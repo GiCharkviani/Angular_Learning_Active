@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <span>Routing Guards</span>
+  <a class="first-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true}" mat-button routerLink="/">Home</a>
+  <a mat-button routerLinkActive="active" routerLink="/admin">Admin</a>
+</mat-toolbar>
+<main class="content">
+  <router-outlet></router-outlet>
+</main>

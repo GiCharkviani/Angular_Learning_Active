@@ -1,0 +1,24 @@
+
+
+
+<div *ngIf="alertAfterAutoLogOut" class="log-in-again">
+    <div class="internal">
+      <h5>პროფილიდან ავტომატურად გახვედი</h5>
+      <button (click)="LogInAgain(form)">დაბრუნდი</button>
+    </div>
+
+  </div>
+
+<form  class="login" (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <h4  *ngIf="error" style="font-size: 1.2vw;" class="lead text-danger alert alert-danger">{{error}}</h4>
+  <input placeholder="იმეილი" ngModel type="email" name="email" required email>
+  <input placeholder="პაროლი" ngModel type="password" name="password"
+  autocomplete="on" required>
+
+  <div *ngIf="loading" class="loader"></div>
+
+  <button id="login" [disabled]="!form.valid" type="submit" class="btn btn-primary">ავტორიზაცია</button>
+  <br>
+  <button id="registrate" type="button" class="btn btn-info" (click)="onRegister()">რეგისტრაცია</button>
+</form>
+

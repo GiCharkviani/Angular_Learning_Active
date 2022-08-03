@@ -1,0 +1,17 @@
+<ng-template #headerBUttons>
+  <button (click)="headerApp.selectItem(item1)">Item 1</button>
+  <button (click)="headerApp.selectItem(item2)">Item 2</button>
+  <button (click)="headerApp.selectItem(item3)">Item 3</button>
+</ng-template>
+
+<app-head #headerApp [headerTemplate]="headerBUttons">
+  <app-item title="item1" #item1>
+    <p>item 1</p>
+  </app-item>
+  <app-item title="item2" #item2>
+    <p>item 2</p>
+  </app-item>
+  <app-item title="item3" #item3>
+    <p>item 3</p>
+  </app-item>
+</app-head>

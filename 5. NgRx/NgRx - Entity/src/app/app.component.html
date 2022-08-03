@@ -1,0 +1,20 @@
+<ul>
+  <li  *ngFor="let person of persons"><button (click)="deletePer(person._id)" >Delete</button><button (click)="update(person._id)">Update</button>{{person.name}} <p>{{ person._id }}</p></li>
+</ul>
+
+
+<button (click)="onCreate()">Create</button>
+
+<hr>
+<hr>
+<hr>
+
+<ul>
+  <li *ngFor="let country of countries" >
+    {{ country.name }}
+    <button (click)="deleteCountry(country._id)">Delete</button>
+    <button (click)="updateCountry(country._id)" >Update</button>
+  </li>
+</ul>
+<button (click)="createCountry()" >Create</button>
+

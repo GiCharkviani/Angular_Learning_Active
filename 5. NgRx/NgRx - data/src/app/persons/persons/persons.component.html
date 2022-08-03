@@ -1,0 +1,85 @@
+<form
+  class="container"
+  [formGroup]="addPersonForm"
+  (ngSubmit)="addPerson()"
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    margin-top: 50px;
+  "
+>
+  <mat-form-field appearance="fill" >
+    <mat-label>What's your name?</mat-label>
+    <input matInput formControlName="name" type="text" autocomplete="off" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>What's your Surname?</mat-label>
+    <input matInput formControlName="surname" type="text" autocomplete="off" />
+  </mat-form-field>
+  <br />
+  <mat-form-field appearance="fill">
+    <mat-label>What's your Age?</mat-label>
+    <input matInput formControlName="age" type="number" autocomplete="off"/>
+  </mat-form-field>
+  <br />
+  <button mat-stroked-button color="primary" [disabled]="addPersonForm.invalid" type="submit">Add Person</button>
+</form>
+
+<hr />
+<div class="alert alert-danger" role="alert" *ngIf="(errorMessage$ | async) as error">
+  {{error}}
+</div>
+<hr>
+
+<div class="row">
+  <div class="col-6">
+    <mat-expansion-panel hideToggle *ngFor="let person of persons$ | async" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ person.name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          surname: <span class="text-warning">{{ person.surname }}</span
+          >, age: <span class="text-warning">{{ person.age }}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div>
+        <button mat-raised-button color="warn" (click)="deletePerson(person._id)">Delete</button>
+        <button mat-raised-button color="link" (click)="editing(person)" style="float: right;">Edit</button>
+      </div>
+  </mat-expansion-panel>
+  </div>
+
+  <div class="col-6" *ngIf="(selectedPerson$ | async) as person; else selectPerson">
+    <h4  class="lead text-secondary text-center" display-1>{{person.name}} is selected</h4>
+    <form class="container-fluid" #form *ngIf="!editMode; else updated">
+      <input type="text" [value]="person.name" class="form-control" #name>
+      <input type="text" [value]="person.surname" class="form-control" #surname>
+      <input type="text" [value]="person.age" class="form-control" #age>
+      <br>
+      <button class="btn btn-outline-info" type="button" (click)="updatePerson(person._id,name.value, surname.value, +age.value, form)">Update</button>
+    </form>
+    <ng-template #updated>
+      <h2 class="text-success">Updated!</h2>
+    </ng-template>
+  </div>
+
+  <div *ngIf="loading$ | async" style="display: flex; justify-content: center; font-size: 1em;">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-template #selectPerson>
+    <div class="col-6" style="display: flex; justify-content: center; align-items: center;">
+      <h3 class="display-1 text-info">Click <span class="text-dark">Edit</span> to edit person</h3>
+    </div>
+  </ng-template>
+
+</div>
+
+
+

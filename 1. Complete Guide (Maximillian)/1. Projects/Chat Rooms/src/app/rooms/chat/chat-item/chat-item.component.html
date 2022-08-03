@@ -1,0 +1,59 @@
+<li
+class="you"
+currentUser
+[currentUserMessageId]="messageItem.id"
+>
+  <div class="entete">
+    <span class="status green"></span>
+    <h2>{{messageItem.name}}</h2>
+    <h3>{{messageItem.timeStamp | date: 'HH:mm:ss, YYYY	MMMM dd'}}</h3>
+  </div>
+
+  <div class="message">
+    {{messageItem.message}}
+  </div>
+  <br>
+  <span likeCheck [likedUser]="messageItem.clickerId" style="display: inline;cursor: pointer;"><i (click)="onLike()" style="color: rgb(77, 139, 221);" class="far fa-thumbs-up">{{messageItem.react}} </i></span>
+
+  <span  style=" display: none; cursor: context-menu;"><i  style="color: rgb(182, 77, 16);" class="far fa-thumbs-up">{{messageItem.react}} </i></span>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<li
+class="list-group-item user-select-none shadow-sm bg-white rounded"
+currentUser
+[currentUserMessageId]="messageItem.id"
+  >
+
+  <div style="display: flex; justify-content: space-between;">
+
+    <div style="word-wrap: break-word;">
+      <img [src]="messageItem.picture ? messageItem.picture : '../../../../assets/user/images.png'" class="rounded" width="5%">
+      {{messageItem.message}}
+    </div>
+    <div style="display: flex; width: 30px; align-items: center; justify-content: center;" >
+
+      <span likeCheck [likedUser]="messageItem.clickerId" style="float:right; display: inline;cursor: pointer;"><i (click)="onLike()" style="color: rgb(8, 72, 156);" class="far fa-thumbs-up">{{messageItem.react}} </i></span>
+
+      <span  style="float:right; display: none; cursor: context-menu;"><i  style="color: rgb(182, 77, 16);" class="far fa-thumbs-up">{{messageItem.react}} </i></span>
+
+    </div>
+  </div>
+
+  <span class="lead text-center mt-1" style="float: right; font-size: 16px; color: grey;"
+  id="user">
+  {{messageItem.name}}</span>
+</li>
+-->

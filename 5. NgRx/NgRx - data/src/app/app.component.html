@@ -1,0 +1,16 @@
+<p>
+  <mat-toolbar color="primary">
+    <div style="display: flex; justify-content: center; width: 100%;">
+      <button  style="color: darkblue" routerLinkActive="active" [routerLink]="['/persons']" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>person</mat-icon>
+      </button>
+
+      <button style="color: darkblue" routerLinkActive="active" [routerLink]="['/countries']" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>flag</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+</p>
+
+
+<router-outlet></router-outlet>

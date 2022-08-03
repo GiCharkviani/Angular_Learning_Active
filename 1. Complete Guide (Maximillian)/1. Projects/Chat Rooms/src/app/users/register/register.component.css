@@ -1,0 +1,207 @@
+
+.flexCont{
+  display: flex;
+  justify-content: center;
+}
+
+input.ng-invalid.ng-touched{
+  border: 1px solid red!important;
+}
+
+input:focus{
+  outline: none!important;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.login {
+  overflow: auto;
+  margin: 20px;
+  background-color: white;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+.login::before, .login::after {
+  content: "";
+  position: absolute;
+  width: 30vw;
+  height: 30vw;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+.login::before {
+  top: 100px;
+  right: 10vw;
+  background-color: rgba(69, 105, 144, 0.15);
+  -webkit-animation: wawes 6s infinite linear;
+  -moz-animation: wawes 6s infinite linear;
+  animation: wawes 6s infinite linear;
+}
+.login::after {
+  top: 100px;
+  left: 10vw;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: wawes 7s infinite;
+  -moz-animation: wawes 7s infinite;
+  animation: wawes 7s infinite;
+}
+.login > input {
+  font-family: "Asap", sans-serif;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  margin: 15px 0px;
+  border-bottom: 1px solid rgba(2, 128, 144, 0.2);
+}
+.login > button {
+  font-family: "Asap", sans-serif;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1vw;
+  text-transform: uppercase;
+  width: 10vw;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #f45b69;
+  -webkit-transition: background-color 300ms;
+  -moz-transition: background-color 300ms;
+  transition: background-color 300ms;
+}
+.login > button:hover {
+  background-color: #f24353;
+}
+
+#registrate{
+  background-color: rgb(15, 122, 68);
+  width: 100%!important;
+}
+#registrate:hover{
+  background-color: rgb(22, 161, 92);
+}
+#authorization{
+  width: 100%!important;
+}
+
+
+#back{
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+}
+
+#back:hover{
+  background-color: black;
+  color: white;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 786px){
+  .login > button {
+    font-size: 2vw;
+    width: 15vw;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 500px){
+  .login {
+    width: 80vw;
+  }
+  .login > button {
+    font-size: 3vw;
+    width: 20vw;
+  }
+}
+
+@-webkit-keyframes wawes {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes wawes {
+  from {
+    -moz-transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes wawes {
+  from {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/*სპინერი*/
+.loader {
+  animation: spin 1s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #09f;
+  border-top-color: #09f;
+  box-sizing: border-box;
+  height: 20vmin;
+  left: calc(50% - 10vmin);
+  position: fixed;
+  top: calc(50% - 10vmin);
+  width: 20vmin;
+  z-index: 1;
+}
+.loader:before {
+  animation: spin 2s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #3cf;
+  border-top-color: #3cf;
+  box-sizing: border-box;
+  content: "";
+  height: 16vmin;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16vmin;
+}
+.loader:after {
+  animation: spin 3s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #6ff;
+  border-top-color: #6ff;
+  box-sizing: border-box;
+  content: "";
+  height: 12vmin;
+  left: 2vmin;
+  position: absolute;
+  top: 2vmin;
+  width: 12vmin;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

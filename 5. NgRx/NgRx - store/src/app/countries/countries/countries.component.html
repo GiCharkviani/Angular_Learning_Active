@@ -1,0 +1,105 @@
+<h1 class="lead" style="text-align: center">Countries</h1>
+<hr />
+
+<form
+  [formGroup]="countryForms"
+  (ngSubmit)="addForm()"
+  class="form-grup container"
+>
+  <input
+    formControlName="name"
+    class="form-control"
+    type="text"
+    placeholder="add country name"
+  />
+  <input
+    formControlName="capital"
+    class="form-control"
+    type="text"
+    placeholder="add country capital city"
+  />
+  <button
+    class="btn btn-outline-success"
+    type="submit"
+    [disabled]="!countryForms.valid"
+  >
+    Add Form
+  </button>
+</form>
+
+<hr />
+
+<h1 class="lead text-secondary" style="text-align: center">
+  List of Countries
+</h1>
+
+<div class="row container-fluid">
+  <div class="col-6">
+    <ul class="list-group">
+      <li
+        style="cursor: pointer"
+        (click)="selectCountry(country._id)"
+        class="list-group-item"
+        aria-current="true"
+        *ngFor="let country of countries$ | async"
+      >
+        {{ country.name }}
+        <button
+          (click)="delete($event.stopPropagation(), country._id)"
+          class="btn btn-danger"
+          style="float: right"
+        >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="col-6" *ngIf="selectedCountry$ | async as selected">
+    <ng-container *ngIf="editing; else showing">
+      <h2 class="lead" style="text-align: center;">{{selected.name}}</h2>
+      <form (ngSubmit)="editCountry(editing, selected._id)" #editing="ngForm">
+        <input
+          type="text"
+          [placeholder]="'instead of ' + selected.name + ' will be...'"
+          ngModel
+          value=""
+          name="countryName"
+          class="form-control"
+          required
+        />
+        <input
+          type="text"
+          [placeholder]="'instead of ' + selected.capital + ' will be...'"
+          ngModel
+          value=""
+          name="capital"
+          class="form-control"
+          required
+        />
+        <br />
+        <button type="submit" class="btn btn-outline-success" [disabled]="editing.invalid">
+          Edit
+        </button>
+
+        <button style="float: right;" (click)="switchEdit()" type="button" class="btn btn-outline-secondary">Back</button>
+      </form>
+    </ng-container>
+    <ng-template #showing>
+      <h2>{{ selected.capital }}</h2>
+
+      <button
+        (click)="switchEdit()"
+        style="margin-top: 20px"
+        class="btn btn-outline-warning"
+      >
+        Edit Mode
+      </button>
+    </ng-template>
+  </div>
+</div>
+
+<hr />
+
+<div *ngIf="errorMessage$ | async" class="alert alert-danger" role="alert">
+  {{ errorMessage$ | async }}
+</div>

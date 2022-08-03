@@ -1,0 +1,82 @@
+<div *ngIf="canDeactiateElement" class="sure">
+  <div class="sureChild">
+    <p>დარწმუნებული ხარ?</p>
+    <button (click)="yesBtn()" class="btn btn-outline-secondary w-50">კი</button>
+    <br>
+    <button (click)="noBtn()" class="btn btn-outline-success w-50">არა</button>
+  </div>
+</div>
+
+
+<!--ყველაფერი ერთ კონტეინერში-->
+<div id="container">
+  <!--მარცხენა მომხმარებლის და მომხმარებლების სიის პანელი-->
+  <aside>
+    <div class="container">
+      <div class="header-container">
+        <div class="header" #forBackImage>
+          <h4 class="main-heading">{{currentUser[0].name}}</h4>
+          <h4 class="main-heading">{{currentUser[0].surname}}</h4>
+        </div>
+      </div>
+      <div class="overlay-header"></div>
+      <div class="body">
+        <div class="stats">
+          <span class="stat-module">
+            ასაკი: <span class="stat-number">{{currentUser[0].age}}</span>
+          </span>
+          <span class="stat-module">
+            დაბადების თარიღი: <span class="stat-number">{{currentUser[0].bday | date }}</span>
+          </span>
+        </div>
+
+        <div class="u-clearfix"></div>
+        <div class="body-info">
+          <button (click)="onLogout()" type="button" id="logOutFromProfile">გასვლა</button>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <!--მომხმარებლების სია-->
+      <app-users-list></app-users-list>
+    </ul>
+  </aside>
+
+<!--მარჯვენა ჩათის პანელი-->
+  <main>
+    <!--ჩათი-->
+    <ul
+    id="chat"
+    #scrollMe
+    >
+      <app-chat-item
+    *ngFor="let message of messages; let i = index"
+    [messageItem]="message"
+    [index]="i"
+    (reacted)="catchReact($event)"
+      ></app-chat-item>
+    </ul>
+    <!--გაგზავნის ღილაკი-->
+    <footer>
+      <form
+      (ngSubmit)="sendMessage(form)" #form="ngForm"
+      >
+      <div class="flex-controllers">
+        <textarea
+        placeholder="დაწერე მესიჯი"
+        row="1"
+        (keydown.enter)="sendMessage(form)" ngModel
+        name="message"
+        required
+        ></textarea>
+        <button
+        id="sendBtn"
+        class="btn btn-info"
+        [disabled]="!form.valid"
+        type="submit"
+        ><i class="fas fa-paper-plane"></i></button>
+      </div>
+      </form>
+    </footer>
+  </main>
+</div>

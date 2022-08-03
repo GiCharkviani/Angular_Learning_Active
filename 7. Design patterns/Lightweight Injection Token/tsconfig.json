@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "lib-shared-ui-one": [
+        "dist/lib-shared-ui-one/lib-shared-ui-one",
+        "dist/lib-shared-ui-one"
+      ],
+      "lib-shared-ui-two": [
+        "dist/lib-shared-ui-two/lib-shared-ui-two",
+        "dist/lib-shared-ui-two"
+      ]
+    }
+  }
+}

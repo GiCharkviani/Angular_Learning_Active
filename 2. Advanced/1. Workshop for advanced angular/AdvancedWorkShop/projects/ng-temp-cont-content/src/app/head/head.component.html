@@ -1,0 +1,11 @@
+<ng-template #defaultItemsHeader let-items="items">
+  <ul *ngIf="items">
+    <li (click)="selectItem(item)" [ngCLass]="{selected: item.selected}" *ngFor="let item of items">{{item.title}}</li>
+  </ul>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="headerTemplate ? headerTemplate : defaultItemsHeader; context: itemsContext"></ng-container>
+
+<div>
+  <ng-content></ng-content>
+</div>

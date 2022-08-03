@@ -1,0 +1,25 @@
+<button (click)="show = !show">show</button>
+
+<ng-template [appMyDirective]="show" >
+  <app-nav>
+    <p>მე მხოლოდ ერთი ng-content წამიკითხავს, რომელსაც select-ში მე ვუწერივარ</p>
+
+    <h3 me> მე მარტო "me" წამიკითხავს</h3>
+
+    <h6>მე მეორე ng-content წამიკითხავს</h6>
+  </app-nav>
+</ng-template>
+
+<h2 *appMyDirective="show">
+  ფიფქ დირექტივა
+</h2>
+
+
+<!-- თემფლეითით ინფორმაციის გადაწოდება -->
+<ng-template #bodyForInfo let-cvladi="cvladi">
+  <h2>my name is {{cvladi}}</h2>
+  <h3>insert your name</h3>
+  <input type="text" placeholder="your name">
+</ng-template>
+
+<app-info [body]="bodyForInfo" [cvladebistvis]="{cvladi:'giorgi'}"></app-info>

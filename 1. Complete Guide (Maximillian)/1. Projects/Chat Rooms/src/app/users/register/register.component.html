@@ -1,0 +1,54 @@
+<div *ngIf="loading" class="loader"></div>
+
+
+<div class="flexCont" *ngIf="!loading">
+
+  <form [formGroup]="registrationForm" (ngSubmit)="onRegister()" class="login" *ngIf="!success">
+    <button id="back" class="btn btn-outline-dark w-100" type="button" routerLink="/login">უკან</button>
+
+    <h4 *ngIf="error" style="font-size: 1.2vw;" class="lead text-danger alert alert-danger">{{error}}</h4>
+
+
+    <input placeholder="იმეილი" type="email" formControlName="email">
+    <input placeholder="პაროლი" type="password" formControlName="password" autocomplete="on">
+    <hr>
+    <input placeholder="სახელი" type="text" formControlName="name">
+    <input placeholder="გვარი" type="text" formControlName="surname">
+    <br>
+
+    <div style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; padding: 20px">
+      <h3 class="lead" style="font-size:1.3vw">სქესი:</h3>
+      <label for="male">
+        კაცი
+        <input value="male" formControlName="sex" name="sex" id="male" type="radio">
+      </label>
+      <br>
+      <label for="female">
+        ქალი
+        <input formControlName="sex" value="female" name="sex" id="female" type="radio">
+      </label>
+    </div>
+
+    <br>
+    <input placeholder="ასაკი" type="number" id="age" formControlName="age">
+    <br>
+    <input placeholder="დაბადების თარიღი" type="date" formControlName="bday">
+    <br>
+
+    <div style="display: flex; justify-content: center; text-align: center;">
+      <p *ngIf="!photo" title="აქ გამოჩნდება არჩეული ფოტო" style="cursor: context-menu;" class="lead">ფოტო</p>
+      <img *ngIf="photo" #picture id="picture" style="border: 3px solid lightblue; border-radius: 20px" width="80%" [src]="photoLink" alt="">
+    </div>
+
+    <input style="border-bottom: none!important;" [disabled]="disableFile" class="form-control" type="file" (change)="appearPicture($event)" required>
+    <hr>
+    <button id="registrate" class="btn btn-success" type="submit"
+      [disabled]="!registrationForm.valid">რეგისტრაცია</button>
+  </form>
+
+  <div class="login" *ngIf="success">
+    <h4 style="font-size: 1.2vw;" class="lead text-success alert alert-success">{{successMessage}}</h4>
+    <button id="authorization" class="w-100" routerLink="/login">ავტორიზაცია</button>
+  </div>
+
+</div>

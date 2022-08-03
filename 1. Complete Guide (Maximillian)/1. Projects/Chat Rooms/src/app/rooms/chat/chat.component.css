@@ -1,0 +1,315 @@
+/*მთლიანი კონტეინერი*/
+#container{
+	width:100vw;
+	height:100vh;
+	background:#eff3f7;
+	font-size:0;
+	border-radius:5px;
+}
+
+/*მარცხენა მომხმარებლის და მომხმარებლების სიის პანელი*/
+ul::-webkit-scrollbar{
+  display: none!important;
+}
+
+aside::-webkit-scrollbar{
+  display: none!important;
+}
+
+aside{
+	width:20%;
+	height:100%;
+	background-color:#3b3e49;
+	display:inline-block;
+	font-size:15px;
+	vertical-align:top;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+aside header{
+  height: 40%;
+	padding:30px 20px;
+  background-color: rgb(181, 221, 221);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  overflow: auto;
+}
+
+aside ul{
+	padding-left:0;
+	margin:0;
+	list-style-type:none;
+	overflow: auto;
+  height: 50%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.container {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin-top: 0;
+}
+
+.header-container {
+  position: relative;
+}
+
+.header-image {
+  position: relative;
+
+  height: auto;
+
+  -webkit-animation: zoomEffect 35s infinite;
+          animation: zoomEffect 35s infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+@-webkit-keyframes zoomEffect {
+  0% {
+    -webkit-transform: scale(1) translateX(0);
+            transform: scale(1) translateX(0);
+  }
+  100% {
+    -webkit-transform: scale(1.2) translateX(-360px) translateY(-80px);
+            transform: scale(1.2) translateX(-360px) translateY(-80px);
+  }
+}
+
+@keyframes zoomEffect {
+  0% {
+    -webkit-transform: scale(1) translateX(0) translateY(0);
+            transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1.2) translateX(-360px) translateY(-80px);
+            transform: scale(1.2) translateX(-360px) translateY(-80px);
+  }
+}
+
+.header {
+  color: #fff;
+  padding: 15px;
+  height: 200px;
+  overflow: auto;
+  vertical-align:middle;
+}
+
+.header > svg {
+  cursor: pointer;
+}
+
+.main-heading {
+  color: #fff;
+  font-size: 2vw;
+  font-weight: 300;
+  margin-right: 50px;
+  word-break: break-all;
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px){
+  .main-heading{
+    word-break:keep-all;
+  }
+}
+
+.tag {
+  background-color: rgba(255, 255, 255, .35);
+  border-radius: 20px;
+  font-size: 11px;
+  margin-right: 8px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+
+
+.stat-module {
+  display: inline-block;
+  font-size: 1.7vw;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+
+.stat-number {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.2vw;
+}
+
+.overlay-header {
+  background-color: #eee;
+  height: 100px;
+  margin-top: -3vw;
+  transform: rotate(-10deg);
+  width: 150%;
+  z-index: 0;
+}
+
+.body {
+  background-color: #eee;
+  color: #555;
+  margin-top: -50px;
+  padding: 0 7px 7px;
+  position: relative;
+}
+
+.body-image {
+  border-radius: 100%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  float: left;
+  margin: -90px 0 20px;
+  position: relative;
+  z-index: 2;
+  width:10vw;
+  height: 10vh;
+}
+
+#logOutFromProfile{
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(21, 30, 51);
+  color: whitesmoke;
+  padding: 8px;
+  font-size: 1.7vw;
+  font-weight: bold;
+}
+
+#logOutFromProfile:hover{
+  background-color: rgb(248, 47, 20);
+  color: rgb(0, 0, 0);
+
+}
+
+
+
+
+
+/*მარჯვენა ჩათის პანელი*/
+main{
+	width:80%;
+	height:100%;
+	display:inline-block;
+	font-size:15px;
+}
+
+#chat{
+	padding-left:0;
+	margin:0;
+	list-style-type:none;
+	overflow-y:scroll;
+	height:80%;
+	border-top:2px solid #fff;
+	border-bottom:2px solid #fff;
+}
+
+main footer{
+  height: 20%;
+	padding:20px 30px 10px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+main footer textarea{
+	resize:none;
+	border:none;
+	display:block;
+	width:80%;
+	height: 100%;
+	border-radius:3px;
+	padding:10px;
+	font-size:13px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#sendBtn{
+  width: 20%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fa-paper-plane{
+  font-size: 3vw;
+}
+
+#sendBtn:hover {
+  background-color: rgb(47, 188, 231);
+  color: antiquewhite;
+}
+
+main footer textarea::placeholder{
+	color:#ddd;
+}
+
+main footer textarea:focus{
+  outline: none;
+  border: 1px solid teal
+}
+
+main footer form {
+  width: 80%;
+}
+
+.flex-controllers{
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+/*კითხვის კომპონენტი*/
+.sure {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(250, 235, 215, 0.376);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sureChild {
+  width: 20%;
+  height: 20%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: rgb(138,145,43);
+  background: linear-gradient(304deg, rgba(138,145,43,0.8799894957983193) 14%, rgba(70,160,236,0.9360119047619048) 49%, rgba(168,223,209,0.9444152661064426) 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+  word-break: break-all;
+  border-radius: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px){
+  .sureChild{
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 1030px){
+  .sureChild{
+    width: 40%;
+    height: 40%;
+  }
+}
+
+
+

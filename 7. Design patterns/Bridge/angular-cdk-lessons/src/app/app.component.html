@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Angular CDK Lessons</span>
+    <button mat-button (click)="createDialog()">open dialog</button>
+    <ng-container *ngIf="isWideScreen$ | async">
+      <div>Your browser is:</div>
+      <div [ngSwitch]="true">
+        <div *ngSwitchCase="platform.BLINK">Chrome</div>
+        <div *ngSwitchCase="platform.SAFARI">Safari</div>
+        <div *ngSwitchCase="platform.TRIDENT">Pain</div>
+        <div *ngSwitchDefault>Undefined browser</div>
+      </div>
+    </ng-container>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main class="content">
+  <!-- <app-drop-down-search></app-drop-down-search> -->
+  <!-- <app-value-accessor-example></app-value-accessor-example> -->
+  <!-- <app-widget-wrapper>
+    <app-velocity-widget></app-velocity-widget>
+  </app-widget-wrapper>
+  <app-widget-wrapper>
+    <app-weather-widget></app-weather-widget>
+  </app-widget-wrapper> -->
+  <app-search-form-field-container></app-search-form-field-container>
+</main>

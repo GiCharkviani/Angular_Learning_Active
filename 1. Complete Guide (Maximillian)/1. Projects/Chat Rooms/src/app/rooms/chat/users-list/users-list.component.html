@@ -1,0 +1,9 @@
+<li *ngFor="let user of users">
+  <img
+  [ngStyle]="{'border-color': user.status == 'offline' ? 'red' : 'green'}"
+  [src]="user.picture.length > 6 ? user.picture : '../../../../assets/user/images.png'" alt="">
+  <div>
+    <p>{{user.name}}</p>
+  </div>
+</li>
+

@@ -1,0 +1,9 @@
+li {
+  display: inline;
+  list-style-type: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+li:hover {
+  font-weight: bold;
+}
