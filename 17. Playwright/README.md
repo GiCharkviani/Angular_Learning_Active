@@ -84,6 +84,11 @@ test.beforeEach(async ({page}) => {
 - `` page.screenshot({path: "screenshot.png", fullPage: true}) `` - screenshots the page and saved screenshots;
 - `` page.$("h1") `` -  it targets the concrete element in order to perform some actions on it, for example screenshot;
   - `` .screenshot({path: "single_screenshot"}) `` - and after that, we can just screenshot this element only;
+- `` page.waitForSelector(css selector) `` -  it will wait for element to appear in configured timout and will provide assertion as well;
+- `` page.keyboard `` - keyboard events, that are listed below;
+  - `` .press("enter") `` - imitates keyboard event, in this case enter press;
+- `` page.selectOption("css selector", "value") `` - to select value in select element;
+
 
 
 
