@@ -188,6 +188,8 @@ test("Single Element Snapshot", async ({page}) => {
 ## API Testing
 ### async ({request}) => {}:
 **We assume await before each function call** <br />
+**No await needed before expect()** <br />
+
 - `` const response = request.get(url)`` - it will send request and return a response, which better store in variable for later usage;
   - `` response.status()`` - returns response status;
   - `` response.json()`` - parses response into JSON;
@@ -205,9 +207,9 @@ test("POST Request - Login", async ({request}) => {
     const responseBody = await response.json();
     // console.log(responseBody)
 
-    await expect(response.status()).toBe(200);
-    await expect(responseBody).toBeTruthy();
-    await expect(responseBody.token).toBeTruthy();
+    expect(response.status()).toBe(200);
+    expect(responseBody).toBeTruthy();
+    expect(responseBody.token).toBeTruthy();
 })
 ```
 
