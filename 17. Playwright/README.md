@@ -190,7 +190,7 @@ test("Single Element Snapshot", async ({page}) => {
 **We assume await before each function call** <br />
 - `` const response = request.get(url)`` - it will send request and return a response, which better store in variable for later usage;
   - `` response.status()`` - returns response status;
-  - `` response.body()`` - parses response into JSON;
+  - `` response.json()`` - parses response into JSON;
   - `` response.text()`` - response body, but you must parse it later;
 #### Example:
 ```
