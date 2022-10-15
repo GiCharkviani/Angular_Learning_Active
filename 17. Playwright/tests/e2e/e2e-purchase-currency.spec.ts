@@ -1,40 +1,35 @@
-import {test, expect} from "@playwright/test";
+import {test} from "@playwright/test";
+import {LoginNewPage} from "../../page-objects/loginNewPage";
+import {HomePage} from "../../page-objects/homePage";
+import {Navbar} from "../../page-objects/components/Navbar";
+import {PayBillsNavbar} from "../../page-objects/components/PayBillsNavbar";
+import {PurchaseCurrencyPage} from "../../page-objects/purchaseCurrencyPage";
 
-test.describe.only("Purchase foreign currency cash test", () => {
+test.describe("Purchase foreign currency cash test", () => {
+    let homePage: HomePage;
+    let loginPage: LoginNewPage;
+    let navbar: Navbar;
+    let payBillsNavbar: PayBillsNavbar;
+    let purchaseCurrencyPage: PurchaseCurrencyPage;
+
     test.beforeEach(async ({page}) => {
-        await page.goto("http://zero.webappsecurity.com/index.html");
-        await page.click("#signin_button");
-        await page.type("#user_login", "username");
-        await page.type("#user_password", "password");
+        homePage = new HomePage(page);
+        loginPage = new LoginNewPage(page);
 
-        await page.click("text=Sign in");
+        await homePage.visit();
+        await homePage.clickOnSignIn();
 
-        await page.goto("http://zero.webappsecurity.com/bank/transfer-funds.html");
+        await loginPage.login("username", "password");
+
+        navbar = new Navbar(page);
+        await navbar.clickOnTab("Pay Bills")
+        payBillsNavbar = new PayBillsNavbar(page);
+        await payBillsNavbar.clickNav(3);
+
+        purchaseCurrencyPage = new PurchaseCurrencyPage(page);
     })
 
     test("Should purchase", async ({page}) => {
-        await page.click("#pay_bills_tab");
-        await page.click("div.ui-tabs ul li:last-of-type");
-
-        const foreignCurrencyPurchase = await page.locator("h2.board-header");
-        await expect(foreignCurrencyPurchase).toContainText("Purchase foreign currency cash");
-
-        await page.selectOption("#pc_currency", "GBP");
-        const sellRate = await page.locator("#sp_sell_rate");
-        await expect(sellRate).toContainText("1 pound (GBP)");
-
-        const AMOUNT = "500";
-        await page.type("#pc_amount", AMOUNT);
-        await page.check("#pc_inDollars_false");
-        await page.click("#pc_calculate_costs");
-
-        const conversionAmount = await page.locator("#pc_conversion_amount");
-        await expect(conversionAmount).toBeVisible();
-        await expect(conversionAmount).toContainText(`${AMOUNT}.00 pound (GBP)`);
-
-        await page.click("#purchase_cash");
-        const successMessage = await page.locator("#alert_content");
-        await expect(successMessage).toHaveText("Foreign currency cash was successfully purchased.");
-
+        await purchaseCurrencyPage.fillForm(500);
     })
 })

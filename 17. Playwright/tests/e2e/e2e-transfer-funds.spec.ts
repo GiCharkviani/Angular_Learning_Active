@@ -1,34 +1,31 @@
-import {test, expect} from "@playwright/test";
+import {test} from "@playwright/test";
+import {HomePage} from "../../page-objects/homePage";
+import {LoginNewPage} from "../../page-objects/loginNewPage";
+import {Navbar} from "../../page-objects/components/Navbar";
+import {TransferFundsPage} from "../../page-objects/transferFundsPage";
 
 test.describe("Transfer Funds and Make Payments" , () => {
+    let homePage: HomePage;
+    let loginPage: LoginNewPage;
+    let navbar: Navbar;
+    let transferFundsPage: TransferFundsPage
+
     test.beforeEach(async ({page}) => {
-        await page.goto("http://zero.webappsecurity.com/index.html");
-        await page.click("#signin_button");
-        await page.type("#user_login", "username");
-        await page.type("#user_password", "password");
+        homePage = new HomePage(page);
+        loginPage = new LoginNewPage(page);
 
-        await page.click("text=Sign in");
+        await homePage.visit();
+        await homePage.clickOnSignIn();
 
-        await page.goto("http://zero.webappsecurity.com/bank/transfer-funds.html");
+        await loginPage.login("username", "password");
+        navbar = new Navbar(page);
+        transferFundsPage = new TransferFundsPage(page);
     })
 
     test("Transfer funds", async ({page}) => {
-        await page.click("#transfer_funds_tab");
-
-        await page.selectOption("#tf_fromAccountId", "2");
-        await page.selectOption("#tf_toAccountId", "3");
-
-        await page.type("#tf_amount","500");
-        await page.type("#tf_description", "Test message");
-
-        await page.click("#btn_submit");
-
-        const boardHeader = await page.locator("h2.board-header");
-        await expect(boardHeader).toContainText("Verify");
-
-        await page.click("#btn_submit");
-
-        const message = await page.locator(".alert-success");
-        await expect(message).toContainText("You successfully submitted your transaction");
+       await navbar.clickOnTab("Transfer Funds");
+       await transferFundsPage.fillForm();
+       await transferFundsPage.assertVerifyText();
+       await transferFundsPage.assertSuccessMessage();
     })
 })
