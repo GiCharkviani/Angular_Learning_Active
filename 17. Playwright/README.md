@@ -91,6 +91,7 @@ test.beforeEach(async ({page}) => {
 - `` page.keyboard `` - keyboard events, that are listed below;
   - `` .press("enter") `` - imitates keyboard event, in this case enter press;
 - `` page.selectOption("css selector", "value") `` - to select value in select element;
+- `` page.waitForTimeout(3000) `` - it will wait for specified milliseconds and then continue;
 
 
 
