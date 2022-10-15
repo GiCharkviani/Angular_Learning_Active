@@ -1,0 +1,91 @@
+{
+  "test": "Negative scenario for Login",
+  "status": "passed",
+  "executionTime": 2287,
+  "errors": []
+},{
+  "test": "Positive Scenario for login + logout",
+  "status": "passed",
+  "executionTime": 3155,
+  "errors": []
+},{
+  "test": "Should find search results",
+  "status": "passed",
+  "executionTime": 2228,
+  "errors": []
+},{
+  "test": "Should send new payment",
+  "status": "passed",
+  "executionTime": 5105,
+  "errors": []
+},{
+  "test": "Should purchase",
+  "status": "passed",
+  "executionTime": 5609,
+  "errors": []
+},{
+  "test": "Verify the results for each account",
+  "status": "passed",
+  "executionTime": 5663,
+  "errors": []
+},{
+  "test": "Reset feedback form",
+  "status": "passed",
+  "executionTime": 2758,
+  "errors": []
+},{
+  "test": "Submit feedback form",
+  "status": "passed",
+  "executionTime": 2490,
+  "errors": []
+},{
+  "test": "Transfer funds",
+  "status": "passed",
+  "executionTime": 4177,
+  "errors": []
+},{
+  "test": "Negative scenario for Login",
+  "status": "passed",
+  "executionTime": 2222,
+  "errors": []
+},{
+  "test": "Positive Scenario for login + logout",
+  "status": "passed",
+  "executionTime": 3317,
+  "errors": []
+},{
+  "test": "Should find search results",
+  "status": "passed",
+  "executionTime": 2192,
+  "errors": []
+},{
+  "test": "Should purchase",
+  "status": "passed",
+  "executionTime": 5450,
+  "errors": []
+},{
+  "test": "Verify the results for each account",
+  "status": "passed",
+  "executionTime": 5744,
+  "errors": []
+},{
+  "test": "Should send new payment",
+  "status": "passed",
+  "executionTime": 5904,
+  "errors": []
+},{
+  "test": "Reset feedback form",
+  "status": "passed",
+  "executionTime": 2724,
+  "errors": []
+},{
+  "test": "Transfer funds",
+  "status": "passed",
+  "executionTime": 4267,
+  "errors": []
+},{
+  "test": "Submit feedback form",
+  "status": "passed",
+  "executionTime": 2664,
+  "errors": []
+},

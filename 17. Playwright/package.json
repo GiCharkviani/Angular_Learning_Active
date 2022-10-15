@@ -12,7 +12,8 @@
     "test:visual": "playwright test --config=visual.config.ts",
     "test:api": "playwright test --config=api.config.ts --project=Chromium --reporter=list",
     "jenkins-server": "java -jar jenkins.war --httpPort=8080 --enable-future-java",
-    "test:tips": "playwright test --config=playwright.config.ts --project=Chromium"
+    "test:tips": "playwright test --config=playwright.config.ts --project=Chromium",
+    "test:reporter": "playwright test --config=e2e.config.ts --project=Chromium --reporter=reporter.ts"
   },
   "author": "",
   "license": "ISC",
