@@ -19,6 +19,9 @@
   - `` junit `` - reports only in command line printing xml format report;
   - `` html `` - reports in and generates separate html file;
 - `` show-report `` - last report will show;
+- 
+### Update snapshots for tests flag
+**in the command line just add ```--update-snapshots``` flag**
 
 
 ## Intro
@@ -72,7 +75,7 @@ test.beforeEach(async ({page}) => {
 **If we write ``await page.pause()`` inspector page will start and as a result, app will start executing tests, if we are in headed mode we will see browser popups**
 
 ## Test function parameters
-### async ({page}) => {}
+### async ({page}) => {}:
 **We assume await before each function call** <br />
 **We sometimes example data as parameters** <br />
 **if it's subsection, we assume parent section proceeds as well before that, not only await keyword, I mean**
@@ -181,9 +184,38 @@ test("Single Element Snapshot", async ({page}) => {
     await expect(await pageElement.screenshot()).toMatchSnapshot("page-title.png")
 })
 ```
-### Update snapshots for tests
-**in the command line just add ```--update-snapshots``` flag**
 
+## API Testing
+### async ({request}) => {}:
+**We assume await before each function call** <br />
+- `` const response = request.get(url)`` - it will send request and return a response, which better store in variable for later usage;
+  - `` response.status()`` - returns response status;
+  - `` response.body()`` - parses response into JSON;
+  - `` response.text()`` - response body, but you must parse it later;
+#### Example:
+```
+test("POST Request - Login", async ({request}) => {
+    const response = await request.post(baseUrl + "login", {
+        data: {
+            email: "eve.holt@reqres.in",
+            password: "cityslicka"
+        }
+    });
+
+    const responseBody = await response.json();
+    // console.log(responseBody)
+
+    await expect(response.status()).toBe(200);
+    await expect(responseBody).toBeTruthy();
+    await expect(responseBody.token).toBeTruthy();
+})
+```
+
+
+
+
+## Page Object Model (POM)
+You can find it in page-objects folder. It uses OOP approach.
 
 
 ## CONFIGURATION
@@ -204,6 +236,7 @@ const config: PlaywrightTestConfig = {}
 Assuming example values next to the properties
 - **timeout: 60000** - number of milliseconds as a global timeout for all the tests to finish;
 - **retries: 0** - how many times to rerun failing test;
+- **testDir: "tests/api"** - specify testing directory, where test files are located;
 - **use: {}** - here you specify browser specific configs;
   - **headless: true** - run in head-full or headless mode;
   - **viewport: {width: 1280, height: 720}** - for which size of monitor to test;
@@ -224,8 +257,3 @@ Assuming example values next to the properties
 ```
 **Then running command:** ``npm run tests:chrome`` <br />
 **overwriting command (adding new value)**: ``npm run tests:chrome -- --headed`` => --headed flag will be added
-
-
- 
-## Page Object Model (POM)
-You can find it in page-objects folder. It uses OOP approach.

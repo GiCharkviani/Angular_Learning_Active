@@ -9,7 +9,8 @@
     "test:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "test:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
     "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
-    "test:visual": "playwright test --config=visual.config.ts"
+    "test:visual": "playwright test --config=visual.config.ts",
+    "test:api": "playwright test --config=api.config.ts --project=Chromium"
   },
   "author": "",
   "license": "ISC",
