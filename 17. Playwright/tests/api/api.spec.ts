@@ -8,7 +8,7 @@ test.describe.parallel("API Testing", () => {
         expect(response.status()).toBe(200);
 
         const responseBody = await response.json();
-        await expect(responseBody).toBeTruthy();
+        expect(responseBody).toBeTruthy();
     })
 
     test("Simple API Test - Assert Invalid Endpoint", async ({request}) => {
@@ -23,12 +23,12 @@ test.describe.parallel("API Testing", () => {
         // console.log(responseBody)
         // console.table(responseBody)
 
-        await expect(response.status()).toBe(200);
+        expect(response.status()).toBe(200);
 
-        await expect(responseBody.data).toBeTruthy();
+        expect(responseBody.data).toBeTruthy();
 
-        await expect(responseBody.data.id).toBe(3);
-        await expect(responseBody.data.first_name).toBe("Emma");
+        expect(responseBody.data.id).toBe(3);
+        expect(responseBody.data.first_name).toBe("Emma");
     })
 
     test("POST Request - Create New User", async ({request}) => {
@@ -43,10 +43,10 @@ test.describe.parallel("API Testing", () => {
         const responseBody = await response.json();
 
         // console.log(responseBody);
-        await expect(response.status()).toBe(201);
-        await expect(responseBody).toBeTruthy();
-        await expect(responseBody.createdAt).toBeTruthy();
-        await expect(responseBody.id).toBe(1029);
+        expect(response.status()).toBe(201);
+        expect(responseBody).toBeTruthy();
+        expect(responseBody.createdAt).toBeTruthy();
+        expect(responseBody.id).toBe(1029);
     })
 
     test("POST Request - Login", async ({request}) => {
@@ -60,9 +60,9 @@ test.describe.parallel("API Testing", () => {
         const responseBody = await response.json();
         // console.log(responseBody)
 
-        await expect(response.status()).toBe(200);
-        await expect(responseBody).toBeTruthy();
-        await expect(responseBody.token).toBeTruthy();
+        expect(response.status()).toBe(200);
+        expect(responseBody).toBeTruthy();
+        expect(responseBody.token).toBeTruthy();
     })
 
     test("POST Request - Login Fail", async ({request}) => {
@@ -75,9 +75,9 @@ test.describe.parallel("API Testing", () => {
         const responseBody = await response.json();
         // console.log(responseBody)
 
-        await expect(response.status()).toBe(400);
-        await expect(responseBody).toBeTruthy();
-        await expect(responseBody.error).toBeTruthy();
+        expect(response.status()).toBe(400);
+        expect(responseBody).toBeTruthy();
+        expect(responseBody.error).toBeTruthy();
     })
 
     test("PUT Request - Update User", async ({request}) => {
@@ -91,16 +91,16 @@ test.describe.parallel("API Testing", () => {
         const responseBody = await response.json();
         // console.log(responseBody);
 
-        await expect(response.status()).toBe(200);
-        await expect(responseBody.name).toBe("new name");
-        await expect(responseBody.job).toBe("new job");
-        await expect(responseBody.updatedAt).toBeTruthy();
+        expect(response.status()).toBe(200);
+        expect(responseBody.name).toBe("new name");
+        expect(responseBody.job).toBe("new job");
+        expect(responseBody.updatedAt).toBeTruthy();
     })
 
     test("DELETE Request - Delete User", async ({request}) => {
         const response = await request.delete(baseUrl + "user/3");
 
-        await expect(response.status()).toBe(204);
+        expect(response.status()).toBe(204);
     })
 
 
