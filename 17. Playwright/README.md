@@ -196,3 +196,5 @@ Assuming example values next to the properties
 
 
  
+## Page Object Model (POM)
+You can find it in page-objects folder. It uses OOP approach.
