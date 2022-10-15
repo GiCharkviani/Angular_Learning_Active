@@ -8,9 +8,10 @@
     "test:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
     "test:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "test:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
-    "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
+    "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium --reporter=list",
     "test:visual": "playwright test --config=visual.config.ts",
-    "test:api": "playwright test --config=api.config.ts --project=Chromium"
+    "test:api": "playwright test --config=api.config.ts --project=Chromium --reporter=list",
+    "jenkins-server": "java -jar jenkins.war --httpPort=8080 --enable-future-java"
   },
   "author": "",
   "license": "ISC",
