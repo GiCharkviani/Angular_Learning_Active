@@ -154,6 +154,37 @@ export async function assertTitle(page) {
 }
 ```
 
+## Visual Testing
+**this functionality is attached to page object and then on assertion in order to check** <br />
+**We assume await before each function call**
+
+### Whole page screenshot
+- `` page.screenshot()`` - will screenshot entire webpage;
+- `` expect(someScreenshot).toMatchScreenshot("example.png")`` - checks if taken screenshot matches some saved .png file, if not, it will generate the one;
+
+**after image is generated, it will always compare them**
+#### Example:
+```
+test("Full Page Snapshot", async ({page}) => {
+    await page.goto("https://www.example.com/");
+    expect(await page.screenshot()).toMatchSnapshot("homepage.png");
+})
+```
+### Single element screenshot
+- `` page.$(css selector)`` - will target to specific element, better store in variable;
+- `` expect(slectedElementVariable).toMatchScreenshot("example.png")`` - checks if taken screenshot matches some saved .png file, if not, it will generate the one;
+  **after image is generated, it will always compare them**
+#### Example:
+```
+test("Single Element Snapshot", async ({page}) => {
+    const pageElement = await page.$("h1");
+    await expect(await pageElement.screenshot()).toMatchSnapshot("page-title.png")
+})
+```
+### Update snapshots for tests
+**in the command line just add ```--update-snapshots``` flag**
+
+
 
 ## CONFIGURATION
 1. Creating file on root level, named - playwright.config.ts;

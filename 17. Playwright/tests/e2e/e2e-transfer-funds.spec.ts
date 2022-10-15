@@ -17,7 +17,9 @@ test.describe("Transfer Funds and Make Payments" , () => {
         await homePage.visit();
         await homePage.clickOnSignIn();
 
-        await loginPage.login("username", "password");
+        await loginPage.login("username", "password")
+        await loginPage.goToTransferFunds();
+
         navbar = new Navbar(page);
         transferFundsPage = new TransferFundsPage(page);
     })

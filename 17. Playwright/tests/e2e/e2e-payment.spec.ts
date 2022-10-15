@@ -19,6 +19,7 @@ test.describe("New Payment", () => {
         await homePage.clickOnSignIn();
 
         await loginPage.login("username", "password");
+        await loginPage.goToTransferFunds();
 
         paymentPage = new PaymentPage(page);
         navbar = new Navbar(page);

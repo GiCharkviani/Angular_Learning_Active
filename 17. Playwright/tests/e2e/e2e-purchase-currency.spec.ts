@@ -20,6 +20,7 @@ test.describe("Purchase foreign currency cash test", () => {
         await homePage.clickOnSignIn();
 
         await loginPage.login("username", "password");
+        await loginPage.goToTransferFunds();
 
         navbar = new Navbar(page);
         await navbar.clickOnTab("Pay Bills")

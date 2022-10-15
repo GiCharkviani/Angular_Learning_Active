@@ -18,6 +18,7 @@ test.describe("Filter Transactions", () => {
         await homePage.clickOnSignIn();
 
         await loginPage.login("username", "password");
+        await loginPage.goToTransferFunds();
 
         navbar = new Navbar(page);
         filterTransactionsPage = new FilterTransactionsPage(page);
