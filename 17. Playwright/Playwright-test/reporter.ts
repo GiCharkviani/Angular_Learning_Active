@@ -28,7 +28,6 @@ class MyReporter implements Reporter {
 
          fs.writeFileSync("test-result.json", `${dataToString},`, {flag: 'a'});
     }
-
 }
 
 export default MyReporter;

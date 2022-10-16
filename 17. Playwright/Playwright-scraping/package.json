@@ -1,0 +1,20 @@
+{
+  "name": "playwright-scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scraper": "node scraper.ts",
+    "scraper:3": "for run in {1..10}; do node scraper.ts; done"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.27.1",
+    "random-useragent": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0"
+  }
+}
