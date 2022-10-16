@@ -5,7 +5,8 @@
   "main": "cucumber.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test:cucumber": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet"
+    "test:cucumber": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet",
+    "test:report": "node reporter.js"
   },
   "keywords": [],
   "author": "",

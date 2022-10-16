@@ -103,4 +103,75 @@ Then("I should see the home page", async function() {
 command: ``/node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet``.
 Then it will generate cucumber_report.json file.**
 
+8. **We can also apply here page-objects pattern, e.g. creating login-page.js in page-objects folder and create there class 
+and after login-steps.js will look like this:**
+#### Example of login-steps.js after page-object pattern applied:
+```
+const { Given, When, Then, defineStep } = require("@cucumber/cucumber");
+const { LoginPage } = require("../page-objects/login-page");
+
+const loginPage = new LoginPage();
+
+Given("I visit a login page", async function() {
+    await loginPage.navigateToLoginScreen();
+})
+
+When("I fill the login form with valid credentials", async function() {
+    await loginPage.submitLoginForm();
+})
+
+Then("I should see the home page", async function() {
+    await loginPage.assertUserIsLoggedIn()
+})
+```
+
+9. **We can also create custom html report, for this in report.js file
+we should write following code:**
+#### Example of reporter.js:
+```
+const reporter = require("cucumber-html-reporter");
+
+const options = {
+    theme: "bootstrap",
+    jsonFile: "cucumber_report.json",
+    output: "reports/cucumber_report.html",
+    reportSuiteAsScenarios: true,
+    scenarioTimestamp: true,
+    launchReport: false,
+    metadata: { // it's optional
+        "App Version": "2.0.0",
+        "Test Environment": "STAGING",
+        Browser: "Chrome 54.0",
+        Platform: "Windows 10",
+    }
+};
+
+reporter.generate(options);
+```
+**And after this we should execute this file from node like this: ``node reporter.js``.**
+
+10. **We can also create scenario outlines, in other words - parametrized scenarios.
+For this we should add following syntax in login.feature file:**
+#### Example for login.feature:
+```
+  Scenario Outline: Try to login with invalid credentials
+    Given I visit a login page
+    When I fill the login form with "<username>" and "<password>"
+    Then I wait for 3 seconds
+
+    Examples:
+      | username | password |
+      | fail-1  | fail-1  |
+      | fail-2  | fail-2  |
+      | fail-3  | fail-3  |
+```
+**And then following function in the login-step.js:**
+#### Example from login-step.js:
+```
+defineStep(/^I fill the login form with "([^"]*)" and "([^"]*)"$/, async function(username, password) {
+    await loginPage.submitLoginWithParameters(username, password);
+})
+```
+**As a result, it will iterate through given examples and pass each value as a parameter to our function.**
+
 
