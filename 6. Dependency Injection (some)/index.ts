@@ -62,7 +62,7 @@ component.user.sayHi();
 
 
 
-// DI in Depth (Angular)
+// DI in Depth (Angular): View Providers
 
     /**
      * UseClass იმ სერვისის ნაცვლად რომელიც გამოძახებულია კონსტრუქტორში, შექმნის მითითებული სერვისის ინსტანსს.
