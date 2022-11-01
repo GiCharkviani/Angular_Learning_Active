@@ -7,7 +7,7 @@ Before(({I}) => {
 Scenario("Login Test - Negative", ({I, LoginPage}) => {
     I.click("#signin_button");
     I.seeElement("#login_form");
-    LoginPage.submitLogin("invalid username", "invalid password");
+    LoginPage.submitLogin("invalid username", "invalid passwording");
     LoginPage.assertLoginFormIsVisible();
     I.seeElement(".alert-error");
 })
