@@ -1,26 +1,2 @@
-<router-outlet></router-outlet>
-<a href="standing">Go to</a>
-<hr>
-<input type="text" [(ngModel)]="title" placeholder="Title">
-<input type="text" [(ngModel)]="body" placeholder="Body">
-<button (click)="addPost()">Add Product</button>
 
-<hr>
-
-<details *ngFor="let item of posts; odd as o; even as e">
-  <summary>
-    {{item.title}}
-    <span class="icon">👇</span>
-  </summary>
-  <p>
-    {{item.body}}
-  </p>
-  <b>Odd: {{o}} | Even: {{e}}</b>
-  <br>
-  <i>ID: {{item.id}}</i>
-  <br>
-  <i>UserId: {{item.userId}}</i>
-</details>
-
-<hr>
 

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {HttpService} from "./http.service";
-import {tap} from "rxjs";
+const _ = require("lodash")
 
 export interface Post {
   id: number;
@@ -25,42 +25,39 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.httpService.data.pipe(tap((posts: Post[]) => {
-      const newArray: Post[] = [...posts, ...posts, ...posts, ...posts, ...posts,...posts,
-        ...posts, ...posts, ...posts, ...posts,...posts, ...posts, ...posts, ...posts, ...posts].flat();
 
-      console.log(newArray)
+    const myObj: any = {
+      name: "gio",
+      surname: "gigicha",
+      age: 321
+    };
 
-      let gotIndex = 0;
+    const newObj: any = {};
 
-     const interval = setInterval(() => {
-       // debugger
-       if(newArray[gotIndex].userId > 2) {
-         this.posts.push(newArray[gotIndex])
-         this.cd.markForCheck()
-       }
+    Object
+      .keys(myObj)
+      .forEach((key: string) =>  myObj[key] && (newObj[key] = myObj[key]));
 
-       gotIndex++
-       if(gotIndex === newArray.length - 1) {
-         clearInterval(interval)
-       }
-     }, 0)
+    const profileChanges1: any = Object
+      .keys(myObj)
+      .filter((key: string) => myObj[key])
+      .reduce((accum: any, currentValue: string) => {
+        accum[currentValue] = myObj[currentValue]
+        return accum;
+      }, {});
 
-    })).subscribe(console.log)
+    const profileChanges2: any = Object
+      .keys(myObj)
+      .filter((key: string) => myObj[key])
+      .reduce((accum: any, currentValue: string) => ({...accum, [currentValue]: myObj[currentValue]}), {});
+
+    const profileChanges3: any = Object
+      .keys(myObj)
+      .reduce((accum: any, currentValue: string) => myObj[currentValue] && ({...accum, [currentValue]: myObj[currentValue]}), {});
+
+
+    console.log(newObj)
   }
 
-  public addPost(): void {
-    this.posts.push({
-      id: this.posts.length,
-      title: this.title,
-      body: this.body,
-      userId: Number.parseFloat((Math.random() * 3).toFixed(2))
-    })
-    this.title = '';
-    this.body = '';
-  }
 
-  public trackByFn(index: number, value: Post): number {
-    return value.id
-  }
 }
