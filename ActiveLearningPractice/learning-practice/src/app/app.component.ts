@@ -18,6 +18,7 @@ export interface Post {
 export class AppComponent implements OnInit{
   title!: string;
   body!: string;
+  showMe: boolean = false;
 
   posts: Post[] = [];
 

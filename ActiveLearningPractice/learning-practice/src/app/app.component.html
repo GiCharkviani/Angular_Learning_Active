@@ -1,2 +1,9 @@
+<h1>Hello world</h1>
 
+<button (click)="showMe = !showMe">Show</button>
 
+@if(showMe) {
+<h2>I am visible</h2>
+} @else {
+<h2>I am not visible</h2>
+}
