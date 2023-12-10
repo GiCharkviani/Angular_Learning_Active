@@ -7,3 +7,11 @@
 } @else {
 <h2>I am not visible</h2>
 }
+
+@defer (when showMe; on interaction, timer(5s)) {
+  <app-item></app-item>
+}
+
+@placeholder (minimum 2s) {
+  <span>There will be deferred content.</span>
+}
