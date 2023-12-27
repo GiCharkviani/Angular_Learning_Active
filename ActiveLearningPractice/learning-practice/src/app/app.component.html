@@ -1,17 +1,39 @@
 <h1>Hello world</h1>
+<nav>
+  <ul routerLink="item">item</ul>
+</nav>
 
-<button (click)="showMe = !showMe">Show</button>
+<router-outlet></router-outlet>
+<input matInput  #input type="text">
 
-@if(showMe) {
-<h2>I am visible</h2>
-} @else {
-<h2>I am not visible</h2>
+<button (click)="setSignal(input.value)" mat-button>Set signal</button>
+<button (click)="updateSignal(input.value)" mat-button>Update signal</button>
+<button (click)="emitSubject(input.value)" mat-button>Emit subject</button>
+
+<br>
+<hr>
+
+<h1>Writable Signal: {{mySignal()}}</h1>
+<h1>Computed Signal: {{computerSignal()}}</h1>
+
+<hr>
+
+<h1>Obs to signal: {{obsToSignal()}}</h1>
+
+<hr>
+@for (todo of (myData$ | async); track todo.id) {
+  <p>{{todo.id}}</p>
+} @empty {
+  <i>List is empty</i>
 }
-
-@defer (when showMe; on interaction, timer(5s)) {
-  <app-item></app-item>
+<hr>
+@defer (on timer(2s)) {
+  <app-button [title]="input.value" show="uchvene"></app-button>
+} @loading (minimum 4s) {
+  <mat-spinner></mat-spinner>
 }
-
-@placeholder (minimum 2s) {
-  <span>There will be deferred content.</span>
+@placeholder (minimum 1ms) {
+  <h1>I will be here until loading starts</h1>
+} @error {
+  <h1>Error occurred</h1>
 }
