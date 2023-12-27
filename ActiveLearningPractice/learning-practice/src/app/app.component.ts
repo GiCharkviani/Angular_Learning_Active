@@ -7,13 +7,14 @@ import {
   WritableSignal
 } from '@angular/core';
 import * as _ from 'lodash'
-import {Observable, shareReplay, Subject, tap} from "rxjs";
+import {map, Observable, shareReplay, Subject, tap} from "rxjs";
 import {toSignal} from "@angular/core/rxjs-interop";
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {ButtonComponent} from "./button/button.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MyServiceService} from "./my-service.service";
 import {CommonModule} from "@angular/common";
+import {ItemComponent} from "./item/item.component";
 
 export interface Post {
   id: number;
@@ -32,7 +33,8 @@ export interface Post {
     RouterLink,
     RouterOutlet,
     ButtonComponent,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ItemComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -52,7 +54,11 @@ export class AppComponent implements OnInit {
   obsToSignal = toSignal(this.myObs, {initialValue: "Giorgi"});
 
   private readonly myService = inject(MyServiceService);
-  public myData$ = this.myService.getData();
+  public myData$: Observable<any[]> = this.myService.getData()
+    .pipe(
+      tap(console.log),
+      // map(data => [])
+    );
 
   constructor(private readonly injector: Injector) {
   }
