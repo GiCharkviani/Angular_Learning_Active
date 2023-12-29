@@ -13,7 +13,11 @@ interface todo {
   imports: [CommonModule],
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss'],
-  hostDirectives: []
+  hostDirectives: [],
+  host: {
+
+  },
+  inputs: []
 })
 export class ItemComponent implements OnInit {
   @Input({required: true}) todo!: todo;
