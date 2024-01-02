@@ -4,7 +4,7 @@ import {bootstrapApplication} from "@angular/platform-browser";
 import {AppComponent} from "./app/app.component";
 import {routes} from "./app/app-router.module";
 import {HttpClientModule} from "@angular/common/http";
-import {PreloadAllModules, provideRouter, withPreloading} from "@angular/router";
+import { provideRouter, withComponentInputBinding} from "@angular/router";
 
 if (environment.production) {
   enableProdMode();
@@ -12,7 +12,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes, withPreloading(PreloadAllModules)),
+    provideRouter(routes, withComponentInputBinding()),
     importProvidersFrom(HttpClientModule)
   ],
 })

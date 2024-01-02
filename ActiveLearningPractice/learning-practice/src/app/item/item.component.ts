@@ -22,6 +22,10 @@ interface todo {
 export class ItemComponent implements OnInit {
   @Input({required: true}) todo!: todo;
 
+  @Input() set id(id: string) {
+    console.log(id, ' - FROM ROUTER PARAMETER');
+  }
+
   constructor() { }
 
   ngOnInit(): void {
