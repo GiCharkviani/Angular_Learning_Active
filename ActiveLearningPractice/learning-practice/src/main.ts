@@ -1,10 +1,11 @@
 import {enableProdMode, importProvidersFrom} from '@angular/core';
 import { environment } from './environments/environment';
-import {bootstrapApplication} from "@angular/platform-browser";
+import {bootstrapApplication, provideClientHydration} from "@angular/platform-browser";
 import {AppComponent} from "./app/app.component";
 import {routes} from "./app/app-router.module";
 import {HttpClientModule} from "@angular/common/http";
 import { provideRouter, withComponentInputBinding} from "@angular/router";
+import {NgOptimizedImage} from "@angular/common";
 
 if (environment.production) {
   enableProdMode();
@@ -13,7 +14,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes, withComponentInputBinding()),
-    importProvidersFrom(HttpClientModule)
+    importProvidersFrom(HttpClientModule, NgOptimizedImage), provideClientHydration()
   ],
 })
   .catch(console.log)

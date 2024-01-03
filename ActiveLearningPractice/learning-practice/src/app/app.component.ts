@@ -1,4 +1,5 @@
 import {
+  afterRender,
   ChangeDetectionStrategy,
   Component, computed, effect, EffectCleanupRegisterFn, EffectRef, inject, Inject, Injector,
   OnInit,
@@ -13,7 +14,7 @@ import {RouterLink, RouterOutlet} from "@angular/router";
 import {ButtonComponent} from "./button/button.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MyServiceService} from "./my-service.service";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {ItemComponent} from "./item/item.component";
 
 export interface Post {
@@ -34,7 +35,8 @@ export interface Post {
     RouterOutlet,
     ButtonComponent,
     MatProgressSpinnerModule,
-    ItemComponent
+    ItemComponent,
+    NgOptimizedImage
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -54,11 +56,7 @@ export class AppComponent implements OnInit {
   obsToSignal = toSignal(this.myObs, {initialValue: "Giorgi"});
 
   private readonly myService = inject(MyServiceService);
-  public myData$: Observable<any[]> = this.myService.getData()
-    .pipe(
-      tap(console.log),
-      // map(data => [])
-    );
+  public myData$: Observable<any[]> = this.myService.getData();
 
   constructor(private readonly injector: Injector) {
   }

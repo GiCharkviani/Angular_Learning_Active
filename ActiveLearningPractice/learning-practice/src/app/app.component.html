@@ -52,8 +52,10 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur distinctio ducimus itaque porro quam. Deserunt facere nesciunt officia omnis possimus, sequi voluptates? Animi eos nam officia pariatur possimus, similique?</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur distinctio ducimus itaque porro quam. Deserunt facere nesciunt officia omnis possimus, sequi voluptates? Animi eos nam officia pariatur possimus, similique?</p>
 
+<img ngSrc="assets/images/nature.jpg" width="2121" height="1414">
 <hr>
 @for (todo of (myData$ | async); track todo.id) {
+  <app-item [todo]="todo"></app-item>
   @defer (on viewport) {
     <app-item [todo]="todo"></app-item>
   } @placeholder {

@@ -26,7 +26,9 @@ export class ItemComponent implements OnInit {
     console.log(id, ' - FROM ROUTER PARAMETER');
   }
 
-  constructor() { }
+  constructor() {
+    // console.log(window)
+  }
 
   ngOnInit(): void {
   }

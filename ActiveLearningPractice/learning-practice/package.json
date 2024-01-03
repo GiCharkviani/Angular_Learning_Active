@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:ssr": "ng run learning-practice:serve-ssr",
+    "serve:ssr": "node dist/learning-practice/server/main.js",
+    "build:ssr": "ng build && ng run learning-practice:server",
+    "prerender": "ng run learning-practice:prerender"
   },
   "private": true,
   "dependencies": {
@@ -20,8 +24,11 @@
     "@angular/material": "^17.0.4",
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/platform-server": "^17.0.2",
     "@angular/router": "^17.0.2",
+    "@angular/ssr": "^17.0.7",
     "@types/lodash": "^4.14.202",
+    "express": "^4.18.2",
     "lodash": "^4.17.21",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -30,7 +37,9 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular/compiler-cli": "^17.0.2",
+    "@types/express": "^4.17.17",
     "@types/jasmine": "~4.0.0",
+    "@types/node": "^18.18.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
