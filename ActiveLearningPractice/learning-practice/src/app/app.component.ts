@@ -71,5 +71,8 @@ export class AppComponent {
     this.ingredientList = JSON.parse(jsoFile);
   }
 
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }
 

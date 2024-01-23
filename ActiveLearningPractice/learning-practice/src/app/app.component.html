@@ -28,8 +28,8 @@
   }
   <hr>
 
-<!--  <div *ngFor="let item of ingredientList">-->
-<!--    <testComponent [item]="item"></testComponent>-->
-<!--  </div>-->
+  <div *ngFor="let item of ingredientList; trackBy: trackByFn">
+    <testComponent [item]="item"></testComponent>
+  </div>
 </div>
 
