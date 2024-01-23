@@ -9,8 +9,8 @@ import {CommonModule, NgOptimizedImage} from "@angular/common";
   template: `
     <h2>Items: </h2>
     <ul>
-      <li>Name: {{item.name}}</li>
-      <li>Quantity: {{item.quantity}}</li>
+      <li>Name: {{ item.name }}</li>
+      <li>Quantity: {{ item.quantity }}</li>
     </ul>
   `,
   styles: ``,
@@ -45,7 +45,7 @@ export class testComponent implements OnInit, OnDestroy {
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent  {
+export class AppComponent {
   public isDisabled = true;
   public myAttribute = 'Avto';
 
@@ -53,25 +53,22 @@ export class AppComponent  {
 
   public ingredientList = [
     {name: 'noodles', quantity: 1, id: 21},
-    {name: 'miso broth', quantity: 1,  id: 24},
-    {name: 'egg', quantity: 2,  id: 51},
+    {name: 'miso broth', quantity: 1, id: 24},
+    {name: 'egg', quantity: 2, id: 51},
   ];
 
-  public addItem() {
-    this.ingredientList.push({
-      name: 'Khachapuri',
-      quantity: 32,
-      id: 54
-    })
+  public getItemsFromServer() {
+    this.ingredientList = [
+      {name: 'noodles', quantity: 1, id: 21},
+      {name: 'miso broth', quantity: 1, id: 24},
+      {name: 'egg', quantity: 2, id: 51},
+      {name: 'Khachapuri', quantity: 32, id: 54}
+    ];
   }
 
   public removeItem() {
-    this.ingredientList.pop()
-  }
-
-  getValue(name: string) {
-    console.log(name + ' - ITEM_CREATED')
-    return ''
+    const jsoFile = JSON.stringify(this.ingredientList.slice(0, -1));
+    this.ingredientList = JSON.parse(jsoFile);
   }
 
 }
