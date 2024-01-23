@@ -15,3 +15,21 @@
 } @else {
   <h1>I am not rendered</h1>
 }
+
+
+<!-- Loop -->
+<hr>
+<button (click)="addItem()">Add Item</button>
+<button (click)="removeItem()">Delete Item</button>
+
+<div>
+  @for(item of ingredientList; track item.id) {
+    <testComponent [item]="item"></testComponent>
+  }
+  <hr>
+
+  <div *ngFor="let item of ingredientList">
+    <testComponent [item]="item"></testComponent>
+  </div>
+</div>
+
