@@ -27,6 +27,8 @@ export class AppComponent  {
   public isDisabled = true;
   public myAttribute = 'Avto';
 
+  public render: boolean = false;
+
   constructor() {
   }
 

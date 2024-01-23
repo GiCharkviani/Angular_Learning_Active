@@ -1,8 +1,17 @@
 <router-outlet></router-outlet>
 
-
+<!-- ESSENTIALS -->
 
 <!-- Dynamic attributes and properties -->
 <button [disabled]="isDisabled">Dynamic Properties</button>
 <button [attr.avto]="myAttribute">Dynamic Attributes</button>
-<button [style.color]="'red'" >Dynamic Attributes 2</button>
+<button [style.color]="'red'">Dynamic Attributes 2</button>
+
+
+<!-- Conditional Rendering -->
+<button (click)="render = !render">Render</button>
+@if (render) {
+  <h1>I am rendered</h1>
+} @else {
+  <h1>I am not rendered</h1>
+}
