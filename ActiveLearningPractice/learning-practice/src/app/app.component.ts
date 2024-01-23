@@ -24,15 +24,10 @@ import {Person} from "./decoratos/demo";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent  {
+  public isDisabled = true;
+  public myAttribute = 'Avto';
 
   constructor() {
-    // Person.callMe();
-    const avto = new Person('Avto')
-    // const giorgi = new Person('Giorgi')
-
-    console.log('AFTER_CLASS_CREATION')
-
-    // console.log(avto, giorgi)
   }
 
 }
