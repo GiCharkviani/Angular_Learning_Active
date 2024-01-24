@@ -8,7 +8,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatButtonModule
   ],
   template: `
-    <button mat-button>New Button</button>
+    <button mat-raised-button>New Button</button>
   `
 })
 export class ButtonComponent {

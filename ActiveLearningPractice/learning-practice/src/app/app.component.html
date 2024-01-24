@@ -1,35 +1,44 @@
+<div>
+  <ul>
+    <li routerLink="selector">Selectors</li>
+    <li routerLink="styles">Styles</li>
+  </ul>
+</div>
+
 <router-outlet></router-outlet>
 
-<!-- ESSENTIALS -->
-
-<!-- Dynamic attributes and properties -->
-<button [disabled]="isDisabled">Dynamic Properties</button>
-<button [attr.avto]="myAttribute">Dynamic Attributes</button>
-<button [style.color]="'red'">Dynamic Attributes 2</button>
 
 
-<!-- Conditional Rendering -->
-<button (click)="render = !render">Render</button>
-@if (render) {
-  <h1>I am rendered</h1>
-} @else {
-  <h1>I am not rendered</h1>
-}
+<!--&lt;!&ndash; ESSENTIALS &ndash;&gt;-->
+
+<!--&lt;!&ndash; Dynamic attributes and properties &ndash;&gt;-->
+<!--<button [disabled]="isDisabled">Dynamic Properties</button>-->
+<!--<button [attr.avto]="myAttribute">Dynamic Attributes</button>-->
+<!--<button [style.color]="'red'">Dynamic Attributes 2</button>-->
 
 
-<!-- Loop -->
-<hr>
-<button (click)="getItemsFromServer()">Add Item</button>
-<button (click)="removeItem()">Delete Item</button>
+<!--&lt;!&ndash; Conditional Rendering &ndash;&gt;-->
+<!--<button (click)="render = !render">Render</button>-->
+<!--@if (render) {-->
+<!--  <h1>I am rendered</h1>-->
+<!--} @else {-->
+<!--  <h1>I am not rendered</h1>-->
+<!--}-->
 
-<div>
-  @for(item of ingredientList; track item.id) {
-    <testComponent [item]="item"></testComponent>
-  }
-  <hr>
 
-  <div *ngFor="let item of ingredientList; trackBy: trackByFn">
-    <testComponent [item]="item"></testComponent>
-  </div>
-</div>
+<!--&lt;!&ndash; Loop &ndash;&gt;-->
+<!--<hr>-->
+<!--<button (click)="getItemsFromServer()">Add Item</button>-->
+<!--<button (click)="removeItem()">Delete Item</button>-->
+
+<!--<div>-->
+<!--  @for(item of ingredientList; track item.id) {-->
+<!--    <testComponent [item]="item"></testComponent>-->
+<!--  }-->
+<!--  <hr>-->
+
+<!--  <div *ngFor="let item of ingredientList; trackBy: trackByFn">-->
+<!--    <testComponent [item]="item"></testComponent>-->
+<!--  </div>-->
+<!--</div>-->
 
