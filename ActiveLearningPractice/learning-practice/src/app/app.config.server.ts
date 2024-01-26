@@ -15,5 +15,5 @@ export const config = mergeApplicationConfig({providers: [
     importProvidersFrom(HttpClientModule),
     provideRouter(routes, withComponentInputBinding()),
     provideClientHydration(),
-    withFetch()
+    withFetch(),
   ]} as ApplicationConfig, serverConfig);
