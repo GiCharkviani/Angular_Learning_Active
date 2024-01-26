@@ -5,7 +5,6 @@ import {Component} from "@angular/core";
   standalone: true,
   imports: [],
   template: `
-        <h1>My styles</h1>
   `,
   styles: `
   `
