@@ -10,7 +10,14 @@ import {ChildComponent} from "./child.component";
     ChildComponent
   ],
   template: `
-    <app-child name="Giorgi" [age]="23"></app-child>
+    <app-child
+      parentName="Gio"
+      parentAge="23"
+      [hobby]="23"
+      amIStudent="0"
+      myDogName="Jeka"
+      FavFood="Banana"
+    ></app-child>
   `,
   styles: ``
 })

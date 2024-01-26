@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, numberAttribute} from "@angular/core";
 
 @Component({
   selector: 'app-parent',
@@ -12,7 +12,7 @@ import {Component, Input} from "@angular/core";
 })
 export class ParentComponent {
   @Input() name!: string;
-  @Input() age!: number;
+  @Input({transform: numberAttribute}) age!: number;
 
   lastName: string = 'lasta'
 
