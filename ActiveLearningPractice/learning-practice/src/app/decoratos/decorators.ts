@@ -1,5 +1,5 @@
 /*
- 3 tpes of decorator:
+ 4 tpes of decorator:
  1. Class decorator
  2. Method decorator
  3. Field decorator
