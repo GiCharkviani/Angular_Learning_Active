@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit, TemplateRef, ViewChild} from "@angular/core";
 import {ParentComponent} from "./parent.component";
 import {ChildComponent} from "./child.component";
 
@@ -10,11 +10,15 @@ import {ChildComponent} from "./child.component";
     ChildComponent
   ],
   template: `
-    <app-child></app-child>
+    <app-child name="Giorgi" [age]="23"></app-child>
   `,
-  styles: `
-  `
+  styles: ``
 })
-export class InputPropertiesTesterComponent {
-  
+export class InputPropertiesTesterComponent implements OnInit {
+  @ViewChild(ChildComponent, {static: true}) child: TemplateRef<ChildComponent> | undefined;
+
+  ngOnInit() {
+    console.log(this.child);
+  }
+
 }

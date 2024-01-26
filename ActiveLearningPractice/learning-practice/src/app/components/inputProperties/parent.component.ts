@@ -14,6 +14,8 @@ export class ParentComponent {
   @Input() name!: string;
   @Input() age!: number;
 
+  lastName: string = 'lasta'
+
   constructor() {
     console.warn('PARENT CREATED')
   }

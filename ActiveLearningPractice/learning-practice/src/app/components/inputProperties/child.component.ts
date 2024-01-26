@@ -7,6 +7,8 @@ import {ParentComponent} from "./parent.component";
   imports: [],
   template: `
     <h2>Child</h2>
+    <p>my name is: {{name}}</p>
+    <p>my age is: {{age}}</p>
   `,
   styles: `
   `
