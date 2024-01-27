@@ -6,11 +6,17 @@ import {Component} from "@angular/core";
   imports: [
   ],
   template: `
-
+    <h1>Host Element</h1>
   `,
-  styles: ``
+  styles: ``,
+  host: {
+    'class': 'avto',
+    '(click)': 'onClick($event)'
+  }
 })
 export class HostElementComponent {
 
-
+  onClick(value: any) {
+    console.log(value)
+  }
 }
