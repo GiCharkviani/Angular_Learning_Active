@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ContentChildren, QueryList} from "@angular/core";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 
@@ -19,5 +19,8 @@ import {MatSelectModule} from "@angular/material/select";
   styles: ``
 })
 export class CardComponent {
+  @ContentChildren(HTMLOptionElement) optionElements!: QueryList<HTMLOptionElement>;
+
+
 
 }
