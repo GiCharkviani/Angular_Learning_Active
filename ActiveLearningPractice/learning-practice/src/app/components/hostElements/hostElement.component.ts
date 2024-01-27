@@ -10,7 +10,7 @@ import {Component} from "@angular/core";
   `,
   styles: ``
 })
-export class HostElementsComponent {
+export class HostElementComponent {
 
 
 }
