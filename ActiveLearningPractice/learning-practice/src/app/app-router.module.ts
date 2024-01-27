@@ -3,11 +3,13 @@ import {SelectorsTesterComponent} from "./components/selectors/selectorsTester.c
 import {StylesTesterComponent} from "./components/styles/stylesTester.component";
 import {InputPropertiesTesterComponent} from "./components/inputProperties/inputPropertiesTester.component";
 import {OutputPropertiesTesterComponent} from "./components/outputProperties/outputPropertiesTester.component";
+import {ContentProjectionTesterComponent} from "./components/contentProjection/contentProjectionTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
   {path: 'styles', component: StylesTesterComponent},
   {path: 'inputProperties', component: InputPropertiesTesterComponent},
-  {path: 'outputProperties', component: OutputPropertiesTesterComponent}
+  {path: 'outputProperties', component: OutputPropertiesTesterComponent},
+  {path: 'contentProjection', component: ContentProjectionTesterComponent}
 ];
 
