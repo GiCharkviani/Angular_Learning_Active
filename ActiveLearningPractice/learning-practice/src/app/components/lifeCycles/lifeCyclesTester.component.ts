@@ -54,12 +54,12 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
     console.log('DO_CHECK_CHILD')
   }
 
-  ngAfterViewInit() {
-    console.log('AFTER_VIEW_INIT_CHILD')
-  }
-
   ngAfterContentInit() {
     console.log('AFTER_CONTENT_INIT_CHILD')
+  }
+
+  ngAfterViewInit() {
+    console.log('AFTER_VIEW_INIT_CHILD')
   }
 
   ngOnDestroy() {
@@ -104,14 +104,14 @@ export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, Af
     console.log('DO_CHECK')
   }
 
-  ngAfterViewInit() {
-    console.log('AFTER_VIEW_INIT')
-  }
-
   ngAfterContentInit() {
     console.log('AFTER_CONTENT_INIT')
   }
 
+  ngAfterViewInit() {
+    console.log('AFTER_VIEW_INIT')
+  }
+  
   ngOnDestroy() {
     console.log('ON_DESTROY')
   }
