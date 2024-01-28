@@ -1,4 +1,14 @@
-import {Component, DestroyRef, inject, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from "@angular/core";
+import {
+  Component,
+  DestroyRef,
+  DoCheck,
+  inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges
+} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 
 
@@ -15,7 +25,7 @@ import {FormsModule} from "@angular/forms";
   `,
   styles: ``
 })
-export class localComponent implements OnChanges, OnInit, OnDestroy {
+export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck {
   @Input('firstName') name!: string;
   @Input() age: number = 0;
   private destroyRef = inject(DestroyRef);
@@ -34,6 +44,10 @@ export class localComponent implements OnChanges, OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('ON_INIT_CHILD')
+  }
+
+  ngDoCheck() {
+    console.log('DO_CHECK')
   }
 
   ngOnDestroy() {
@@ -56,7 +70,7 @@ export class localComponent implements OnChanges, OnInit, OnDestroy {
   `,
   styles: ``
 })
-export class LifeCyclesTesterComponent implements OnInit, OnDestroy {
+export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck {
   public name!: string;
   private destroyRef = inject(DestroyRef);
 
@@ -70,6 +84,10 @@ export class LifeCyclesTesterComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('ON_INIT')
+  }
+
+  ngDoCheck() {
+    console.log('DO_CHECK')
   }
 
   ngOnDestroy() {
