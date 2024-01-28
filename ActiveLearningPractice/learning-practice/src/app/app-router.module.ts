@@ -5,6 +5,7 @@ import {InputPropertiesTesterComponent} from "./components/inputProperties/input
 import {OutputPropertiesTesterComponent} from "./components/outputProperties/outputPropertiesTester.component";
 import {ContentProjectionTesterComponent} from "./components/contentProjection/contentProjectionTester.component";
 import {HostElementsTesterComponent} from "./components/hostElements/hostElementsTester.component";
+import {LifeCyclesTesterComponent} from "./components/lifeCycles/lifeCyclesTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -12,6 +13,7 @@ export const routes: Route[] = [
   {path: 'inputProperties', component: InputPropertiesTesterComponent},
   {path: 'outputProperties', component: OutputPropertiesTesterComponent},
   {path: 'contentProjection', component: ContentProjectionTesterComponent},
-  {path: 'hostElements', component: HostElementsTesterComponent}
+  {path: 'hostElements', component: HostElementsTesterComponent},
+  {path: 'lifeCycles', component: LifeCyclesTesterComponent}
 ];
 
