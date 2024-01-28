@@ -1,8 +1,8 @@
 import {
   AfterContentChecked,
-  AfterContentInit, afterNextRender, afterRender, AfterViewChecked,
+  AfterContentInit, afterNextRender, afterRender, AfterRenderPhase, AfterViewChecked,
   AfterViewInit,
-  Component, ContentChild,
+  Component,
   DestroyRef,
   DoCheck,
   inject,
@@ -10,7 +10,7 @@ import {
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges, ViewChild
+  SimpleChanges
 } from "@angular/core";
 import {FormsModule} from "@angular/forms";
 
