@@ -43,12 +43,8 @@ export class localComponent implements OnChanges, OnInit {
   `,
   styles: ``
 })
-export class LifeCyclesTesterComponent implements OnInit, OnChanges {
+export class LifeCyclesTesterComponent implements OnInit {
   public name!: string;
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes, 'ON_CHANGES')
-  }
 
   ngOnInit() {
     console.log('ON_INIT')
