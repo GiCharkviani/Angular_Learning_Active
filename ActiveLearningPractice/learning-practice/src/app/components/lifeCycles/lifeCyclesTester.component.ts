@@ -16,7 +16,7 @@ import {FormsModule} from "@angular/forms";
   styles: ``
 })
 export class localComponent implements OnChanges, OnInit {
-  @Input() name!: string;
+  @Input('firstName') name!: string;
   @Input() age: number = 0;
 
   ngOnChanges(changes: SimpleChanges) {
@@ -39,7 +39,7 @@ export class localComponent implements OnChanges, OnInit {
   ],
   template: `
     <input type="text" [(ngModel)]="name" />
-    <app-localComponent [age]="23" [name]="name" ></app-localComponent>
+    <app-localComponent [age]="23" [firstName]="name" ></app-localComponent>
   `,
   styles: ``
 })
