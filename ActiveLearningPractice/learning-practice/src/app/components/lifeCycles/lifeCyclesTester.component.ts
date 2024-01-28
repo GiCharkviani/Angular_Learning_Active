@@ -1,5 +1,6 @@
 import {
-  AfterContentInit,
+  AfterContentChecked,
+  AfterContentInit, AfterViewChecked,
   AfterViewInit,
   Component, ContentChild,
   DestroyRef,
@@ -30,7 +31,7 @@ import {FormsModule} from "@angular/forms";
   `,
   styles: ``
 })
-export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, AfterViewInit, AfterContentInit {
+export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, AfterViewInit, AfterContentInit, AfterViewChecked, AfterContentChecked {
   @Input('firstName') name!: string;
   @Input() age: number = 0;
   hobby = {
@@ -62,11 +63,19 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
     console.log('AFTER_CONTENT_INIT_CHILD')
   }
 
+  ngAfterContentChecked() {
+    console.log('AFTER_CONTENT_CHECKED_CHILD')
+  }
+
   ngAfterViewInit() {
     this.hobby = {
       name: 'Programming'
     }
     console.log('AFTER_VIEW_INIT_CHILD')
+  }
+
+  ngAfterViewChecked() {
+    console.log('AFTER_VEW_CHECKED_CHILD')
   }
 
   ngOnDestroy() {
@@ -91,7 +100,7 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
   `,
   styles: ``
 })
-export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, AfterViewInit, AfterContentInit {
+export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, AfterViewInit, AfterContentInit, AfterViewChecked, AfterContentChecked {
   public name!: string;
   private destroyRef = inject(DestroyRef);
 
@@ -115,8 +124,16 @@ export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, Af
     console.log('AFTER_CONTENT_INIT')
   }
 
+  ngAfterContentChecked() {
+    console.log('AFTER_CONTENT_CHECKED')
+  }
+
   ngAfterViewInit() {
     console.log('AFTER_VIEW_INIT')
+  }
+
+  ngAfterViewChecked() {
+    console.log('AFTER_VEW_CHECKED')
   }
 
   ngOnDestroy() {
