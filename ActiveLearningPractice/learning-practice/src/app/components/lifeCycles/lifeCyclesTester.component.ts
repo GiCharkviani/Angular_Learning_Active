@@ -15,12 +15,16 @@ import {FormsModule} from "@angular/forms";
   `,
   styles: ``
 })
-export class localComponent implements OnChanges {
+export class localComponent implements OnChanges, OnInit {
   @Input() name!: string;
   @Input() age: number = 0;
 
+  ngOnInit() {
+    console.log('ON_INIT_CHILD')
+  }
+
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes, 'ON_CHANGES')
+    console.log(changes, 'ON_CHANGES_CHILD')
   }
 
 }
