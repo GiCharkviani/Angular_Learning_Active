@@ -19,12 +19,12 @@ export class localComponent implements OnChanges, OnInit {
   @Input() name!: string;
   @Input() age: number = 0;
 
-  ngOnInit() {
-    console.log('ON_INIT_CHILD')
-  }
-
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes, 'ON_CHANGES_CHILD')
+  }
+
+  ngOnInit() {
+    console.log('ON_INIT_CHILD')
   }
 
 }
@@ -43,8 +43,12 @@ export class localComponent implements OnChanges, OnInit {
   `,
   styles: ``
 })
-export class LifeCyclesTesterComponent implements OnInit {
+export class LifeCyclesTesterComponent implements OnInit, OnChanges {
   public name!: string;
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes, 'ON_CHANGES')
+  }
 
   ngOnInit() {
     console.log('ON_INIT')
