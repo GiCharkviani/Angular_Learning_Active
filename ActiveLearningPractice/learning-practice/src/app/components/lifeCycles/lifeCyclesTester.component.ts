@@ -23,6 +23,8 @@ import {FormsModule} from "@angular/forms";
     <div>
       <p>Name: {{name}}</p>
       <p>Age: {{age}}</p>
+
+      <ng-content></ng-content>
     </div>
   `,
   styles: ``
@@ -76,7 +78,9 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
   ],
   template: `
     <input type="text" [(ngModel)]="name" />
-    <app-localComponent [age]="23" [firstName]="name" ></app-localComponent>
+    <app-localComponent [age]="23" [firstName]="name" >
+      <h2>Your content</h2>
+    </app-localComponent>
   `,
   styles: ``
 })
