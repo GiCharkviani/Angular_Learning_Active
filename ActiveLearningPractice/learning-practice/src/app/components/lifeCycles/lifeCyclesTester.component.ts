@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 
 
@@ -15,7 +15,7 @@ import {FormsModule} from "@angular/forms";
   `,
   styles: ``
 })
-export class localComponent implements OnChanges, OnInit {
+export class localComponent implements OnChanges, OnInit, OnDestroy {
   @Input('firstName') name!: string;
   @Input() age: number = 0;
 
@@ -25,6 +25,10 @@ export class localComponent implements OnChanges, OnInit {
 
   ngOnInit() {
     console.log('ON_INIT_CHILD')
+  }
+
+  ngOnDestroy() {
+    console.log('ON_DESTROY_CHILD')
   }
 
 }
@@ -43,11 +47,15 @@ export class localComponent implements OnChanges, OnInit {
   `,
   styles: ``
 })
-export class LifeCyclesTesterComponent implements OnInit {
+export class LifeCyclesTesterComponent implements OnInit, OnDestroy {
   public name!: string;
 
   ngOnInit() {
     console.log('ON_INIT')
+  }
+
+  ngOnDestroy() {
+    console.log('ON_DESTROY')
   }
 
 }
