@@ -1,6 +1,6 @@
 import {
   AfterContentChecked,
-  AfterContentInit, AfterViewChecked,
+  AfterContentInit, afterNextRender, afterRender, AfterViewChecked,
   AfterViewInit,
   Component, ContentChild,
   DestroyRef,
@@ -44,6 +44,14 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
 
     this.destroyRef.onDestroy(() => {
       console.log('ON_DESTROY_REF_CHILD')
+    })
+
+    afterNextRender(() => {
+      console.warn('AFTER_NEXT_RENDER_CHILD')
+    })
+
+    afterRender(() => {
+      console.warn('AFTER_RENDER_CHILD')
     })
   }
 
@@ -109,6 +117,14 @@ export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, Af
 
     this.destroyRef.onDestroy(() => {
       console.log('ON_DESTROY_REF')
+    })
+
+    afterNextRender(() => {
+      console.warn('AFTER_NEXT_RENDER')
+    })
+
+    afterRender(() => {
+      console.warn('AFTER_RENDER')
     })
   }
 
