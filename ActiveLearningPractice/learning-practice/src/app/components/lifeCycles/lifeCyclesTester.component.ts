@@ -47,7 +47,7 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck {
   }
 
   ngDoCheck() {
-    console.log('DO_CHECK')
+    console.log('DO_CHECK_CHILD')
   }
 
   ngOnDestroy() {
