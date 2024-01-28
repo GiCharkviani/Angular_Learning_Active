@@ -100,6 +100,8 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
     FormsModule,
     localComponent
   ],
+  host: {},
+  hostDirectives:[],
   template: `
     <input type="text" [(ngModel)]="name" />
     <app-localComponent [age]="23" [firstName]="name" >
