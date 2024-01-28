@@ -1,7 +1,7 @@
 import {
   AfterContentInit,
   AfterViewInit,
-  Component,
+  Component, ContentChild,
   DestroyRef,
   DoCheck,
   inject,
@@ -9,7 +9,7 @@ import {
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges
+  SimpleChanges, ViewChild
 } from "@angular/core";
 import {FormsModule} from "@angular/forms";
 
@@ -23,6 +23,7 @@ import {FormsModule} from "@angular/forms";
     <div>
       <p>Name: {{name}}</p>
       <p>Age: {{age}}</p>
+      <p>Hobby: {{hobby.name}}</p>
 
       <ng-content></ng-content>
     </div>
@@ -32,6 +33,9 @@ import {FormsModule} from "@angular/forms";
 export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, AfterViewInit, AfterContentInit {
   @Input('firstName') name!: string;
   @Input() age: number = 0;
+  hobby = {
+    name: 'Swimming'
+  }
   private destroyRef = inject(DestroyRef);
 
   constructor() {
@@ -59,6 +63,9 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
   }
 
   ngAfterViewInit() {
+    this.hobby = {
+      name: 'Programming'
+    }
     console.log('AFTER_VIEW_INIT_CHILD')
   }
 
@@ -111,7 +118,7 @@ export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, Af
   ngAfterViewInit() {
     console.log('AFTER_VIEW_INIT')
   }
-  
+
   ngOnDestroy() {
     console.log('ON_DESTROY')
   }
