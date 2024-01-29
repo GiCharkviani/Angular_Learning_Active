@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren} from "@angular/core";
+import {AfterViewInit, Component, ElementRef, InjectionToken, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
 import {GrandChildComponent} from "./grandChild.component";
 
+const ADVANCED_DI_COMPONENT = new InjectionToken<string>('adi');
 
 @Component({
   selector: 'app-childrenQueries',
@@ -29,6 +30,7 @@ export class ChildrenQueriesTestingComponent implements AfterViewInit {
   @ViewChildren(ChildQueryComponent) childComponents!: QueryList<ChildQueryComponent>;
 
   @ViewChild('lonely') lonelyH2!: ElementRef;
+
 
   ngAfterViewInit() {
     console.log(this.childComponent, 'CHILD');

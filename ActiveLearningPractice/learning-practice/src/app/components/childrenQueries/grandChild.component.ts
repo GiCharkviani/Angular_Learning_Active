@@ -1,12 +1,12 @@
-import {Component, Input} from "@angular/core";
+import {Component, InjectionToken, Input} from "@angular/core";
 
+export const ADVANCED_DI_COMPONENT = new InjectionToken<string>('adi');
 
 @Component({
   selector: 'app-grandChildQuery',
   standalone: true,
-  imports: [
-
-  ],
+  providers: [{ provide: ADVANCED_DI_COMPONENT, useExisting: GrandChildComponent }],
+  imports: [],
   template: `
     <p>Grand Child name: {{name}}</p>
     <p>Grand Child age: {{age}}</p>
