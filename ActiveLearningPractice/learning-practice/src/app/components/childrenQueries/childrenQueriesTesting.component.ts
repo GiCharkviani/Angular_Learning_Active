@@ -19,8 +19,8 @@ export class ChildrenQueriesTestingComponent implements AfterViewInit {
   @ViewChildren(ChildQueryComponent) childComponents!: QueryList<ChildQueryComponent>;
 
   ngAfterViewInit() {
-    console.log(this.childComponent);
-    this.childComponents.forEach(component => console.log(component))
+    console.log(this.childComponent, 'CHILD');
+    this.childComponents.forEach(component => console.log(component, 'CHILDREN'))
   }
 
 
