@@ -110,7 +110,14 @@ export class localComponent implements OnChanges, OnInit, OnDestroy, DoCheck, Af
   `,
   styles: ``
 })
-export class LifeCyclesTesterComponent implements OnInit, OnDestroy, DoCheck, AfterViewInit, AfterContentInit, AfterViewChecked, AfterContentChecked {
+export class LifeCyclesTesterComponent implements
+  OnInit,
+  OnDestroy,
+  DoCheck,
+  AfterViewInit,
+  AfterContentInit,
+  AfterViewChecked, 
+  AfterContentChecked {
   public name!: string;
   private destroyRef = inject(DestroyRef);
 
