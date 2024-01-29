@@ -116,7 +116,7 @@ export class LifeCyclesTesterComponent implements
   DoCheck,
   AfterViewInit,
   AfterContentInit,
-  AfterViewChecked, 
+  AfterViewChecked,
   AfterContentChecked {
   public name!: string;
   private destroyRef = inject(DestroyRef);
