@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 
 @Component({
@@ -8,11 +8,13 @@ import {Component} from "@angular/core";
 
   ],
   template: `
-
+    <p>Child name: {{name}}</p>
+    <p>Child age: {{age}}</p>
   `,
   styles: ``
 })
 export class ChildQueryComponent {
-
+  @Input() name!: string;
+  @Input() age!: number;
 
 }
