@@ -1,4 +1,13 @@
-import {AfterViewInit, Component, ElementRef, InjectionToken, QueryList, ViewChild, ViewChildren} from "@angular/core";
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  InjectionToken,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren
+} from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
 import {GrandChildComponent} from "./grandChild.component";
 
@@ -25,15 +34,19 @@ const ADVANCED_DI_COMPONENT = new InjectionToken<string>('adi');
   `,
   styles: ``
 })
-export class ChildrenQueriesTestingComponent implements AfterViewInit {
-  @ViewChild(ChildQueryComponent) childComponent!: ChildQueryComponent;
+export class ChildrenQueriesTestingComponent implements AfterViewInit, OnInit {
+  @ViewChild(ChildQueryComponent, {static: true}) childComponent!: ChildQueryComponent;
   @ViewChildren(ChildQueryComponent) childComponents!: QueryList<ChildQueryComponent>;
 
   @ViewChild('lonely') lonelyH2!: ElementRef;
 
+  ngOnInit() {
+    console.log(this.childComponent, 'CHILD_static');
+  }
 
   ngAfterViewInit() {
     console.log(this.childComponent, 'CHILD');
+
     this.childComponents.forEach(component => console.log(component, 'CHILDREN'));
 
     console.log(this.lonelyH2, 'VARIABLE_REFERENCE');
