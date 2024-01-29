@@ -1,15 +1,21 @@
 import {AfterViewInit, Component, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
+import {GrandChildComponent} from "./grandChild.component";
 
 
 @Component({
   selector: 'app-childrenQueries',
   standalone: true,
   imports: [
-    ChildQueryComponent
+    ChildQueryComponent,
+    GrandChildComponent
   ],
   template: `
-    <app-childQuery name="avto" [age]="23"></app-childQuery>
+    <app-childQuery name="avto" [age]="23">
+      <app-grandChildQuery></app-grandChildQuery>
+      <app-grandChildQuery></app-grandChildQuery>
+    </app-childQuery>
+
     <app-childQuery name="gio" [age]="32"></app-childQuery>
   `,
   styles: ``
