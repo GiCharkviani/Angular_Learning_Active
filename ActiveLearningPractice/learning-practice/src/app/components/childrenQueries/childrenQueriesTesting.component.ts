@@ -7,7 +7,6 @@ import {ChildQueryComponent} from "./childQuery.component";
   standalone: true,
   imports: [
     ChildQueryComponent
-
   ],
   template: `
     <app-childQuery name="avto" [age]="23"></app-childQuery>
