@@ -12,8 +12,8 @@ import {GrandChildComponent} from "./grandChild.component";
   ],
   template: `
     <app-childQuery name="avto" [age]="23">
-      <app-grandChildQuery></app-grandChildQuery>
-      <app-grandChildQuery></app-grandChildQuery>
+      <app-grandChildQuery  name="vaza" [age]="51"></app-grandChildQuery>
+      <app-grandChildQuery  name="guga" [age]="74"></app-grandChildQuery>
     </app-childQuery>
 
     <app-childQuery name="gio" [age]="32"></app-childQuery>
