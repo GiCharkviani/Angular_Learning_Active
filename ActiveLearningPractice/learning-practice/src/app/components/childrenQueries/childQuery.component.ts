@@ -5,7 +5,7 @@ import {
   ContentChildren,
   ElementRef,
   Input,
-  QueryList, ViewChild
+  QueryList
 } from "@angular/core";
 import {ADVANCED_DI_COMPONENT, GrandChildComponent} from "./grandChild.component";
 
