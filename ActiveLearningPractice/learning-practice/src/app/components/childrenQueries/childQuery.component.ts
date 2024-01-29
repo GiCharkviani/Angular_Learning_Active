@@ -24,7 +24,7 @@ export class ChildQueryComponent implements AfterContentInit {
   @Input() age!: number;
 
   ngAfterContentInit() {
-    console.log(this.grandChild, 'GRAND_CHILD')
-    this.grandChildren.forEach((component) => console.log(component, 'GRAND_CHILDREN'))
+    console.log(this.grandChild, 'GRAND_CHILD');
+    this.grandChildren.forEach((component) => console.log(component, 'GRAND_CHILDREN'));
   }
 }
