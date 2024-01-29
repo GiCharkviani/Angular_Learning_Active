@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChild, ContentChildren, Input, QueryList} from "@angular/core";
+import {AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, Input, QueryList} from "@angular/core";
 import {GrandChildComponent} from "./grandChild.component";
 
 
@@ -20,11 +20,15 @@ export class ChildQueryComponent implements AfterContentInit {
   @ContentChild(GrandChildComponent) grandChild!: GrandChildComponent;
   @ContentChildren(GrandChildComponent) grandChildren!: QueryList<GrandChildComponent>;
 
+  @ContentChild('lonely') lonelyH2!: ElementRef;
+
   @Input() name!: string;
   @Input() age!: number;
 
   ngAfterContentInit() {
     console.log(this.grandChild, 'GRAND_CHILD');
     this.grandChildren.forEach((component) => console.log(component, 'GRAND_CHILDREN'));
+
+    console.log(this.lonelyH2, 'VARIABLE_REFERENCE')
   }
 }
