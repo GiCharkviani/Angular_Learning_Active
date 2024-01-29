@@ -10,19 +10,22 @@ import {
 } from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
 import {GrandChildComponent} from "./grandChild.component";
+import {GrandGrandChildComponent} from "./grandGrandChild.component";
 
-const ADVANCED_DI_COMPONENT = new InjectionToken<string>('adi');
 
 @Component({
   selector: 'app-childrenQueries',
   standalone: true,
   imports: [
     ChildQueryComponent,
-    GrandChildComponent
+    GrandChildComponent,
+    GrandGrandChildComponent
   ],
   template: `
     <app-childQuery name="avto" [age]="23">
-      <app-grandChildQuery  name="vaza" [age]="51"></app-grandChildQuery>
+      <app-grandChildQuery  name="vaza" [age]="51">
+        <app-grandGrandChildQuery name="ucnaura" [age]="33"></app-grandGrandChildQuery>
+      </app-grandChildQuery>
       <app-grandChildQuery  name="guga" [age]="74"></app-grandChildQuery>
 
       <h2 #lonely>I am lonely CHILD oooo</h2>

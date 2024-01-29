@@ -8,6 +8,7 @@ import {
   QueryList
 } from "@angular/core";
 import {ADVANCED_DI_COMPONENT, GrandChildComponent} from "./grandChild.component";
+import {GrandGrandChildComponent} from "./grandGrandChild.component";
 
 
 @Component({
@@ -25,7 +26,7 @@ import {ADVANCED_DI_COMPONENT, GrandChildComponent} from "./grandChild.component
   styles: ``
 })
 export class ChildQueryComponent implements AfterContentInit {
-  @ContentChild(GrandChildComponent) grandChild!: GrandChildComponent;
+  @ContentChild(GrandGrandChildComponent, {descendants: false}) grandChild!: GrandGrandChildComponent;
   @ContentChildren(GrandChildComponent) grandChildren!: QueryList<GrandChildComponent>;
 
   @ContentChild('lonely') lonelyH2!: ElementRef;
