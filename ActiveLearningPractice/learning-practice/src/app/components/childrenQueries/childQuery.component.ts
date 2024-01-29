@@ -29,6 +29,6 @@ export class ChildQueryComponent implements AfterContentInit {
     console.log(this.grandChild, 'GRAND_CHILD');
     this.grandChildren.forEach((component) => console.log(component, 'GRAND_CHILDREN'));
 
-    console.log(this.lonelyH2, 'VARIABLE_REFERENCE')
+    console.log(this.lonelyH2, 'VARIABLE_REFERENCE_CHILD')
   }
 }
