@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, QueryList, ViewChild, ViewChildren} from "@angular/core";
+import {AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
 import {GrandChildComponent} from "./grandChild.component";
 
@@ -17,6 +17,8 @@ import {GrandChildComponent} from "./grandChild.component";
     </app-childQuery>
 
     <app-childQuery name="gio" [age]="32"></app-childQuery>
+
+    <h2 #lonely>I am lonely oooo</h2>
   `,
   styles: ``
 })
@@ -24,9 +26,13 @@ export class ChildrenQueriesTestingComponent implements AfterViewInit {
   @ViewChild(ChildQueryComponent) childComponent!: ChildQueryComponent;
   @ViewChildren(ChildQueryComponent) childComponents!: QueryList<ChildQueryComponent>;
 
+  @ViewChild('lonely') lonelyH2!: ElementRef;
+
   ngAfterViewInit() {
     console.log(this.childComponent, 'CHILD');
-    this.childComponents.forEach(component => console.log(component, 'CHILDREN'))
+    this.childComponents.forEach(component => console.log(component, 'CHILDREN'));
+
+    console.log(this.lonelyH2, 'VARIABLE_REFERENCE')
   }
 
 
