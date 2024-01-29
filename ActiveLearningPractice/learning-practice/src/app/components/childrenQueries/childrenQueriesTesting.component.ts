@@ -4,9 +4,9 @@ import {
   ElementRef,
   InjectionToken,
   OnInit,
-  QueryList,
+  QueryList, TemplateRef,
   ViewChild,
-  ViewChildren
+  ViewChildren, ViewContainerRef
 } from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
 import {GrandChildComponent} from "./grandChild.component";
@@ -34,17 +34,21 @@ import {GrandGrandChildComponent} from "./grandGrandChild.component";
     <app-childQuery name="gio" [age]="32"></app-childQuery>
 
     <h2 #lonely>I am lonely oooo</h2>
+
+    <ng-template #myTemplate></ng-template>
   `,
   styles: ``
 })
 export class ChildrenQueriesTestingComponent implements AfterViewInit, OnInit {
-  @ViewChild(ChildQueryComponent, {static: true}) childComponent!: ChildQueryComponent;
+  @ViewChild(ChildQueryComponent, {static: true, read: ViewContainerRef}) childComponent!: ChildQueryComponent;
+  @ViewChild('myTemplate', {static: true, read: ElementRef}) myTemplate!: TemplateRef<any>;
   @ViewChildren(ChildQueryComponent) childComponents!: QueryList<ChildQueryComponent>;
 
-  @ViewChild('lonely') lonelyH2!: ElementRef;
+  @ViewChild('lonely', {read: ViewContainerRef}) lonelyH2!: ElementRef;
 
   ngOnInit() {
     console.log(this.childComponent, 'CHILD_static');
+    console.log(this.myTemplate, 'TEMPLATE_REF')
   }
 
   ngAfterViewInit() {
