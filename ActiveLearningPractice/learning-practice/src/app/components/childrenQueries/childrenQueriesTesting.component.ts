@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {AfterViewInit, Component, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {ChildQueryComponent} from "./childQuery.component";
 
 
@@ -15,7 +15,14 @@ import {ChildQueryComponent} from "./childQuery.component";
   `,
   styles: ``
 })
-export class ChildrenQueriesTestingComponent {
+export class ChildrenQueriesTestingComponent implements AfterViewInit {
+  @ViewChild(ChildQueryComponent) childComponent!: ChildQueryComponent;
+  @ViewChildren(ChildQueryComponent) childComponents!: QueryList<ChildQueryComponent>;
+
+  ngAfterViewInit() {
+    console.log(this.childComponent);
+    this.childComponents.forEach(component => console.log(component))
+  }
 
 
 }
