@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ViewContainerRef} from "@angular/core";
 import {NgComponentOutlet, NgTemplateOutlet} from "@angular/common";
 import {DynamicComponent} from "./dynamic.component";
 
@@ -22,7 +22,8 @@ import {DynamicComponent} from "./dynamic.component";
     <ng-container *ngComponentOutlet="dynamic"></ng-container>
 
     <hr>
-    <h3>View Container Ref</h3>
+    <h2>View Container Ref</h2>
+    <button (click)="createComponent()">Create Component</button>
 
     <!--  Template  -->
     <ng-template #avto let-cityName="name">
@@ -34,5 +35,12 @@ import {DynamicComponent} from "./dynamic.component";
 })
 export class DynamicComponentsTesterComponent {
   public dynamic = DynamicComponent;
+
+  constructor(private vcr: ViewContainerRef) {
+  }
+
+  createComponent() {
+    
+  }
 
 }
