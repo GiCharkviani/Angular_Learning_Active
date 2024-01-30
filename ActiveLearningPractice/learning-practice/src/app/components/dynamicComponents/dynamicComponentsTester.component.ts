@@ -24,6 +24,7 @@ import {DynamicComponent} from "./dynamic.component";
     <hr>
     <h2>View Container Ref</h2>
     <button (click)="createComponent()">Create Component</button>
+    <button (click)="clearComponent()">Clear Component</button>
 
     <!--  Template  -->
     <ng-template #avto let-cityName="name">
@@ -40,7 +41,11 @@ export class DynamicComponentsTesterComponent {
   }
 
   createComponent() {
-    this.vcr.createComponent(DynamicComponent);
+    const component = this.vcr.createComponent(DynamicComponent);
+  }
+
+  clearComponent() {
+    this.vcr.clear();
   }
 
 }
