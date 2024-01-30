@@ -15,6 +15,11 @@ import {Component} from "@angular/core";
     <h3>Component Outlet</h3>
 
     <h3>View Container Ref</h3>
+
+    <!--  Template  -->
+    <ng-template>
+      <p>I am a ng-template</p>
+    </ng-template>
   `,
   styles: ``
 })
