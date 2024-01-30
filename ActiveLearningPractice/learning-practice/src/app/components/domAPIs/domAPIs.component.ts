@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {afterNextRender, Component, ElementRef} from "@angular/core";
 
 
 @Component({
@@ -7,11 +7,19 @@ import {Component} from "@angular/core";
   imports: [
   ],
   template: `
-
+    <h2>DOM APIs</h2>
+    <input type="text">
   `,
   styles: ``
 })
 export class DomAPIsComponent {
 
+  constructor(elementRef: ElementRef) {
+    console.log(elementRef)
+
+    afterNextRender(() => {
+      elementRef.nativeElement.querySelector('input')?.focus();
+    })
+  }
 
 }
