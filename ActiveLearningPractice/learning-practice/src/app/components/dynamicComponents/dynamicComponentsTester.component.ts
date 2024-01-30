@@ -40,7 +40,7 @@ export class DynamicComponentsTesterComponent {
   }
 
   createComponent() {
-    
+    this.vcr.createComponent(DynamicComponent);
   }
 
 }
