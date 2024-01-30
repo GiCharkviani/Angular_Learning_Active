@@ -1,6 +1,5 @@
 import {Component, ViewContainerRef} from "@angular/core";
 import {NgComponentOutlet, NgTemplateOutlet} from "@angular/common";
-import {DynamicComponent} from "./dynamic.component";
 
 
 @Component({
@@ -19,7 +18,7 @@ import {DynamicComponent} from "./dynamic.component";
 
     <hr>
     <h3>Component Outlet</h3>
-    <ng-container *ngComponentOutlet="dynamic"></ng-container>
+<!--    <ng-container *ngComponentOutlet="dynamic"></ng-container>-->
 
     <hr>
     <h2>View Container Ref</h2>
@@ -35,13 +34,16 @@ import {DynamicComponent} from "./dynamic.component";
   styles: ``
 })
 export class DynamicComponentsTesterComponent {
-  public dynamic = DynamicComponent;
+  // public dynamic = DynamicComponent;
 
   constructor(private vcr: ViewContainerRef) {
   }
 
-  createComponent() {
-    const component = this.vcr.createComponent(DynamicComponent);
+  async createComponent() {
+    const newComp = await import('.//dynamic.component');
+
+    // @ts-ignore
+    const component = this.vcr.createComponent(newComp.DynamicComponent);
   }
 
   clearComponent() {
