@@ -41,8 +41,6 @@ export class DynamicComponentsTesterComponent {
 
   async createComponent() {
     const newComp = await import('.//dynamic.component');
-
-    // @ts-ignore
     const component = this.vcr.createComponent(newComp.DynamicComponent);
   }
 
