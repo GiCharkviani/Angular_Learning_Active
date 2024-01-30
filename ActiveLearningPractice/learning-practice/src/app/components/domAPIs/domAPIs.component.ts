@@ -2,7 +2,7 @@ import {afterNextRender, Component, ElementRef, Renderer2} from "@angular/core";
 
 
 @Component({
-  selector: 'app-domapis',
+  selector: 'app-domapisTester',
   standalone: true,
   imports: [
   ],

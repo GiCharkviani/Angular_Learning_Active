@@ -8,6 +8,7 @@ import {HostElementsTesterComponent} from "./components/hostElements/hostElement
 import {LifeCyclesTesterComponent} from "./components/lifeCycles/lifeCyclesTester.component";
 import {ChildrenQueriesTestingComponent} from "./components/childrenQueries/childrenQueriesTesting.component";
 import {DomAPIsComponent} from "./components/domAPIs/domAPIs.component";
+import {DynamicComponentsTesterComponent} from "./components/dynamicComponents/dynamicComponentsTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -18,6 +19,7 @@ export const routes: Route[] = [
   {path: 'hostElements', component: HostElementsTesterComponent},
   {path: 'lifeCycles', component: LifeCyclesTesterComponent},
   {path: 'childrenQueries', component: ChildrenQueriesTestingComponent},
-  {path: 'domapis', component: DomAPIsComponent}
+  {path: 'domapis', component: DomAPIsComponent},
+  {path: 'dynamicComponents', component: DynamicComponentsTesterComponent}
 ];
 
