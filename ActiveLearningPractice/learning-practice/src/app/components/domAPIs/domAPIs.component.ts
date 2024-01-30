@@ -1,4 +1,4 @@
-import {afterNextRender, Component, ElementRef} from "@angular/core";
+import {afterNextRender, Component, ElementRef, Renderer2} from "@angular/core";
 
 
 @Component({
@@ -14,12 +14,14 @@ import {afterNextRender, Component, ElementRef} from "@angular/core";
 })
 export class DomAPIsComponent {
 
-  constructor(elementRef: ElementRef) {
-    console.log(elementRef)
+  constructor(elementRef: ElementRef, private renderer: Renderer2) {
+    console.log(elementRef);
+    this.renderer.addClass(elementRef.nativeElement, 'testClass')
 
     afterNextRender(() => {
       elementRef.nativeElement.querySelector('input')?.focus();
     })
+
   }
 
 }
