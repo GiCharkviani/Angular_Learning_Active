@@ -7,6 +7,7 @@ import {ContentProjectionTesterComponent} from "./components/contentProjection/c
 import {HostElementsTesterComponent} from "./components/hostElements/hostElementsTester.component";
 import {LifeCyclesTesterComponent} from "./components/lifeCycles/lifeCyclesTester.component";
 import {ChildrenQueriesTestingComponent} from "./components/childrenQueries/childrenQueriesTesting.component";
+import {DomAPIsComponent} from "./components/domAPIs/domAPIs.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -16,6 +17,7 @@ export const routes: Route[] = [
   {path: 'contentProjection', component: ContentProjectionTesterComponent},
   {path: 'hostElements', component: HostElementsTesterComponent},
   {path: 'lifeCycles', component: LifeCyclesTesterComponent},
-  {path: 'childrenQueries', component: ChildrenQueriesTestingComponent}
+  {path: 'childrenQueries', component: ChildrenQueriesTestingComponent},
+  {path: 'domapis', component: DomAPIsComponent}
 ];
 
