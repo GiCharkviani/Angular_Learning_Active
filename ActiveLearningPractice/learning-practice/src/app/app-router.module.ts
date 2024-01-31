@@ -9,6 +9,7 @@ import {LifeCyclesTesterComponent} from "./components/lifeCycles/lifeCyclesTeste
 import {ChildrenQueriesTestingComponent} from "./components/childrenQueries/childrenQueriesTesting.component";
 import {DomAPIsComponent} from "./components/domAPIs/domAPIs.component";
 import {DynamicComponentsTesterComponent} from "./components/dynamicComponents/dynamicComponentsTester.component";
+import {EventBindingTestingComponent} from "./templateSyntax/eventBinding/eventBindingTesting.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -20,6 +21,7 @@ export const routes: Route[] = [
   {path: 'lifeCycles', component: LifeCyclesTesterComponent},
   {path: 'childrenQueries', component: ChildrenQueriesTestingComponent},
   {path: 'domapis', component: DomAPIsComponent},
-  {path: 'dynamicComponents', component: DynamicComponentsTesterComponent}
+  {path: 'dynamicComponents', component: DynamicComponentsTesterComponent},
+  {path: 'eventBinding', component: EventBindingTestingComponent}
 ];
 
