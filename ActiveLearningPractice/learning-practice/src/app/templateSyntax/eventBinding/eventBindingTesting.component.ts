@@ -7,7 +7,6 @@ import {
   selector: 'app-childQuery',
   standalone: true,
   imports: [
-
   ],
   template: `
   `,
