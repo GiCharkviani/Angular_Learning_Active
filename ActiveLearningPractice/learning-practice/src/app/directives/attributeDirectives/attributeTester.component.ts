@@ -8,9 +8,10 @@ import {MagicDirective} from "./magic.directive";
     MagicDirective
   ],
   template: `
-    <div>
+    <div magiDir>
       <p>My name is: My Name is: My name is - Eminem</p>
     </div>
+
   `,
   styles: ``
 })
