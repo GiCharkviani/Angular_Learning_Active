@@ -13,6 +13,8 @@ import {MagicDirective} from "./magic.directive";
     </div>
 
     <h2 magicDir (changedColor)="onChangeColor($event)">Other Element</h2>
+
+    <p ngNonBindable>{{5 + 5}}</p>
   `,
   styles: ``
 })
