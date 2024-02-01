@@ -11,6 +11,7 @@ import {DomAPIsComponent} from "./components/domAPIs/domAPIs.component";
 import {DynamicComponentsTesterComponent} from "./components/dynamicComponents/dynamicComponentsTester.component";
 import {EventBindingTestingComponent} from "./templateSyntax/eventBinding/eventBindingTesting.component";
 import {DirectivesOverviewTesterComponent} from "./directives/overview/directivesOverviewTester.component";
+import {AttributeTesterComponent} from "./directives/attributeDirectives/attributeTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -25,6 +26,6 @@ export const routes: Route[] = [
   {path: 'dynamicComponents', component: DynamicComponentsTesterComponent},
   {path: 'eventBinding', component: EventBindingTestingComponent},
   {path: 'directivesOverview', component: DirectivesOverviewTesterComponent},
-  {path: 'attributeDirectives', component: DirectivesOverviewTesterComponent}
+  {path: 'attributeDirectives', component: AttributeTesterComponent}
 ];
 
