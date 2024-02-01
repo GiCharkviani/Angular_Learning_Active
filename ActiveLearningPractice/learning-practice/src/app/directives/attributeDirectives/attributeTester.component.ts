@@ -12,11 +12,14 @@ import {MagicDirective} from "./magic.directive";
       <p>My name is: My Name is: My name is - Eminem</p>
     </div>
 
-    <h2 magiDir>Other Element</h2>
+    <h2 magiDir (changedColor)="onChangeColor($event)">Other Element</h2>
   `,
   styles: ``
 })
 export class AttributeTesterComponent {
 
+  public onChangeColor(value: any) {
+    console.log(value, 'CHANGED_COLOR')
+  }
 
 }
