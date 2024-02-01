@@ -8,11 +8,11 @@ import {MagicDirective} from "./magic.directive";
     MagicDirective
   ],
   template: `
-    <div magiDir defaultColor="red">
+    <div magicDir defaultColor="red">
       <p>My name is: My Name is: My name is - Eminem</p>
     </div>
 
-    <h2 magiDir (changedColor)="onChangeColor($event)">Other Element</h2>
+    <h2 magicDir (changedColor)="onChangeColor($event)">Other Element</h2>
   `,
   styles: ``
 })

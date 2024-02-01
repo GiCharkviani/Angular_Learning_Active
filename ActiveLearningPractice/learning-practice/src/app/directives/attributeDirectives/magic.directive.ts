@@ -2,7 +2,7 @@ import {Directive, ElementRef, EventEmitter, Input, Output} from "@angular/core"
 
 @Directive({
   standalone: true,
-  selector: '[magiDir]',
+  selector: '[magicDir]',
   host: {
     '(click)': 'onClick()',
     '[style.color]': '_defaultColor'
