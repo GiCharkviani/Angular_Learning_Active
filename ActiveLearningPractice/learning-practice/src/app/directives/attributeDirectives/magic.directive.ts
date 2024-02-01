@@ -9,7 +9,7 @@ import {Directive, ElementRef, Input} from "@angular/core";
   }
 })
 export class MagicDirective {
-  public _defaultColor: string | null = 'black';
+  public _defaultColor: string = 'black';
 
   @Input() set defaultColor(color: string) {
     this._defaultColor = color;
@@ -20,6 +20,6 @@ export class MagicDirective {
   }
 
   protected onClick() {
-    this._defaultColor = prompt('Clicked');
+    this._defaultColor = prompt('Clicked') as string;
   }
 }
