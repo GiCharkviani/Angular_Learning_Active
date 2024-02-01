@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit,} from '@an
 import {RouterLink, RouterOutlet} from "@angular/router";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {CommonModule, NgOptimizedImage} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'testComponent',
@@ -41,7 +42,8 @@ export class testComponent implements OnInit, OnDestroy {
     RouterOutlet,
     MatProgressSpinnerModule,
     NgOptimizedImage,
-    testComponent
+    testComponent,
+    FormsModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

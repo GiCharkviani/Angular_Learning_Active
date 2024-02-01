@@ -10,6 +10,7 @@ import {ChildrenQueriesTestingComponent} from "./components/childrenQueries/chil
 import {DomAPIsComponent} from "./components/domAPIs/domAPIs.component";
 import {DynamicComponentsTesterComponent} from "./components/dynamicComponents/dynamicComponentsTester.component";
 import {EventBindingTestingComponent} from "./templateSyntax/eventBinding/eventBindingTesting.component";
+import {DirectivesOverviewTesterComponent} from "./directives/overview/directivesOverviewTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -22,6 +23,7 @@ export const routes: Route[] = [
   {path: 'childrenQueries', component: ChildrenQueriesTestingComponent},
   {path: 'domapis', component: DomAPIsComponent},
   {path: 'dynamicComponents', component: DynamicComponentsTesterComponent},
-  {path: 'eventBinding', component: EventBindingTestingComponent}
+  {path: 'eventBinding', component: EventBindingTestingComponent},
+  {path: 'directivesOverview', component: DirectivesOverviewTesterComponent}
 ];
 
