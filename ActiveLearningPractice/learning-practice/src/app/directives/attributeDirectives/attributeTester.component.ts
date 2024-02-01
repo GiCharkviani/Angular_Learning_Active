@@ -12,6 +12,7 @@ import {MagicDirective} from "./magic.directive";
       <p>My name is: My Name is: My name is - Eminem</p>
     </div>
 
+    <h2 magiDir>Other Element</h2>
   `,
   styles: ``
 })
