@@ -8,7 +8,7 @@ import {MagicDirective} from "./magic.directive";
     MagicDirective
   ],
   template: `
-    <div magiDir>
+    <div magiDir defaultColor="red">
       <p>My name is: My Name is: My name is - Eminem</p>
     </div>
 

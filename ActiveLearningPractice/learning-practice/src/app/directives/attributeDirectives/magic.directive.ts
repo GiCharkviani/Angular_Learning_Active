@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Input} from "@angular/core";
+import {Directive, ElementRef, EventEmitter, Input, Output} from "@angular/core";
 
 @Directive({
   standalone: true,
@@ -15,11 +15,14 @@ export class MagicDirective {
     this._defaultColor = color;
   }
 
+  @Output() changedColor = new EventEmitter();
+
   constructor(private elRef: ElementRef) {
     console.log(this.elRef, 'EL_REF');
   }
 
   protected onClick() {
     this._defaultColor = prompt('Clicked') as string;
+    this.changedColor.emit(this._defaultColor);
   }
 }
