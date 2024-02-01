@@ -5,7 +5,7 @@ import {Directive, ElementRef, Input} from "@angular/core";
   selector: '[magiDir]',
   host: {
     '(click)': 'onClick()',
-    'style.color': 'defaultColor'
+    '[style.color]': '_defaultColor'
   }
 })
 export class MagicDirective {
