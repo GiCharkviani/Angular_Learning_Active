@@ -24,6 +24,7 @@ export const routes: Route[] = [
   {path: 'domapis', component: DomAPIsComponent},
   {path: 'dynamicComponents', component: DynamicComponentsTesterComponent},
   {path: 'eventBinding', component: EventBindingTestingComponent},
-  {path: 'directivesOverview', component: DirectivesOverviewTesterComponent}
+  {path: 'directivesOverview', component: DirectivesOverviewTesterComponent},
+  {path: 'attributeDirectives', component: DirectivesOverviewTesterComponent}
 ];
 
