@@ -3,7 +3,19 @@ import {Directive, ElementRef, Input, TemplateRef, ViewContainerRef} from "@angu
 
 @Directive({
   standalone: true,
-  selector: '[gamoChndes]'
+  selector: '[gamoChndes]',
+  hostDirectives: [
+    // add directives to the host element,
+    // customDirective,
+
+    /*
+    {
+      directive: hostDirective,
+      inputs: ['menuId: id'],
+      outputs: ['menuClosed: closed'],
+    }
+     */
+  ]
 })
 export class StructuralDirective {
   private _showOrNot: boolean = false;
