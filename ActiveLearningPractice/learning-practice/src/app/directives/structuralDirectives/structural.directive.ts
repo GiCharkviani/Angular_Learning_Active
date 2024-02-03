@@ -16,15 +16,21 @@ export class StructuralDirective {
     this.context.$implicit = show;
     this.context.showOrNot = show;
 
+    if(this.gamoChndesThen) {
+      this.viewContainerRef.createEmbeddedView(this.gamoChndesThen, this.context);
+    } else {
       if(show) {
         this.viewContainerRef.createEmbeddedView(this.templateRef, this.context);
       } else {
         this.viewContainerRef.clear();
       }
+    }
   }
   get gamoChndes() {
     return this._showOrNot;
   }
+
+  @Input() gamoChndesThen!: TemplateRef<any>;
 
   constructor(private templateRef: TemplateRef<any>, private elRef: ElementRef, private viewContainerRef: ViewContainerRef) {
     console.log(templateRef, viewContainerRef, elRef, 'ELEMENT-ATTACHED')

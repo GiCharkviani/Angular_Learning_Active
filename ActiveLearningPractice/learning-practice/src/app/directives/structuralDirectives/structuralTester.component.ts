@@ -10,7 +10,7 @@ import {StructuralDirective} from "./structural.directive";
   template: `
     <button (click)="onClick()">Show Element</button>
 
-    <p *gamoChndes="show as result; let showAs = showOrNot" >Structural Directive: {{showAs}}</p>
+    <p *gamoChndes="show; let avto = showOrNot" >Structural Directive: {{avto}}</p>
 
 <!--    The same as:-->
 <!--    <ng-template [gamoChndes]="show" >-->
