@@ -1,5 +1,6 @@
 import {Directive, ElementRef, Input, TemplateRef, ViewContainerRef} from "@angular/core";
 
+
 @Directive({
   standalone: true,
   selector: '[gamoChndes]'
@@ -7,11 +8,15 @@ import {Directive, ElementRef, Input, TemplateRef, ViewContainerRef} from "@angu
 export class StructuralDirective {
   private _showOrNot: boolean = false;
 
+  private context: any = {};
+
   @Input({required: true})
   set gamoChndes(show: boolean) {
     this._showOrNot = show;
+    this.context.$implicit = show;
+
       if(show) {
-        this.viewContainerRef.createEmbeddedView(this.templateRef);
+        this.viewContainerRef.createEmbeddedView(this.templateRef, this.context);
       } else {
         this.viewContainerRef.clear();
       }

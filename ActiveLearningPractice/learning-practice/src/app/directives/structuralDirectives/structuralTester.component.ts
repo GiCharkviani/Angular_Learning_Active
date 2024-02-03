@@ -12,7 +12,6 @@ import {StructuralDirective} from "./structural.directive";
 
     <p *gamoChndes="show as result" >Structural Directive: {{result}}</p>
 
-
 <!--    The same as:-->
 <!--    <ng-template [gamoChndes]="show" >-->
 <!--      <p>Structural Directive</p>-->
