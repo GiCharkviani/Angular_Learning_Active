@@ -8,7 +8,8 @@ import {StructuralDirective} from "./structural.directive";
     StructuralDirective
   ],
   template: `
-    <p *gamoChndes>Structural Directive</p>
+    <button (click)="show = !show">Show Element</button>
+    <p *gamoChndes="show" >Structural Directive</p>
 
 
 <!--    The same as:-->
@@ -19,5 +20,6 @@ import {StructuralDirective} from "./structural.directive";
   styles: ``
 })
 export class StructuralTesterComponent {
+  public show: boolean = false;
 
 }
