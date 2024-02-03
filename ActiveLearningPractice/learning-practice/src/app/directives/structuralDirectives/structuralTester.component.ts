@@ -8,7 +8,13 @@ import {StructuralDirective} from "./structural.directive";
     StructuralDirective
   ],
   template: `
-    <p gamoChndes>Structural Directive</p>
+    <p *gamoChndes>Structural Directive</p>
+
+
+<!--    The same as:-->
+<!--    <ng-template gamoChndes>-->
+<!--      <p>Structural Directive</p>-->
+<!--    </ng-template>-->
   `,
   styles: ``
 })

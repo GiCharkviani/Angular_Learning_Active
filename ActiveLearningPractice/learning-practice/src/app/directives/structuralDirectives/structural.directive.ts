@@ -1,4 +1,4 @@
-import {Directive, TemplateRef, ViewContainerRef} from "@angular/core";
+import {Directive, ElementRef, TemplateRef, ViewContainerRef} from "@angular/core";
 
 @Directive({
   standalone: true,
@@ -6,7 +6,7 @@ import {Directive, TemplateRef, ViewContainerRef} from "@angular/core";
 })
 export class StructuralDirective {
 
-  constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) {
-    console.log(templateRef, viewContainerRef, 'ELEMENT-ATTACHED')
+  constructor(private templateRef: TemplateRef<any>, private elRef: ElementRef, private viewContainerRef: ViewContainerRef) {
+    console.log(templateRef, viewContainerRef, elRef, 'ELEMENT-ATTACHED')
   }
 }
