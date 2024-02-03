@@ -13,6 +13,8 @@ export class StructuralDirective implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes, 'CHANGES')
+    if('gamoChndes' in changes) {
+      
+    }
   }
 }
