@@ -13,7 +13,7 @@ import {StructuralDirective} from "./structural.directive";
 
 
 <!--    The same as:-->
-<!--    <ng-template gamoChndes>-->
+<!--    <ng-template [gamoChndes]="show" >-->
 <!--      <p>Structural Directive</p>-->
 <!--    </ng-template>-->
   `,
