@@ -16,9 +16,7 @@ export class StructuralDirective implements OnChanges {
     console.log(changes, 'CHANGES')
 
     if('gamoChndes' in changes) {
-      const {gamoChndes: {currentValue}} = changes;
-
-      if(currentValue) {
+      if(changes['gamoChndes'].currentValue) {
         this.viewContainerRef.createEmbeddedView(this.templateRef);
       } else {
         this.viewContainerRef.clear();
