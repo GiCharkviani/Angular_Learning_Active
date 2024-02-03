@@ -21,7 +21,13 @@ import {StructuralDirective} from "./structural.directive";
 <!--      <p>Structural Directive</p>-->
 <!--    </ng-template>-->
   `,
-  styles: ``
+  styles: ``,
+  host: {
+    '(click)': 'onClick()'
+  },
+  hostDirectives: [
+    // add directives to the host element
+  ]
 })
 export class StructuralTesterComponent {
   public show: boolean = false;
