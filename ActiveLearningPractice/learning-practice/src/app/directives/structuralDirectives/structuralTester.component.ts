@@ -26,7 +26,16 @@ import {StructuralDirective} from "./structural.directive";
     '(click)': 'onClick()'
   },
   hostDirectives: [
-    // add directives to the host element
+    // add directives to the host element,
+    // customDirective,
+
+    /*
+    {
+      directive: hostDirective,
+      inputs: ['menuId: id'],
+      outputs: ['menuClosed: closed'],
+    }
+     */
   ]
 })
 export class StructuralTesterComponent {
