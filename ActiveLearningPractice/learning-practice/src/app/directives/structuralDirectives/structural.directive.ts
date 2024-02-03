@@ -14,6 +14,7 @@ export class StructuralDirective {
   set gamoChndes(show: boolean) {
     this._showOrNot = show;
     this.context.$implicit = show;
+    this.context.showOrNot = show;
 
       if(show) {
         this.viewContainerRef.createEmbeddedView(this.templateRef, this.context);
