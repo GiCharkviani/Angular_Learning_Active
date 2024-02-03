@@ -39,4 +39,12 @@ export class StructuralDirective {
   constructor(private templateRef: TemplateRef<any>, private elRef: ElementRef, private viewContainerRef: ViewContainerRef) {
     console.log(templateRef, viewContainerRef, elRef, 'ELEMENT-ATTACHED')
   }
+
+  static ngTemplateGuard_(input: string ) {
+    return true;
+  }
+
+  static ngTemplateContextGuard(dir: any, ctx: unknown) {
+    return true;
+  }
 }
