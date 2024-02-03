@@ -10,7 +10,7 @@ import {StructuralDirective} from "./structural.directive";
   template: `
     <button (click)="onClick()">Show Element</button>
 
-    <p *gamoChndes="show; AnEs otherTemp; let avto = showOrNot" >Structural Directive: {{avto}}</p>
+    <p *gamoChndes="show as smth; AnEs otherTemp; let avto = showOrNot" >Structural Directive: {{avto}} - {{smth}}</p>
 
     <ng-template #otherTemp let-gio="showOrNot">
       <h2>I am other guy: {{gio}}</h2>
