@@ -10,7 +10,7 @@ import {StructuralDirective} from "./structural.directive";
   template: `
     <button (click)="onClick()">Show Element</button>
 
-    <p *gamoChndes="show" >Structural Directive</p>
+    <p *gamoChndes="show as result" >Structural Directive: {{result}}</p>
 
 
 <!--    The same as:-->
