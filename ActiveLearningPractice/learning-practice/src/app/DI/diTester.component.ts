@@ -1,5 +1,7 @@
 import {Component, Inject, InjectionToken} from "@angular/core";
 
+
+/* Injection Token */
 interface AppConfig {
   theme: string;
   language: string;
@@ -25,7 +27,7 @@ const APP_CONFIG = new InjectionToken<AppConfig>(
   }
 );
 
-
+/* View Providers */
 const myValue = {
   userStatus() {
     return 'value status';
@@ -39,6 +41,8 @@ const myValue = {
   template: ``,
   styles: ``,
   providers: [
+    /* View Providers */
+
     // {provide: LoggerService, useClass: BetterLoggerService},
 
     // BetterLoggerService,
