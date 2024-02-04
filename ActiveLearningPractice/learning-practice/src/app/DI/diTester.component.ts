@@ -3,7 +3,7 @@ import {UserService} from "./user.service";
 
 
 @Component({
-  selector: 'app-inputProperties',
+  selector: 'app-diTester',
   standalone: true,
   imports: [],
   template: `
