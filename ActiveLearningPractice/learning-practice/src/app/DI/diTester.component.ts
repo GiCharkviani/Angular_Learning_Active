@@ -1,11 +1,12 @@
 import {Component} from "@angular/core";
 import {UserService} from "./user.service";
-import {LoggerService} from "./logger.service";
 import {AuthService} from "./auth.service";
-import {ModeratorService} from "./moderator.service";
-import {BetterLoggerService} from "./betterLogger.service";
-import {AdminService} from "./admin.service";
 
+const myValue = {
+  userStatus() {
+    return 'value status';
+  }
+}
 
 @Component({
   selector: 'app-diTester',
@@ -19,26 +20,27 @@ import {AdminService} from "./admin.service";
     // BetterLoggerService,
     // {provide: LoggerService, useExisting: BetterLoggerService},
 
-    BetterLoggerService,
-    AuthService,
-    {
-      provide: UserService,
-      useFactory: (logger: BetterLoggerService, auth: AuthService) => {
-        if(auth.userStatus() === 'moderator') {
-          return new ModeratorService(logger);
-        }
-        return new AdminService(logger);
-      },
-      deps: [BetterLoggerService, AuthService]
-    }
+  //   BetterLoggerService,
+  //   AuthService,
+  //   {
+  //     provide: UserService,
+  //     useFactory: (logger: BetterLoggerService, auth: AuthService) => {
+  //       if(auth.userStatus() === 'moderator') {
+  //         return new ModeratorService(logger);
+  //       }
+  //       return new AdminService(logger);
+  //     },
+  //     deps: [BetterLoggerService, AuthService]
+  //   }
+
+    {provide: AuthService, useValue: myValue}
   ]
 })
 export class DiTesterComponent {
 
  constructor(
-  private userService: UserService
+  private authService: AuthService
  ) {
-   this.userService.getName();
-   this.userService.log();
+  console.log(this.authService.userStatus())
  }
 }
