@@ -10,7 +10,13 @@ const config: AppConfig = {
   language: 'en'
 }
 
-const APP_CONFIG = new InjectionToken<AppConfig>('app.config', {providedIn: 'root', factory: () => config});
+const APP_CONFIG = new InjectionToken<AppConfig>(
+  'app.config',
+  {
+    providedIn: 'root',
+    factory: () => config
+  }
+);
 
 
 const myValue = {
