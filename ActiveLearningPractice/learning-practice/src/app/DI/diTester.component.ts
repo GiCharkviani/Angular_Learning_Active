@@ -13,5 +13,6 @@ import {UserService} from "./user.service";
   providers: [UserService]
 })
 export class DiTesterComponent {
-
+ constructor(private userService: UserService) {
+ }
 }
