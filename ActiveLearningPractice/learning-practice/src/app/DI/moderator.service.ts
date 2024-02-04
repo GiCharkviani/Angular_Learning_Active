@@ -2,10 +2,10 @@ import {Injectable} from "@angular/core";
 import {UserService} from "./user.service";
 
 @Injectable()
-export class AdminService extends UserService {
+export class ModeratorService extends UserService {
 
   override getName() {
-    console.log('admin name')
+    console.log('moderator name')
   }
 
 }
