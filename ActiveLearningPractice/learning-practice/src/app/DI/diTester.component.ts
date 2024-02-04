@@ -27,7 +27,7 @@ import {AdminService} from "./admin.service";
         if(auth.userStatus() === 'moderator') {
           return new ModeratorService(logger);
         }
-        return new AdminService(logger)
+        return new AdminService(logger);
       },
       deps: [BetterLoggerService, AuthService]
     }
@@ -38,6 +38,7 @@ export class DiTesterComponent {
  constructor(
   private userService: UserService
  ) {
-   this.userService.getName()
+   this.userService.getName();
+   this.userService.log();
  }
 }
