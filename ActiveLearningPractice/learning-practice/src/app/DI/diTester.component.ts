@@ -11,9 +11,13 @@ import {AuthService} from "./auth.service";
   template: ``,
   styles: ``,
   providers: [
-    // BetterLoggerService,
     // {provide: LoggerService, useClass: BetterLoggerService},
+    
+    // BetterLoggerService,
     // {provide: LoggerService, useExisting: BetterLoggerService},
+
+    LoggerService,
+    AuthService,
     {
       provide: UserService,
       useFactory: (logger: LoggerService, auth: AuthService) => {
@@ -27,7 +31,7 @@ import {AuthService} from "./auth.service";
 export class DiTesterComponent {
 
  constructor(
-
+  private userService: UserService
  ) {
 
  }
