@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {UserService} from "./user.service";
 import {LoggerService} from "./logger.service";
+import {BetterLoggerService} from "./betterLogger.service";
 
 
 @Component({
@@ -10,13 +11,12 @@ import {LoggerService} from "./logger.service";
   template: ``,
   styles: ``,
   providers: [
-    {provide: UserService, useClass: LoggerService}
+    {provide: LoggerService, useClass: BetterLoggerService}
   ]
 })
 export class DiTesterComponent {
 
- constructor(userService: UserService) {
-   // @ts-ignore
-   userService!.log()
+ constructor(loggerService: LoggerService) {
+   loggerService.log()
  }
 }
