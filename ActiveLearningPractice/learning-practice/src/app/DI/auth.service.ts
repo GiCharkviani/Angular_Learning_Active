@@ -2,9 +2,10 @@ import {Injectable} from "@angular/core";
 
 @Injectable()
 export class AuthService  {
+  private _userStatus = 'admin'
 
   public userStatus() {
-    return 'admin';
+    return this._userStatus;
   }
 
 }
