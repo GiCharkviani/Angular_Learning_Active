@@ -1,4 +1,4 @@
-import {Component, EnvironmentInjector, inject, Inject, InjectionToken} from "@angular/core";
+import {Component, EnvironmentInjector, inject, Inject, InjectionToken, runInInjectionContext} from "@angular/core";
 import {ModeratorService} from "./moderator.service";
 
 
@@ -86,6 +86,10 @@ export class DiTesterComponent {
   }
 
   public doSMth() {
-    // const data = inject(ModeratorService); // Error
+    runInInjectionContext(this.environmentInjector, () => {
+      const service = inject(ModeratorService);
+      service.getName();
+    })
+
   }
 }
