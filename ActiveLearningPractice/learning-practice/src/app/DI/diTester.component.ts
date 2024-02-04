@@ -1,6 +1,7 @@
 import {Component, Inject} from "@angular/core";
 import {LoggerService} from "./logger.service";
 import {BetterLoggerService} from "./betterLogger.service";
+import {UserService} from "./user.service";
 
 
 @Component({
@@ -13,7 +14,13 @@ import {BetterLoggerService} from "./betterLogger.service";
     // BetterLoggerService,
     // {provide: LoggerService, useClass: BetterLoggerService},
     // {provide: LoggerService, useExisting: BetterLoggerService},
+    {
+      provide: UserService,
+      useFactory: () => {
 
+      },
+      deps: []
+    }
   ]
 })
 export class DiTesterComponent {
