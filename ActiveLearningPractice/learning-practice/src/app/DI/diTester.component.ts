@@ -32,14 +32,12 @@ const myValue = {
   //     deps: [BetterLoggerService, AuthService]
   //   }
 
-    {provide: AuthService, useValue: myValue}
+    // {provide: AuthService, useValue: myValue}
   ]
 })
 export class DiTesterComponent {
 
  constructor(
-  private authService: AuthService
  ) {
-  console.log(this.authService.userStatus())
  }
 }
