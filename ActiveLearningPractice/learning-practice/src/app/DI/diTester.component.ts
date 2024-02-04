@@ -1,4 +1,4 @@
-import {Component, inject, Inject, InjectionToken} from "@angular/core";
+import {Component, EnvironmentInjector, inject, Inject, InjectionToken} from "@angular/core";
 import {ModeratorService} from "./moderator.service";
 
 
@@ -75,6 +75,7 @@ const myValue = {
   ]
 })
 export class DiTesterComponent {
+  private readonly environmentInjector = inject(EnvironmentInjector);
 
   constructor(
     @Inject(APP_CONFIG) private appConfig: AppConfig,
