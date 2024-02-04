@@ -71,7 +71,6 @@ const myValue = {
       provide: OTHER_CONFIG,
       useValue: otherConfig
     }
-
   ]
 })
 export class DiTesterComponent {
