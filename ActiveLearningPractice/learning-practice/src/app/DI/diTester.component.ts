@@ -1,4 +1,17 @@
-import {Component} from "@angular/core";
+import {Component, Inject, InjectionToken} from "@angular/core";
+
+interface AppConfig {
+  theme: string;
+  language: string;
+}
+
+const config: AppConfig = {
+  theme: 'dark',
+  language: 'en'
+}
+
+const APP_CONFIG = new InjectionToken<AppConfig>('app.config', {providedIn: 'root', factory: () => config});
+
 
 const myValue = {
   userStatus() {
@@ -40,6 +53,8 @@ const myValue = {
 export class DiTesterComponent {
 
  constructor(
+   @Inject(APP_CONFIG) private appConfig: AppConfig
  ) {
+   console.log(this.appConfig)
  }
 }
