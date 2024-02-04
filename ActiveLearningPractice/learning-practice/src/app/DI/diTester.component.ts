@@ -32,6 +32,9 @@ const myValue = {
   //   }
 
     // {provide: AuthService, useValue: myValue}
+
+    /* Injection Token */
+
   ]
 })
 export class DiTesterComponent {
