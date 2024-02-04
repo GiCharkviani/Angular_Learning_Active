@@ -1,4 +1,5 @@
-import {Component, Inject, InjectionToken} from "@angular/core";
+import {Component, inject, Inject, InjectionToken} from "@angular/core";
+import {ModeratorService} from "./moderator.service";
 
 
 /* Injection Token */
@@ -38,7 +39,9 @@ const myValue = {
   selector: 'app-diTester',
   standalone: true,
   imports: [],
-  template: ``,
+  template: `
+    <button (click)="doSMth()">DO Smth</button>
+  `,
   styles: ``,
   providers: [
     /* View Providers */
@@ -79,5 +82,9 @@ export class DiTesterComponent {
   ) {
     console.log(this.appConfig, 'CONFIG');
     console.log(this.otherConfig, 'OTHER_CONFIG')
+  }
+
+  public doSMth() {
+    // const data = inject(ModeratorService); // Error
   }
 }
