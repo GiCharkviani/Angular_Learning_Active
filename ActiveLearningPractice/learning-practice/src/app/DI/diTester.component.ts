@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {UserService} from "./user.service";
 
 
 @Component({
@@ -9,7 +10,7 @@ import {Component} from "@angular/core";
 
   `,
   styles: ``,
-  providers: []
+  providers: [UserService]
 })
 export class DiTesterComponent {
 
