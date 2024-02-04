@@ -10,7 +10,8 @@ import {BetterLoggerService} from "./betterLogger.service";
   template: ``,
   styles: ``,
   providers: [
-    {provide: LoggerService, useClass: BetterLoggerService}
+    // {provide: LoggerService, useClass: BetterLoggerService},
+    {provide: }
   ]
 })
 export class DiTesterComponent {
