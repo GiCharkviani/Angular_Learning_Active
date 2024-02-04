@@ -10,7 +10,7 @@ import {BetterLoggerService} from "./betterLogger.service";
   template: ``,
   styles: ``,
   providers: [
-    BetterLoggerService,
+    // BetterLoggerService,
     // {provide: LoggerService, useClass: BetterLoggerService},
     // {provide: LoggerService, useExisting: BetterLoggerService},
 
@@ -19,14 +19,8 @@ import {BetterLoggerService} from "./betterLogger.service";
 export class DiTesterComponent {
 
  constructor(
-   @Inject(LoggerService) private loggerService: LoggerService,
-   @Inject(BetterLoggerService) private betterLoggerService: BetterLoggerService,
 
-   // private loggerService: LoggerService
  ) {
-   console.log(this.loggerService === this.betterLoggerService, 'DO_EQUAL')
 
-   this.betterLoggerService.log();
-   this.loggerService.log();
  }
 }
