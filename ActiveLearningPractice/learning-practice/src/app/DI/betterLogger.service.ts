@@ -4,7 +4,7 @@ import {LoggerService} from "./logger.service";
 @Injectable()
 export class BetterLoggerService extends LoggerService {
 
-  override log() {
+  public override log() {
     console.log('BETTER LOGGER')
   }
 

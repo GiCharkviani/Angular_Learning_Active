@@ -3,7 +3,7 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class LoggerService {
 
-  public log() {
+  protected log() {
     console.log('LOGGER')
   }
 
