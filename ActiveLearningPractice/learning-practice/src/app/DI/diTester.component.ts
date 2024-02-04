@@ -8,7 +8,8 @@ import {Component} from "@angular/core";
   template: `
 
   `,
-  styles: ``
+  styles: ``,
+  providers: []
 })
 export class DiTesterComponent {
 
