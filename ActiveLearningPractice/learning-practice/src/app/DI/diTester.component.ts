@@ -1,5 +1,4 @@
 import {Component} from "@angular/core";
-import {UserService} from "./user.service";
 import {LoggerService} from "./logger.service";
 import {BetterLoggerService} from "./betterLogger.service";
 
