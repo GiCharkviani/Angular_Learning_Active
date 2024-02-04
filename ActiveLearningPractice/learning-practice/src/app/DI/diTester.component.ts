@@ -38,6 +38,6 @@ export class DiTesterComponent {
  constructor(
   private userService: UserService
  ) {
-
+   this.userService.getName()
  }
 }

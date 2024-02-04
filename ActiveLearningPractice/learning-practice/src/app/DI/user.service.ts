@@ -1,8 +1,7 @@
-import {Injectable} from "@angular/core";
 import {BetterLoggerService} from "./betterLogger.service";
 
-@Injectable()
-export class UserService {
+
+export abstract class UserService {
 
   constructor(private logger: BetterLoggerService) {
   }
@@ -11,8 +10,6 @@ export class UserService {
     this.logger.log();
   }
 
-  public getName() {
-    console.log('user name')
-  }
+  public abstract getName(): void;
 
 }
