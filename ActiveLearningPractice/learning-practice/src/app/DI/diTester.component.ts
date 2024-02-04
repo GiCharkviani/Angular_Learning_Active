@@ -70,8 +70,10 @@ const myValue = {
 export class DiTesterComponent {
 
   constructor(
-    @Inject(APP_CONFIG) private appConfig: AppConfig
+    @Inject(APP_CONFIG) private appConfig: AppConfig,
+    @Inject(OTHER_CONFIG) private otherConfig: AppConfig
   ) {
-    console.log(this.appConfig)
+    console.log(this.appConfig, 'CONFIG');
+    console.log(this.otherConfig, 'OTHER_CONFIG')
   }
 }
