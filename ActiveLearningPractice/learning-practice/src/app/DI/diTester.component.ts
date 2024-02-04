@@ -10,6 +10,11 @@ const config: AppConfig = {
   language: 'en'
 }
 
+const otherConfig: AppConfig = {
+  theme: 'light',
+  language: 'ru'
+}
+
 const APP_CONFIG = new InjectionToken<AppConfig>(
   'app.config',
   {
@@ -37,18 +42,18 @@ const myValue = {
     // BetterLoggerService,
     // {provide: LoggerService, useExisting: BetterLoggerService},
 
-  //   BetterLoggerService,
-  //   AuthService,
-  //   {
-  //     provide: UserService,
-  //     useFactory: (logger: BetterLoggerService, auth: AuthService) => {
-  //       if(auth.userStatus() === 'moderator') {
-  //         return new ModeratorService(logger);
-  //       }
-  //       return new AdminService(logger);
-  //     },
-  //     deps: [BetterLoggerService, AuthService]
-  //   }
+    //   BetterLoggerService,
+    //   AuthService,
+    //   {
+    //     provide: UserService,
+    //     useFactory: (logger: BetterLoggerService, auth: AuthService) => {
+    //       if(auth.userStatus() === 'moderator') {
+    //         return new ModeratorService(logger);
+    //       }
+    //       return new AdminService(logger);
+    //     },
+    //     deps: [BetterLoggerService, AuthService]
+    //   }
 
     // {provide: AuthService, useValue: myValue}
 
@@ -58,9 +63,9 @@ const myValue = {
 })
 export class DiTesterComponent {
 
- constructor(
-   @Inject(APP_CONFIG) private appConfig: AppConfig
- ) {
-   console.log(this.appConfig)
- }
+  constructor(
+    @Inject(APP_CONFIG) private appConfig: AppConfig
+  ) {
+    console.log(this.appConfig)
+  }
 }
