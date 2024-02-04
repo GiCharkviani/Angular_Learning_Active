@@ -12,7 +12,8 @@ import {BetterLoggerService} from "./betterLogger.service";
   providers: [
     BetterLoggerService,
     // {provide: LoggerService, useClass: BetterLoggerService},
-    {provide: LoggerService, useExisting: BetterLoggerService}
+    // {provide: LoggerService, useExisting: BetterLoggerService},
+
   ]
 })
 export class DiTesterComponent {
