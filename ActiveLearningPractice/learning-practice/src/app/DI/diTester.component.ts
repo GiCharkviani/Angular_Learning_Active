@@ -15,6 +15,8 @@ const otherConfig: AppConfig = {
   language: 'ru'
 }
 
+const OTHER_CONFIG = new InjectionToken<AppConfig>('other.app.config');
+
 const APP_CONFIG = new InjectionToken<AppConfig>(
   'app.config',
   {
