@@ -60,6 +60,10 @@ const myValue = {
     // {provide: AuthService, useValue: myValue}
 
     /* Injection Token */
+    {
+      provide: OTHER_CONFIG,
+      useValue: otherConfig
+    }
 
   ]
 })
