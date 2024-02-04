@@ -1,5 +1,7 @@
 import {Component} from "@angular/core";
 import {UserService} from "./user.service";
+import {LoggerService} from "./logger.service";
+import {AuthService} from "./auth.service";
 
 
 @Component({
@@ -14,10 +16,11 @@ import {UserService} from "./user.service";
     // {provide: LoggerService, useExisting: BetterLoggerService},
     {
       provide: UserService,
-      useFactory: () => {
-
+      useFactory: (logger: LoggerService, auth: AuthService) => {
+        logger.log()
+        console.log(auth.userStatus())
       },
-      deps: []
+      deps: [LoggerService, AuthService]
     }
   ]
 })
