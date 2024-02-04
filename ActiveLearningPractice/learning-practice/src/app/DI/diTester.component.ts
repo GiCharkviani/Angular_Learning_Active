@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Inject} from "@angular/core";
 import {LoggerService} from "./logger.service";
 import {BetterLoggerService} from "./betterLogger.service";
 
@@ -15,7 +15,10 @@ import {BetterLoggerService} from "./betterLogger.service";
 })
 export class DiTesterComponent {
 
- constructor(loggerService: LoggerService) {
+ constructor(
+   @Inject(LoggerService) private loggerService: LoggerService,
+   // private loggerService: LoggerService
+ ) {
    loggerService.log()
  }
 }

@@ -8,4 +8,8 @@ export class BetterLoggerService extends LoggerService {
     console.log('BETTER LOGGER')
   }
 
+  public logWarm() {
+    console.warn('Something happens bro')
+  }
+
 }
