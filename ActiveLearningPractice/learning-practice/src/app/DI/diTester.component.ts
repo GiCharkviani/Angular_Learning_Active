@@ -1,4 +1,11 @@
-import {Component, EnvironmentInjector, inject, Inject, InjectionToken, runInInjectionContext} from "@angular/core";
+import {
+  Component,
+  EnvironmentInjector,
+  inject,
+  Inject,
+  InjectionToken,
+  runInInjectionContext
+} from "@angular/core";
 import {ModeratorService} from "./moderator.service";
 
 
@@ -89,6 +96,7 @@ export class DiTesterComponent {
       const service = inject(ModeratorService);
       service.getName();
     })
+
 
   }
 }
