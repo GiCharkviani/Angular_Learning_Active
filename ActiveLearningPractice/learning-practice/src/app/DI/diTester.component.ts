@@ -2,6 +2,9 @@ import {Component} from "@angular/core";
 import {UserService} from "./user.service";
 import {LoggerService} from "./logger.service";
 import {AuthService} from "./auth.service";
+import {ModeratorService} from "./moderator.service";
+import {BetterLoggerService} from "./betterLogger.service";
+import {AdminService} from "./admin.service";
 
 
 @Component({
@@ -12,19 +15,21 @@ import {AuthService} from "./auth.service";
   styles: ``,
   providers: [
     // {provide: LoggerService, useClass: BetterLoggerService},
-    
+
     // BetterLoggerService,
     // {provide: LoggerService, useExisting: BetterLoggerService},
 
-    LoggerService,
+    BetterLoggerService,
     AuthService,
     {
       provide: UserService,
-      useFactory: (logger: LoggerService, auth: AuthService) => {
-        logger.log()
-        console.log(auth.userStatus())
+      useFactory: (logger: BetterLoggerService, auth: AuthService) => {
+        if(auth.userStatus() === 'moderator') {
+          return new ModeratorService(logger);
+        }
+        return new AdminService(logger)
       },
-      deps: [LoggerService, AuthService]
+      deps: [BetterLoggerService, AuthService]
     }
   ]
 })
