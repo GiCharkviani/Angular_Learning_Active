@@ -1,13 +1,12 @@
 import {
-  Component, Inject,
-  InjectionToken, Optional,
+  Component, Optional,
 } from "@angular/core";
 import {UserService} from "./user.service";
 import {DiChildComponent} from "./diChild.component";
 import {AuthService} from "./auth.service";
 import {BetterLoggerService} from "./betterLogger.service";
 import {ContentComponent} from "./content.component";
-import {AppConfig, FLOWER} from "./injectionTokens";
+import {AppConfig} from "./injectionTokens";
 
 
 /* Injection Token */

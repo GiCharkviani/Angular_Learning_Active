@@ -1,5 +1,4 @@
-import {Component, Inject} from "@angular/core";
-import {FLOWER} from "./injectionTokens";
+import {Component} from "@angular/core";
 
 
 @Component({
