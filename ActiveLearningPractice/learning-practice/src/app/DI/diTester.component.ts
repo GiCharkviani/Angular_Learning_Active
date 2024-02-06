@@ -1,12 +1,7 @@
 import {
   Component,
-  EnvironmentInjector,
-  inject,
-  Inject,
   InjectionToken,
-  runInInjectionContext
 } from "@angular/core";
-import {ModeratorService} from "./moderator.service";
 
 
 /* Injection Token */
