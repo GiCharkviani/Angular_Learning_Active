@@ -5,6 +5,7 @@ import {
 import {UserService} from "./user.service";
 import {DiChildComponent} from "./diChild.component";
 import {AuthService} from "./auth.service";
+import {BetterLoggerService} from "./betterLogger.service";
 
 
 /* Injection Token */
@@ -81,7 +82,8 @@ const myValue = {
     // }
 
     /* Resolution Modifiers */
-    AuthService
+    AuthService,
+    BetterLoggerService
   ]
 })
 export class DiTesterComponent {
