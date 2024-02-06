@@ -16,7 +16,9 @@ import {LoggerService} from "./logger.service";
   ]
 })
 export class DiChildComponent {
-  constructor(@Self() @Optional() private authService: AuthService) {
-    console.log(this.authService?.userStatus())
+  constructor(@Self() @Optional() private authService: AuthService,
+              private loggerService: LoggerService) {
+    console.log(this.authService?.userStatus());
+    this.loggerService.log();
   }
 }
