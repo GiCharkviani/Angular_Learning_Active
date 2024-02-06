@@ -1,5 +1,6 @@
 import {Component, Optional, Self} from "@angular/core";
 import {AuthService} from "./auth.service";
+import {LoggerService} from "./logger.service";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {AuthService} from "./auth.service";
   `,
   styles: ``,
   providers: [
-
+    LoggerService
   ]
 })
 export class DiChildComponent {
