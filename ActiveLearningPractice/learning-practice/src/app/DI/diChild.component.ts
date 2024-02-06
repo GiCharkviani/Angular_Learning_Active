@@ -19,9 +19,10 @@ import {BetterLoggerService} from "./betterLogger.service";
 export class DiChildComponent {
   constructor(@Self() @Optional() private authService: AuthService,
               @SkipSelf() @Optional() private loggerService: LoggerService,
-              @Host() private betterLogger: BetterLoggerService) {
+               // @Host() private betterLogger: BetterLoggerService
+              ) {
     console.log(this.authService?.userStatus());
     this.loggerService?.log();
-    this.betterLogger?.logWarm()
+    // this.betterLogger?.logWarm();
   }
 }
