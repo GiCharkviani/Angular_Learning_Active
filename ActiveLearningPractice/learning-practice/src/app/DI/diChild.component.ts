@@ -15,6 +15,9 @@ import {FLOWER} from "./injectionTokens";
   styles: ``,
   providers: [
     LoggerService,
+
+  ],
+  viewProviders: [
     { provide: FLOWER, useValue: {emojy: '🌺'} }
   ]
 })

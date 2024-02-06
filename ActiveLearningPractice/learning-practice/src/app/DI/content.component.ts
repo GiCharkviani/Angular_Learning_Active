@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Inject} from "@angular/core";
+import {FLOWER} from "./injectionTokens";
 
 
 @Component({
@@ -14,7 +15,7 @@ import {Component} from "@angular/core";
   ]
 })
 export class ContentComponent {
-  constructor() {
-
-  }
+  // constructor(@Inject(FLOWER) public flower: {emojy: string}) {
+  //  // will error as it's provided in diChild component's viewProvider's array
+  // }
 }
