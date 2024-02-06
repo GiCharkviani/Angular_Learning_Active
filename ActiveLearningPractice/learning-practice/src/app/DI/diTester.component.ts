@@ -34,6 +34,10 @@ const APP_CONFIG = new InjectionToken<AppConfig>(
   }
 );
 
+const FLOWER = new InjectionToken('flower', {factory: () => '🌻'})
+const ANIMAL = new InjectionToken('animal', {factory: () => '🐶'})
+
+
 /* View Providers */
 const myValue = {
   userStatus() {
