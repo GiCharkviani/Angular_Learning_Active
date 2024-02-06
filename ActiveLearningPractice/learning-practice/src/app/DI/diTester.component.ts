@@ -6,6 +6,7 @@ import {UserService} from "./user.service";
 import {DiChildComponent} from "./diChild.component";
 import {AuthService} from "./auth.service";
 import {BetterLoggerService} from "./betterLogger.service";
+import {ContentComponent} from "./content.component";
 
 
 /* Injection Token */
@@ -49,11 +50,15 @@ const myValue = {
   selector: 'app-diTester',
   standalone: true,
   imports: [
-    DiChildComponent
+    DiChildComponent,
+    ContentComponent
   ],
   template: `
-    <button (click)="doSMth()">DO Smth</button>
-    <app-diChild></app-diChild>
+
+    <app-diChild>
+      <app-contentComponent></app-contentComponent>
+    </app-diChild>
+
   `,
   styles: ``,
   providers: [

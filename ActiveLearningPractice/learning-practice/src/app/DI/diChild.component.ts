@@ -1,7 +1,6 @@
 import {Component, Host, Optional, Self, SkipSelf} from "@angular/core";
 import {AuthService} from "./auth.service";
 import {LoggerService} from "./logger.service";
-import {BetterLoggerService} from "./betterLogger.service";
 
 
 @Component({
@@ -10,6 +9,8 @@ import {BetterLoggerService} from "./betterLogger.service";
   imports: [],
   template: `
         <p>I am child DI</p>
+
+        <ng-content></ng-content>
   `,
   styles: ``,
   providers: [

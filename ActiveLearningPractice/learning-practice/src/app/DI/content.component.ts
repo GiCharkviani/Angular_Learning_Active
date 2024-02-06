@@ -13,7 +13,7 @@ import {Component} from "@angular/core";
 
   ]
 })
-export class DiChildComponent {
+export class ContentComponent {
   constructor() {
 
   }
