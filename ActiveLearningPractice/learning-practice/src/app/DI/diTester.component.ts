@@ -83,8 +83,12 @@ export class DiTesterComponent {
   // private readonly environmentInjector = inject(EnvironmentInjector);
 
   constructor(
+    /* Injection Token */
     // @Inject(APP_CONFIG) private appConfig: AppConfig,
     // @Inject(OTHER_CONFIG) private otherConfig: AppConfig
+
+    /* Resolution Modifiers */
+    
   ) {
 
   }
