@@ -1,7 +1,8 @@
 import {
-  Component,
-  InjectionToken,
+  Component, Inject,
+  InjectionToken, Optional,
 } from "@angular/core";
+import {UserService} from "./user.service";
 
 
 /* Injection Token */
@@ -88,7 +89,7 @@ export class DiTesterComponent {
     // @Inject(OTHER_CONFIG) private otherConfig: AppConfig
 
     /* Resolution Modifiers */
-    
+    @Optional() private userService: UserService
   ) {
 
   }
