@@ -22,6 +22,6 @@ export class DiChildComponent {
               @Host() private betterLogger: BetterLoggerService) {
     console.log(this.authService?.userStatus());
     this.loggerService?.log();
-    this.betterLogger?.log()
+    this.betterLogger?.logWarm()
   }
 }
