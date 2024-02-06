@@ -7,36 +7,16 @@ import {DiChildComponent} from "./diChild.component";
 import {AuthService} from "./auth.service";
 import {BetterLoggerService} from "./betterLogger.service";
 import {ContentComponent} from "./content.component";
+import {AppConfig, FLOWER} from "./injectionTokens";
 
 
 /* Injection Token */
-interface AppConfig {
-  theme: string;
-  language: string;
-}
-
-const config: AppConfig = {
-  theme: 'dark',
-  language: 'en'
-}
 
 const otherConfig: AppConfig = {
   theme: 'light',
   language: 'ru'
 }
 
-const OTHER_CONFIG = new InjectionToken<AppConfig>('other.app.config');
-
-const APP_CONFIG = new InjectionToken<AppConfig>(
-  'app.config',
-  {
-    providedIn: 'root',
-    factory: () => config
-  }
-);
-
-export const FLOWER = new InjectionToken('flower')
-export const ANIMAL = new InjectionToken('animal')
 
 
 /* View Providers */

@@ -1,7 +1,7 @@
-import {Component, Host, Inject, Optional, Self, SkipSelf} from "@angular/core";
+import {Component, Inject, Optional, Self, SkipSelf} from "@angular/core";
 import {AuthService} from "./auth.service";
 import {LoggerService} from "./logger.service";
-import {FLOWER} from "./diTester.component";
+import {FLOWER} from "./injectionTokens";
 
 
 @Component({
@@ -14,7 +14,8 @@ import {FLOWER} from "./diTester.component";
   `,
   styles: ``,
   providers: [
-    LoggerService
+    LoggerService,
+    { provide: FLOWER, useValue: {emojy: '🌺'} }
   ]
 })
 export class DiChildComponent {
