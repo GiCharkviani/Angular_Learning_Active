@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Optional, Self} from "@angular/core";
 import {AuthService} from "./auth.service";
 
 
@@ -15,7 +15,7 @@ import {AuthService} from "./auth.service";
   ]
 })
 export class DiChildComponent {
-  constructor(private authService: AuthService) {
+  constructor(@Self() @Optional() private authService: AuthService) {
     console.log(this.authService.userStatus())
   }
 }
