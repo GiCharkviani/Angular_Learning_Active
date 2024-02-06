@@ -82,7 +82,6 @@ const myValue = {
 
     /* Resolution Modifiers */
     AuthService
-
   ]
 })
 export class DiTesterComponent {
