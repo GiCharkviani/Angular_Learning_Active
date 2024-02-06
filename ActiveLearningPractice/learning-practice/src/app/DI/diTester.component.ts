@@ -34,8 +34,8 @@ const APP_CONFIG = new InjectionToken<AppConfig>(
   }
 );
 
-const FLOWER = new InjectionToken('flower', {factory: () => '🌻'})
-const ANIMAL = new InjectionToken('animal', {factory: () => '🐶'})
+export const FLOWER = new InjectionToken('flower', {factory: () => '🌻'})
+export const ANIMAL = new InjectionToken('animal', {factory: () => '🐶'})
 
 
 /* View Providers */
