@@ -74,28 +74,31 @@ const myValue = {
     // {provide: AuthService, useValue: myValue}
 
     /* Injection Token */
-    {
-      provide: OTHER_CONFIG,
-      useValue: otherConfig
-    }
+    // {
+    //   provide: OTHER_CONFIG,
+    //   useValue: otherConfig
+    // }
+
+    /* Resolution Modifiers */
+
+
   ]
 })
 export class DiTesterComponent {
-  private readonly environmentInjector = inject(EnvironmentInjector);
+  // private readonly environmentInjector = inject(EnvironmentInjector);
 
   constructor(
-    @Inject(APP_CONFIG) private appConfig: AppConfig,
-    @Inject(OTHER_CONFIG) private otherConfig: AppConfig
+    // @Inject(APP_CONFIG) private appConfig: AppConfig,
+    // @Inject(OTHER_CONFIG) private otherConfig: AppConfig
   ) {
-    console.log(this.appConfig, 'CONFIG');
-    console.log(this.otherConfig, 'OTHER_CONFIG')
+
   }
 
   public doSMth() {
-    runInInjectionContext(this.environmentInjector, () => {
-      const service = inject(ModeratorService);
-      service.getName();
-    })
+    // runInInjectionContext(this.environmentInjector, () => {
+    //   const service = inject(ModeratorService);
+    //   service.getName();
+    // })
 
 
   }
