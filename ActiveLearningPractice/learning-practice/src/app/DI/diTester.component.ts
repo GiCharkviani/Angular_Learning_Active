@@ -93,7 +93,7 @@ const myValue = {
     /* Resolution Modifiers */
     AuthService,
     BetterLoggerService,
-    {provide: FLOWER, useValue: {emojy: '🌻'}}
+    { provide: FLOWER, useValue: {emojy: '🌻'} }
   ]
 })
 export class DiTesterComponent {
