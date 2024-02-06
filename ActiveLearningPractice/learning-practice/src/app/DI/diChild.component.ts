@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {AuthService} from "./auth.service";
 
 
 @Component({
@@ -6,12 +7,14 @@ import {Component} from "@angular/core";
   standalone: true,
   imports: [],
   template: `
-
+        <p>I am child DI</p>
   `,
   styles: ``,
-  providers: []
+  providers: [
+
+  ]
 })
 export class DiChildComponent {
-  constructor() {
+  constructor(private authService: AuthService) {
   }
 }

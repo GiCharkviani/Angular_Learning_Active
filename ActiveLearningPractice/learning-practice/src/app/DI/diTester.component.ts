@@ -3,6 +3,8 @@ import {
   InjectionToken, Optional,
 } from "@angular/core";
 import {UserService} from "./user.service";
+import {DiChildComponent} from "./diChild.component";
+import {AuthService} from "./auth.service";
 
 
 /* Injection Token */
@@ -41,9 +43,12 @@ const myValue = {
 @Component({
   selector: 'app-diTester',
   standalone: true,
-  imports: [],
+  imports: [
+    DiChildComponent
+  ],
   template: `
     <button (click)="doSMth()">DO Smth</button>
+    <app-diChild></app-diChild>
   `,
   styles: ``,
   providers: [
@@ -76,7 +81,7 @@ const myValue = {
     // }
 
     /* Resolution Modifiers */
-
+    AuthService
 
   ]
 })
