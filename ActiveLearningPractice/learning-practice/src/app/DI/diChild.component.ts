@@ -16,5 +16,6 @@ import {AuthService} from "./auth.service";
 })
 export class DiChildComponent {
   constructor(private authService: AuthService) {
+    console.log(this.authService.userStatus())
   }
 }
