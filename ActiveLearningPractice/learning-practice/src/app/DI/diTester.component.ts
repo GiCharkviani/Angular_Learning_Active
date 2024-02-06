@@ -35,8 +35,8 @@ const APP_CONFIG = new InjectionToken<AppConfig>(
   }
 );
 
-export const FLOWER = new InjectionToken('flower', {factory: () => '🌻'})
-export const ANIMAL = new InjectionToken('animal', {factory: () => '🐶'})
+export const FLOWER = new InjectionToken('flower')
+export const ANIMAL = new InjectionToken('animal')
 
 
 /* View Providers */
@@ -92,7 +92,8 @@ const myValue = {
 
     /* Resolution Modifiers */
     AuthService,
-    BetterLoggerService
+    BetterLoggerService,
+    {provide: FLOWER, useValue: {emojy: '🌻'}}
   ]
 })
 export class DiTesterComponent {
