@@ -1,4 +1,4 @@
-import {Component, Optional, Self} from "@angular/core";
+import {Component, Optional, Self, SkipSelf} from "@angular/core";
 import {AuthService} from "./auth.service";
 import {LoggerService} from "./logger.service";
 
@@ -17,8 +17,8 @@ import {LoggerService} from "./logger.service";
 })
 export class DiChildComponent {
   constructor(@Self() @Optional() private authService: AuthService,
-              private loggerService: LoggerService) {
+              @SkipSelf() @Optional() private loggerService: LoggerService) {
     console.log(this.authService?.userStatus());
-    this.loggerService.log();
+    this.loggerService?.log();
   }
 }
