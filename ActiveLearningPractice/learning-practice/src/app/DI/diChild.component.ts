@@ -9,7 +9,6 @@ import {LoggerService} from "./logger.service";
   imports: [],
   template: `
         <p>I am child DI</p>
-
         <ng-content></ng-content>
   `,
   styles: ``,
