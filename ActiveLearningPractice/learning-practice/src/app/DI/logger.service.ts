@@ -1,8 +1,7 @@
 import {Injectable} from "@angular/core";
-import {LightWeightTokenService} from "./diChild.component";
 
 @Injectable()
-export class LoggerService extends LightWeightTokenService {
+export class LoggerService {
 
   public log() {
     console.log('LOGGER')
