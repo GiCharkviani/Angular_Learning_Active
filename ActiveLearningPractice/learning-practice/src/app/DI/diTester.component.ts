@@ -1,10 +1,7 @@
 import {
-  Component, Optional,
+  Component,
 } from "@angular/core";
-import {UserService} from "./user.service";
 import {DiChildComponent} from "./diChild.component";
-import {AuthService} from "./auth.service";
-import {BetterLoggerService} from "./betterLogger.service";
 import {ContentComponent} from "./content.component";
 import {AppConfig} from "./injectionTokens";
 
@@ -35,7 +32,7 @@ const myValue = {
   template: `
 
     <app-diChild>
-      <app-contentComponent></app-contentComponent>
+<!--      <app-contentComponent></app-contentComponent>-->
     </app-diChild>
 
   `,
@@ -70,8 +67,9 @@ const myValue = {
     // }
 
     /* Resolution Modifiers */
-    AuthService,
-    BetterLoggerService,
+    // AuthService,
+    // BetterLoggerService,
+
     // { provide: FLOWER, useValue: {emojy: '🌻'} }
   ]
 })
@@ -84,7 +82,7 @@ export class DiTesterComponent {
     // @Inject(OTHER_CONFIG) private otherConfig: AppConfig
 
     /* Resolution Modifiers */
-    @Optional() private userService: UserService
+    // @Optional() private userService: UserService
   ) {
 
   }
