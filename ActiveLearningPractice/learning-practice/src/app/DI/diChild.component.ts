@@ -3,6 +3,8 @@ import {FLOWER} from "./injectionTokens";
 import {ContentComponent} from "./content.component";
 import {LoggerService} from "./logger.service";
 
+/* Lightweight Injection Token */
+export abstract class LightWeightToken {}
 
 @Component({
   selector: 'app-diChild',
@@ -21,7 +23,7 @@ import {LoggerService} from "./logger.service";
   ]
 })
 export class DiChildComponent implements AfterContentInit {
-  @ContentChild(ContentComponent, {read: ElementRef}) contentComponent: ContentComponent | null = null;
+  @ContentChild(LightWeightToken, {read: ElementRef}) contentComponent: ContentComponent | null = null;
 
   ngAfterContentInit() {
     console.log(this.contentComponent, 'CONTENT_COMPONENT')

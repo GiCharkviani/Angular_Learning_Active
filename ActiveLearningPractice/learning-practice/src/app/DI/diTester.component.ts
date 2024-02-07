@@ -26,8 +26,7 @@ const myValue = {
   selector: 'app-diTester',
   standalone: true,
   imports: [
-    DiChildComponent,
-    ContentComponent
+    DiChildComponent
   ],
   template: `
 
