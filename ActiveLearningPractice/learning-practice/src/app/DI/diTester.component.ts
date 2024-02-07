@@ -3,6 +3,8 @@ import {
 } from "@angular/core";
 import {DiChildComponent} from "./diChild.component";
 import {AppConfig} from "./injectionTokens";
+import {LoggerService} from "./logger.service";
+import {AuthService} from "./auth.service";
 
 
 /* Injection Token */
@@ -81,6 +83,10 @@ export class DiTesterComponent {
 
     /* Resolution Modifiers */
     // @Optional() private userService: UserService
+
+    /* Forward Ref */
+    private loggerService: LoggerService,
+    private authService: AuthService
   ) {
 
   }
