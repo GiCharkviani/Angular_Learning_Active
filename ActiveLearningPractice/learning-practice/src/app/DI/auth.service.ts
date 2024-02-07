@@ -1,11 +1,11 @@
-import {Injectable} from "@angular/core";
+import {forwardRef, Inject, Injectable} from "@angular/core";
 import {LoggerService} from "./logger.service";
 
 @Injectable({providedIn: 'root'})
 export class AuthService  {
   private _userStatus = 'moderator';
 
-  constructor(private loggerService: LoggerService) {
+  constructor(@Inject(forwardRef(() => LoggerService)) private loggerService: LoggerService) {
   }
 
   public userStatus() {

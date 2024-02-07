@@ -1,5 +1,5 @@
 import {
-  Component, InjectionToken,
+  Component, forwardRef, InjectionToken,
 } from "@angular/core";
 import {DiChildComponent} from "./diChild.component";
 import {AppConfig} from "./injectionTokens";
@@ -40,6 +40,9 @@ const myValue = {
   `,
   styles: ``,
   providers: [
+    /* Forward Ref */
+    // {provide: NO_CIRCULAR, useExisting: forwardRef(() => LoggerService)}
+
     /* View Providers */
 
     // {provide: LoggerService, useClass: BetterLoggerService},
