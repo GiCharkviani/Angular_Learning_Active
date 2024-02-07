@@ -5,7 +5,7 @@ import {LoggerService} from "./logger.service";
 export class AuthService  {
   private _userStatus = 'moderator';
 
-  constructor(@Inject(forwardRef(() => LoggerService)) private loggerService: LoggerService) {
+  constructor() {
   }
 
   public userStatus() {
