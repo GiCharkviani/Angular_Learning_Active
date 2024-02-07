@@ -11,11 +11,15 @@ import {LightWeightToken} from "./diChild.component";
   `,
   styles: ``,
   providers: [
-
+    {provide: LightWeightToken, useExisting: ContentComponent}
   ]
 })
 export class ContentComponent extends LightWeightToken {
   // constructor(@Inject(FLOWER) public flower: {emojy: string}) {
   //  // will error as it's provided in diChild component's viewProvider's array
   // }
+
+  public flyBaby() {
+    console.log('Do Something')
+  }
 }

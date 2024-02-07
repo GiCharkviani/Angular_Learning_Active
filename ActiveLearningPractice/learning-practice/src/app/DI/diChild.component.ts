@@ -1,6 +1,5 @@
 import {AfterContentInit, Component, ContentChild, ElementRef, Inject, Optional} from "@angular/core";
 import {FLOWER} from "./injectionTokens";
-import {ContentComponent} from "./content.component";
 import {LoggerService} from "./logger.service";
 
 /* Lightweight Injection Token */
@@ -23,10 +22,10 @@ export abstract class LightWeightToken {}
   ]
 })
 export class DiChildComponent implements AfterContentInit {
-  @ContentChild(LightWeightToken, {read: ElementRef}) contentComponent: ContentComponent | null = null;
+  @ContentChild(LightWeightToken, {read: ElementRef}) injectedComponent: LightWeightToken | null = null;
 
   ngAfterContentInit() {
-    console.log(this.contentComponent, 'CONTENT_COMPONENT')
+    console.log(this.injectedComponent, 'CONTENT_COMPONENT')
   }
 
   constructor(

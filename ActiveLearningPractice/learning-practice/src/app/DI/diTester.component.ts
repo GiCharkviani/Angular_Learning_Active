@@ -2,7 +2,6 @@ import {
   Component,
 } from "@angular/core";
 import {DiChildComponent} from "./diChild.component";
-import {ContentComponent} from "./content.component";
 import {AppConfig} from "./injectionTokens";
 
 
