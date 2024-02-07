@@ -3,7 +3,9 @@ import {FLOWER} from "./injectionTokens";
 import {LoggerService} from "./logger.service";
 
 /* Lightweight Injection Token */
-export abstract class LightWeightToken {}
+export abstract class LightWeightToken {
+  abstract flyBaby(): void;
+}
 
 @Component({
   selector: 'app-diChild',
