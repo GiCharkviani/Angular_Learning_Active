@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChild, Inject, Optional, Self, SkipSelf} from "@angular/core";
+import {AfterContentInit, Component, ContentChild, ElementRef, Inject, Optional, Self, SkipSelf} from "@angular/core";
 import {AuthService} from "./auth.service";
 import {LoggerService} from "./logger.service";
 import {FLOWER} from "./injectionTokens";
@@ -22,7 +22,7 @@ import {ContentComponent} from "./content.component";
   ]
 })
 export class DiChildComponent implements AfterContentInit {
-  @ContentChild(ContentComponent) contentComponent: ContentComponent | null = null;
+  @ContentChild(ContentComponent, {read: ElementRef}) contentComponent: ContentComponent | null = null;
 
   ngAfterContentInit() {
     console.log(this.contentComponent, 'CONTENT_COMPONENT')
