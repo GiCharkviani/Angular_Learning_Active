@@ -1,11 +1,13 @@
 import {
-  Component,
+  Component, InjectionToken,
 } from "@angular/core";
 import {DiChildComponent} from "./diChild.component";
 import {AppConfig} from "./injectionTokens";
 import {LoggerService} from "./logger.service";
 import {AuthService} from "./auth.service";
 
+/* Forward Ref */
+const NO_CIRCULAR = new InjectionToken('no_circular');
 
 /* Injection Token */
 
