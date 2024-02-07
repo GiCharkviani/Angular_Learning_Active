@@ -6,6 +6,9 @@ import {LoggerService} from "./logger.service";
 export abstract class LightWeightToken {
   abstract flyBaby(): void;
 }
+export abstract class LightWeightTokenService {
+  abstract log(): void;
+}
 
 @Component({
   selector: 'app-diChild',
@@ -17,7 +20,7 @@ export abstract class LightWeightToken {
   `,
   styles: ``,
   providers: [
-
+    {provide: LightWeightTokenService, useExisting: LoggerService}
   ],
   viewProviders: [
     {provide: FLOWER, useValue: {emojy: '🌺'}}
