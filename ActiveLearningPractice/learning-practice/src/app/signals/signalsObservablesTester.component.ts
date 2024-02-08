@@ -8,6 +8,7 @@ import {SignalStateService} from "./signalState.service";
   imports: [],
   template: `
     <p>People: {{ people() }}</p>
+    <input #inputElement (change)="onChange(inputElement.value)" type="text">
   `,
   styles: ``
 })
@@ -17,5 +18,9 @@ export class SignalsObservablesTesterComponent  {
 
   constructor(private signalStateService: SignalStateService) {
     this.people = this.signalStateService.people;
+  }
+
+  onChange(value: string) {
+    this.signalStateService.addPeople(value);
   }
 }
