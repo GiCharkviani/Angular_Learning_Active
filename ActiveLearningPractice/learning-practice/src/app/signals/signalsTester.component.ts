@@ -32,6 +32,10 @@ export class SignalsTesterComponent {
     this.names = this.signalStateService.names;
     this.namesAndSurnames = this.signalStateService.namesAndSurnames;
     this.surnames = this.signalStateService.surnames;
+
+
+    /* Effects */
+    
   }
 
   public onSetSurname(value: string) {
