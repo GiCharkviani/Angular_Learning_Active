@@ -11,7 +11,7 @@ import {SignalStateService} from "./signalState.service";
     <h2>Writable Signals</h2>
     <div>
       <p>Names: {{ names() }}</p>
-      <input #inputElement (input)="onInput(inputElement.value)" type="text">
+      <input #inputElement (input)="onSetInput(inputElement.value)" type="text">
     </div>
   `,
   styles: ``,
@@ -24,7 +24,11 @@ export class SignalsTesterComponent {
     this.names = this.signalStateService.names;
   }
 
-  public onInput(value: string): void {
+  public onSetInput(value: string): void {
+    this.signalStateService.setNames(value)
+  }
+
+  public onUpdateInput(value: string): void {
     this.signalStateService.updateNames(value)
   }
 
