@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, effect, Signal} from "@angular/core";
+import {ChangeDetectionStrategy, Component, effect, Signal, WritableSignal} from "@angular/core";
 import {SignalStateService} from "./signalState.service";
 
 @Component({
@@ -24,9 +24,9 @@ import {SignalStateService} from "./signalState.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalsTesterComponent {
-  public names!: Signal<string>;
+  public names!: WritableSignal<string>;
   public namesAndSurnames!: Signal<string>;
-  public surnames!: Signal<string>;
+  public surnames!: WritableSignal<string>;
 
   constructor(private signalStateService: SignalStateService) {
     this.names = this.signalStateService.names;
@@ -37,8 +37,11 @@ export class SignalsTesterComponent {
     /* Effects */
     effect( () => {
       const names = this.names();
+      // this.names.set('dsada') // ar qna
+
+
       console.log(names, 'NAMES');
-    });
+    }, {allowSignalWrites: true});
   }
 
   public onSetSurname(value: string) {
