@@ -30,6 +30,11 @@ export class SignalsTesterComponent {
   public namesAndSurnames!: Signal<string>;
   public surnames!: WritableSignal<string>;
 
+  private nameAndSurnameEffect = effect(() => {
+    const nameAndSurname = this.namesAndSurnames();
+    console.log(nameAndSurname, 'NAME_AND_SURNAME');
+  })
+
   constructor(private signalStateService: SignalStateService, private injector: Injector) {
     this.names = this.signalStateService.names;
     this.namesAndSurnames = this.signalStateService.namesAndSurnames;
