@@ -17,7 +17,7 @@ export class SignalStateService {
   public surnames = signal('');
 
   constructor() {
-    console.dir(animal, 'RAGAC')
+    // console.dir(animal, 'RAGAC')
   }
 
   /* Readable Signals */

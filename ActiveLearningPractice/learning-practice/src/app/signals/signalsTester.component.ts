@@ -32,13 +32,17 @@ export class SignalsTesterComponent {
   public namesAndSurnames!: Signal<string>;
   public surnames!: WritableSignal<string>;
 
-  public nameAndSurnameEffect = effect(() => {
+  public nameAndSurnameEffect = effect((onCleanup) => {
     const nameAndSurname = this.namesAndSurnames();
     // console.log(nameAndSurname, 'NAME_AND_SURNAME');
 
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       console.log(nameAndSurname, 'FROM_INTERVAL')
-    }, 1000)
+    }, 2000)
+
+    onCleanup(() => {
+      clearTimeout(timeout);
+    })
 
   })
 
