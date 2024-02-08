@@ -11,8 +11,11 @@ import {SignalStateService} from "./signalState.service";
     <h2>Writable Signals</h2>
     <div>
       <p>Names: {{ names() }}</p>
+      <p>Surnames: {{ surnames() }}</p>
       <p>Names and Surnames: {{ namesAndSurnames() }}</p>
       <input #inputElement (input)="onSetInput(inputElement.value)" type="text">
+      <br>
+      <input #surnameInputElement (input)="onSetSurname(surnameInputElement.value)" type="text">
       <br>
       <input #secondInputElement placeholder=" - " #inputElement (input)="onUpdateInput(secondInputElement.value)" type="text">
     </div>
@@ -23,10 +26,15 @@ import {SignalStateService} from "./signalState.service";
 export class SignalsTesterComponent {
   public names!: Signal<string>;
   public namesAndSurnames!: Signal<string>;
+  public surnames!: Signal<string>;
 
   constructor(private signalStateService: SignalStateService) {
     this.names = this.signalStateService.names;
     this.namesAndSurnames = this.signalStateService.namesAndSurnames;
+  }
+
+  public onSetSurname(value: string) {
+    this.signalStateService.setSurnames(value);
   }
 
   public onSetInput(value: string): void {
