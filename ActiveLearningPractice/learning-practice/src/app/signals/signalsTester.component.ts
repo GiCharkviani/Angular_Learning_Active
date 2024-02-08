@@ -1,4 +1,4 @@
-import {Component, signal} from "@angular/core";
+import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
 
 @Component({
   selector: 'app-signalsTester',
@@ -13,14 +13,15 @@ import {Component, signal} from "@angular/core";
       <input #inputElement (input)="onInput(inputElement.value)" type="text">
     </div>
   `,
-  styles: ``
+  styles: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalsTesterComponent {
   /* Writable Signals */
-  public names = signal(null);
+  public names = signal('');
 
   public onInput(value: string): void {
-    
+    this.names.set(value);
   }
 
 
