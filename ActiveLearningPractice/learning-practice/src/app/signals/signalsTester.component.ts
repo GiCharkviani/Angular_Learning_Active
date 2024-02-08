@@ -13,11 +13,11 @@ import {SignalStateService} from "./signalState.service";
       <p>Names: {{ names() }}</p>
       <p>Surnames: {{ surnames() }}</p>
       <p>Names and Surnames: {{ namesAndSurnames() }}</p>
-      <input #inputElement (input)="onSetInput(inputElement.value)" type="text">
+      <input placeholder="Name" #inputElement (input)="onSetInput(inputElement.value)" type="text">
       <br>
-      <input #surnameInputElement (input)="onSetSurname(surnameInputElement.value)" type="text">
+      <input placeholder="Surname" #surnameInputElement (input)="onSetSurname(surnameInputElement.value)" type="text">
       <br>
-      <input #secondInputElement placeholder=" - " #inputElement (input)="onUpdateInput(secondInputElement.value)" type="text">
+      <input #secondInputElement placeholder="Name - Surname" #inputElement (input)="onUpdateInput(secondInputElement.value)" type="text">
     </div>
   `,
   styles: ``,
