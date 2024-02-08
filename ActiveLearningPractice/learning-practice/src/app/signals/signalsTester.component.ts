@@ -18,6 +18,8 @@ import {SignalStateService} from "./signalState.service";
       <input placeholder="Surname" #surnameInputElement (input)="onSetSurname(surnameInputElement.value)" type="text">
       <br>
       <input #secondInputElement placeholder="Name - Surname" #inputElement (change)="onUpdateInput(secondInputElement.value)" type="text">
+      <br>
+      <button (click)="logSurname()">Log Surname</button>
     </div>
   `,
   styles: ``,
@@ -38,10 +40,15 @@ export class SignalsTesterComponent {
     effect( () => {
       const names = this.names();
       // this.names.set('dsada') // ar qna
-
-
       console.log(names, 'NAMES');
     }, {allowSignalWrites: true});
+  }
+
+  public logSurname() {
+    effect(() => {
+      const surname = this.surnames();
+      console.log(surname, 'SURNAME')
+    });
   }
 
   public onSetSurname(value: string) {
