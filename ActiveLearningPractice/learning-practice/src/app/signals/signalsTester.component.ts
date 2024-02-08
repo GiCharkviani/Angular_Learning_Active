@@ -45,17 +45,17 @@ export class SignalsTesterComponent {
 
     /* Effects */
     effect( () => {
-      const names = this.names();
-      // this.names.set('dsada') // ar qna
-      console.log(names, 'NAMES');
+      const name = this.names();
+      const surname = this.surnames();
+      console.log(`Name is - ${name} and surname is - ${surname}`)
     }, {allowSignalWrites: true});
   }
 
   public logSurname() {
     effect(() => {
-      const name = this.names();
-      const surname = this.surnames();
-      console.log(`Name is - ${name} and surname is - ${surname}`)
+      const names = this.names();
+      // this.names.set('dsada') // ar qna
+      console.log(names, 'NAMES');
     }, {injector: this.injector});
   }
 
