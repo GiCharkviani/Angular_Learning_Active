@@ -12,6 +12,8 @@ import {SignalStateService} from "./signalState.service";
     <div>
       <p>Names: {{ names() }}</p>
       <input #inputElement (input)="onSetInput(inputElement.value)" type="text">
+      <br>
+      <input placeholder=" - " #inputElement (input)="onUpdateInput(inputElement.value)" type="text">
     </div>
   `,
   styles: ``,
