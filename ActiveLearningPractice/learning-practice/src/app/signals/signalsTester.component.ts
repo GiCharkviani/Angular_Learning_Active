@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, effect, Injector, Signal, WritableSignal} from "@angular/core";
+import {ChangeDetectionStrategy, Component, effect, Injector, Signal, untracked, WritableSignal} from "@angular/core";
 import {SignalStateService} from "./signalState.service";
 
 @Component({
@@ -34,7 +34,7 @@ export class SignalsTesterComponent {
 
   public nameAndSurnameEffect = effect(() => {
     const nameAndSurname = this.namesAndSurnames();
-    console.log(nameAndSurname, 'NAME_AND_SURNAME');
+    // console.log(nameAndSurname, 'NAME_AND_SURNAME');
   })
 
   constructor(private signalStateService: SignalStateService, private injector: Injector) {
@@ -46,7 +46,8 @@ export class SignalsTesterComponent {
     /* Effects */
     effect( () => {
       const name = this.names();
-      const surname = this.surnames();
+      // remove this.surnames as a dependency
+      const surname = untracked(this.surnames);
       console.log(`Name is - ${name} and surname is - ${surname}`)
     }, {allowSignalWrites: true});
   }
