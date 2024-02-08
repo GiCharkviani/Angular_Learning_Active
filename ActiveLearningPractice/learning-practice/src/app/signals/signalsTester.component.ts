@@ -35,8 +35,9 @@ export class SignalsTesterComponent {
 
 
     /* Effects */
-    effect(() => {
-      
+    effect( () => {
+      const names = this.names();
+      console.log(names, 'NAMES');
     });
   }
 
