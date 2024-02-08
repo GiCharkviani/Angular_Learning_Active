@@ -20,6 +20,8 @@ import {SignalStateService} from "./signalState.service";
       <input #secondInputElement placeholder="Name - Surname" #inputElement (change)="onUpdateInput(secondInputElement.value)" type="text">
       <br>
       <button (click)="logSurname()">Log Surname</button>
+      <br>
+      <button (click)="nameAndSurnameEffect.destroy()">Destroy Effect</button>
     </div>
   `,
   styles: ``,
@@ -30,7 +32,7 @@ export class SignalsTesterComponent {
   public namesAndSurnames!: Signal<string>;
   public surnames!: WritableSignal<string>;
 
-  private nameAndSurnameEffect = effect(() => {
+  public nameAndSurnameEffect = effect(() => {
     const nameAndSurname = this.namesAndSurnames();
     console.log(nameAndSurname, 'NAME_AND_SURNAME');
   })
