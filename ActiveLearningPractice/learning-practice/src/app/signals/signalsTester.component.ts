@@ -35,6 +35,11 @@ export class SignalsTesterComponent {
   public nameAndSurnameEffect = effect(() => {
     const nameAndSurname = this.namesAndSurnames();
     // console.log(nameAndSurname, 'NAME_AND_SURNAME');
+
+    setTimeout(() => {
+      console.log(nameAndSurname, 'FROM_INTERVAL')
+    }, 1000)
+
   })
 
   constructor(private signalStateService: SignalStateService, private injector: Injector) {
@@ -48,7 +53,7 @@ export class SignalsTesterComponent {
       const name = this.names();
       // remove this.surnames as a dependency
       const surname = untracked(this.surnames);
-      console.log(`Name is - ${name} and surname is - ${surname}`)
+      // console.log(`Name is - ${name} and surname is - ${surname}`)
     }, {allowSignalWrites: true});
   }
 
