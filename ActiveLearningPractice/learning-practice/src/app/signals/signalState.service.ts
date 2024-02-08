@@ -1,9 +1,17 @@
 import {computed, Injectable, signal} from "@angular/core";
 
+
+function equality(value: any) {
+  console.log(value, 'FROM_EQUAL')
+}
+
 @Injectable({providedIn: 'root'})
 export class SignalStateService {
   /* Writable Signals */
-  public names = signal('');
+  public names = signal('', {
+    equal:
+  });
+
   public surnames = signal('');
 
   /* Readable Signals */
