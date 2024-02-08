@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Signal} from "@angular/core";
 import {SignalStateService} from "./signalState.service";
 
 
@@ -7,12 +7,15 @@ import {SignalStateService} from "./signalState.service";
   standalone: true,
   imports: [],
   template: `
+    <p>People: {{ people() }}</p>
   `,
   styles: ``
 })
 export class SignalsObservablesTesterComponent  {
   /* Signals & Observables */
+  public people!: Signal<string | undefined>;
 
   constructor(private signalStateService: SignalStateService) {
+    this.people = this.signalStateService.people;
   }
 }
