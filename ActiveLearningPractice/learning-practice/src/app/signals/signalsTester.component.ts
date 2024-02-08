@@ -53,8 +53,9 @@ export class SignalsTesterComponent {
 
   public logSurname() {
     effect(() => {
+      const name = this.names();
       const surname = this.surnames();
-      console.log(surname, 'SURNAME')
+      console.log(`Name is - ${name} and surname is - ${surname}`)
     }, {injector: this.injector});
   }
 
