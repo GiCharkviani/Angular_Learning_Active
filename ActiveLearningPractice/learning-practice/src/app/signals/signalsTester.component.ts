@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, effect, Signal, WritableSignal} from "@angular/core";
+import {ChangeDetectionStrategy, Component, effect, Injector, Signal, WritableSignal} from "@angular/core";
 import {SignalStateService} from "./signalState.service";
 
 @Component({
@@ -30,7 +30,7 @@ export class SignalsTesterComponent {
   public namesAndSurnames!: Signal<string>;
   public surnames!: WritableSignal<string>;
 
-  constructor(private signalStateService: SignalStateService) {
+  constructor(private signalStateService: SignalStateService, private injector: Injector) {
     this.names = this.signalStateService.names;
     this.namesAndSurnames = this.signalStateService.namesAndSurnames;
     this.surnames = this.signalStateService.surnames;
@@ -48,7 +48,7 @@ export class SignalsTesterComponent {
     effect(() => {
       const surname = this.surnames();
       console.log(surname, 'SURNAME')
-    });
+    }, {injector: this.injector});
   }
 
   public onSetSurname(value: string) {
