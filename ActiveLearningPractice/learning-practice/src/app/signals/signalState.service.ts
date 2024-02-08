@@ -6,6 +6,7 @@ export class SignalStateService {
   public names = signal('');
 
   public updateNames(value: string) {
+    // Update Signal
     this.names.set(value);
   }
 
