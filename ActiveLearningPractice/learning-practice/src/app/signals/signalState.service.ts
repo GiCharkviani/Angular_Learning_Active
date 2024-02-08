@@ -46,6 +46,9 @@ export class SignalStateService {
     this.names.update(oldValue => oldValue + ' - ' + value);
   }
 
-
+  /* Signals & Observables */
+  public addPeople(name: string) {
+    this.people$.next(name);
+  }
 
 }
