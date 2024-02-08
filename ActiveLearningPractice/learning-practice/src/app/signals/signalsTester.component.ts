@@ -11,7 +11,7 @@ import {SignalStateService} from "./signalState.service";
     <h2>Writable Signals</h2>
     <div>
       <p>Names: {{ names() }}</p>
-      <p>Names and Surnames: {{ namesAndSurnames }}</p>
+      <p>Names and Surnames: {{ namesAndSurnames() }}</p>
       <input #inputElement (input)="onSetInput(inputElement.value)" type="text">
       <br>
       <input #secondInputElement placeholder=" - " #inputElement (input)="onUpdateInput(secondInputElement.value)" type="text">
