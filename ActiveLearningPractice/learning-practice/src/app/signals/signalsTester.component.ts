@@ -11,6 +11,7 @@ import {Component} from "@angular/core";
   styles: ``
 })
 export class SignalsTesterComponent {
-
+  /* Writable Signals */
+  
 
 }
