@@ -4,5 +4,9 @@ import {Injectable, signal} from "@angular/core";
 export class SignalStateService {
   /* Writable Signals */
   public names = signal('');
-  
+
+  public updateNames(value: string) {
+    this.names.set(value);
+  }
+
 }
