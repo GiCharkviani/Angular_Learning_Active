@@ -31,6 +31,7 @@ export class SignalsTesterComponent {
   constructor(private signalStateService: SignalStateService) {
     this.names = this.signalStateService.names;
     this.namesAndSurnames = this.signalStateService.namesAndSurnames;
+    this.surnames = this.signalStateService.surnames;
   }
 
   public onSetSurname(value: string) {
