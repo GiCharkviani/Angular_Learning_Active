@@ -1,4 +1,6 @@
 import {computed, Injectable, signal} from "@angular/core";
+import {BehaviorSubject, Subject} from "rxjs";
+import {toSignal} from "@angular/core/rxjs-interop";
 
 
 function equality(value1: string, value2: string): boolean {
@@ -9,6 +11,11 @@ const animal = equality
 
 @Injectable({providedIn: 'root'})
 export class SignalStateService {
+  /* Signals & Observables */
+  public people$ = new BehaviorSubject('');
+  public people = toSignal(this.people$);
+
+
   /* Writable Signals */
   public names = signal<string>('', {
     equal: equality

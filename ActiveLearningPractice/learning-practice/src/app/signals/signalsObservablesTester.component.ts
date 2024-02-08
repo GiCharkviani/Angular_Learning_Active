@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import {SignalStateService} from "./signalState.service";
 
 
 @Component({
@@ -10,5 +11,8 @@ import {Component} from "@angular/core";
   styles: ``
 })
 export class SignalsObservablesTesterComponent  {
+  /* Signals & Observables */
 
+  constructor(private signalStateService: SignalStateService) {
+  }
 }
