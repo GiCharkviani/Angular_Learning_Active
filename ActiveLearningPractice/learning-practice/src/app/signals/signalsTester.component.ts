@@ -17,7 +17,7 @@ import {SignalStateService} from "./signalState.service";
       <br>
       <input placeholder="Surname" #surnameInputElement (input)="onSetSurname(surnameInputElement.value)" type="text">
       <br>
-      <input #secondInputElement placeholder="Name - Surname" #inputElement (input)="onUpdateInput(secondInputElement.value)" type="text">
+      <input #secondInputElement placeholder="Name - Surname" #inputElement (change)="onUpdateInput(secondInputElement.value)" type="text">
     </div>
   `,
   styles: ``,
