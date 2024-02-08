@@ -24,5 +24,6 @@ export class SignalsObservablesTesterComponent  {
 
   onChange(value: string) {
     this.signalStateService.addPeople(value);
+    this.signalStateService.setNames(value);
   }
 }
