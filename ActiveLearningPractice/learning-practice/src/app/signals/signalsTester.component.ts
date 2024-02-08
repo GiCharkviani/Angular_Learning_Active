@@ -1,4 +1,5 @@
-import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, signal} from "@angular/core";
+import {SignalStateService} from "./signalState.service";
 
 @Component({
   selector: 'app-signalsTester',
@@ -9,7 +10,6 @@ import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
   template: `
     <h2>Writable Signals</h2>
     <div>
-      <p>Names: {{ names() }}</p>
       <input #inputElement (input)="onInput(inputElement.value)" type="text">
     </div>
   `,
@@ -17,11 +17,12 @@ import {ChangeDetectionStrategy, Component, signal} from "@angular/core";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalsTesterComponent {
-  /* Writable Signals */
-  public names = signal('');
+
+  constructor(private signalStateService: SignalStateService) {
+  }
 
   public onInput(value: string): void {
-    this.names.set(value);
+
   }
 
 
