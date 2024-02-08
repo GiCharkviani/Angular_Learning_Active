@@ -1,6 +1,6 @@
 import {computed, Injectable, signal} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
-import {toSignal} from "@angular/core/rxjs-interop";
+import {toObservable, toSignal} from "@angular/core/rxjs-interop";
 
 
 function equality(value1: string, value2: string): boolean {
@@ -30,7 +30,7 @@ export class SignalStateService {
   public people$ = new BehaviorSubject('');
   public people = toSignal(this.people$);
 
-  
+  public names$ = toObservable(this.names);
 
 
   /* ----- */

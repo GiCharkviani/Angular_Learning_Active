@@ -18,6 +18,8 @@ export class SignalsObservablesTesterComponent  {
 
   constructor(private signalStateService: SignalStateService) {
     this.people = this.signalStateService.people;
+
+    this.signalStateService.names$.subscribe(data => console.log(data, 'FROM_OBSERVABLE'))
   }
 
   onChange(value: string) {
