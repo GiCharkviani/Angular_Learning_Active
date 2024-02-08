@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone, Signal, signal} from "@angular/core";
+import {ChangeDetectionStrategy, Component, effect, Signal} from "@angular/core";
 import {SignalStateService} from "./signalState.service";
 
 @Component({
@@ -35,7 +35,9 @@ export class SignalsTesterComponent {
 
 
     /* Effects */
-    
+    effect(() => {
+      
+    });
   }
 
   public onSetSurname(value: string) {
