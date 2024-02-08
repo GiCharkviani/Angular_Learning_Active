@@ -4,11 +4,13 @@ import {computed, Injectable, signal} from "@angular/core";
 export class SignalStateService {
   /* Writable Signals */
   public names = signal('');
+  public surnames = signal('');
 
   /* Readable Signals */
   public namesAndSurnames = computed(() => {
     const localNames = this.names();
-    return localNames + ' Chavchavadze';
+    const localSurname = this.surnames();
+    return localNames + localSurname;
   })
 
   public setNames(value: string) {
