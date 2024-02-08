@@ -11,21 +11,12 @@ const animal = equality
 
 @Injectable({providedIn: 'root'})
 export class SignalStateService {
-  /* Signals & Observables */
-  public people$ = new BehaviorSubject('');
-  public people = toSignal(this.people$);
-
-
   /* Writable Signals */
   public names = signal<string>('', {
     equal: equality
   });
 
   public surnames = signal('');
-
-  constructor() {
-    // console.dir(animal, 'RAGAC')
-  }
 
   /* Readable Signals */
   public namesAndSurnames = computed(() => {
@@ -34,6 +25,15 @@ export class SignalStateService {
     return localNames + ' ' + localSurname;
   })
 
+
+  /* Signals & Observables */
+  public people$ = new BehaviorSubject('');
+  public people = toSignal(this.people$);
+
+  
+
+
+  /* ----- */
   public setNames(value: string) {
     this.names.set(value);
   }

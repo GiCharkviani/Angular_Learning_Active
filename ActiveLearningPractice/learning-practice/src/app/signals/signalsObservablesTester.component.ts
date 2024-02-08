@@ -14,7 +14,7 @@ import {SignalStateService} from "./signalState.service";
 })
 export class SignalsObservablesTesterComponent  {
   /* Signals & Observables */
-  public people!: Signal<string | undefined>;
+  public people!: Signal<any>;
 
   constructor(private signalStateService: SignalStateService) {
     this.people = this.signalStateService.people;
