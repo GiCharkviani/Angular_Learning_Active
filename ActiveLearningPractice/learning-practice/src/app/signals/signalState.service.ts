@@ -10,11 +10,15 @@ export class SignalStateService {
   public namesAndSurnames = computed(() => {
     const localNames = this.names();
     const localSurname = this.surnames();
-    return localNames + localSurname;
+    return localNames + ' ' + localSurname;
   })
 
   public setNames(value: string) {
     this.names.set(value);
+  }
+
+  public setSurnames(value: string) {
+    this.surnames.set(value);
   }
 
   public updateNames(value: string) {
