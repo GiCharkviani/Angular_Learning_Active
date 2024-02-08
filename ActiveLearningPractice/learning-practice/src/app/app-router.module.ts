@@ -15,6 +15,7 @@ import {AttributeTesterComponent} from "./directives/attributeDirectives/attribu
 import {StructuralTesterComponent} from "./directives/structuralDirectives/structuralTester.component";
 import {DiTesterComponent} from "./DI/diTester.component";
 import {SignalsTesterComponent} from "./signals/signalsTester.component";
+import {SignalsObservablesTesterComponent} from "./signals/signalsObservablesTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -32,7 +33,8 @@ export const routes: Route[] = [
   {path: 'attributeDirectives', component: AttributeTesterComponent},
   {path: 'structuralDirectives', component: StructuralTesterComponent},
   {path: 'di', component: DiTesterComponent},
-  {path: 'signals', component: SignalsTesterComponent}
+  {path: 'signals', component: SignalsTesterComponent},
+  {path: 'signalsObservables', component: SignalsObservablesTesterComponent}
 
 ];
 
