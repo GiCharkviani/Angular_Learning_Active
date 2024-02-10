@@ -41,7 +41,7 @@ export const routes: Route[] = [
     canActivate: [canActivate], loadComponent: () => import('./routing/routerTester.component')
       .then(m => m.RouterTesterComponent),
     matcher: (url) => {
-      console.log(url, 'URL')
+      // console.log(url, 'URL')
       return {consumed: url, posParams: {userName: new UrlSegment(url[0].path, {})}};
     }
   }

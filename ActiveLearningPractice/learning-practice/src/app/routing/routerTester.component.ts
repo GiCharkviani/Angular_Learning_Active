@@ -15,11 +15,11 @@ export class RouterTesterComponent implements OnChanges {
   @Input() userName!: any;
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes, 'CHANGES')
+    // console.log(changes, 'CHANGES')
   }
 
   constructor(private readonly router: Router, private readonly activatedRoute: ActivatedRoute) {
-    console.log('ROUTER_TESTER_CREATED')
+    // console.log('ROUTER_TESTER_CREATED')
     /* Router Native */
     // console.log(window.location, 'LOCATION')
     // console.log(window.history)

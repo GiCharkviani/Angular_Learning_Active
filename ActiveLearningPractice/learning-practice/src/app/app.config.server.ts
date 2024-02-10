@@ -4,7 +4,7 @@ import {HttpClientModule, withFetch} from "@angular/common/http";
 import {
   PreloadAllModules,
   provideRouter,
-  withComponentInputBinding,
+  withComponentInputBinding, withDebugTracing,
   withHashLocation,
   withPreloading
 } from "@angular/router";
@@ -21,7 +21,7 @@ export const config = mergeApplicationConfig(
   {
     providers: [
       importProvidersFrom(HttpClientModule),
-      provideRouter(routes, withComponentInputBinding(), withHashLocation()),
+      provideRouter(routes, withComponentInputBinding(), withHashLocation(), withDebugTracing()),
       withPreloading(PreloadAllModules),
       provideClientHydration(),
       withFetch(),
