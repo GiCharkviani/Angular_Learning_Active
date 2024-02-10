@@ -17,6 +17,7 @@ import {DiTesterComponent} from "./DI/diTester.component";
 import {SignalsTesterComponent} from "./signals/signalsTester.component";
 import {SignalsObservablesTesterComponent} from "./signals/signalsObservablesTester.component";
 import {canActivate, resolveData} from "./routing/guards";
+import {FormsTesterComponent} from "./forms/formsTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -44,7 +45,8 @@ export const routes: Route[] = [
       // console.log(url, 'URL')
       return {consumed: url, posParams: {userName: new UrlSegment(url[0].path, {})}};
     }
-  }
+  },
+  {path: 'forms', component: FormsTesterComponent},
 ];
 
 
