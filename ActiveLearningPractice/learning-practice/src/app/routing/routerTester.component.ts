@@ -22,7 +22,7 @@ export class RouterTesterComponent {
 
   public toSelector(): void {
     // /router/selector
-    this.router.navigate(['selector'], {relativeTo: this.activatedRoute})
+    this.router.navigate(['selector'], {relativeTo: this.activatedRoute});
   }
 
 
