@@ -37,6 +37,7 @@ export const routes: Route[] = [
   {path: 'di', component: DiTesterComponent},
   {path: 'signals', component: SignalsTesterComponent},
   {path: 'signalsObservables', component: SignalsObservablesTesterComponent},
-  {path: 'router', canMatch: [canMatch], component: RouterTesterComponent}
+  {path: 'router', canActivate: [canActivate], loadComponent: () => import('./routing/routerTester.component')
+      .then(m => m.RouterTesterComponent)}
 ];
 

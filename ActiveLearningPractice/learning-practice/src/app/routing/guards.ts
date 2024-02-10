@@ -1,6 +1,6 @@
 import {
   ActivatedRouteSnapshot,
-  CanActivateFn,
+  CanActivateFn, CanLoadFn,
   CanMatchFn, Route,
   Router,
   RouterStateSnapshot,
@@ -16,5 +16,5 @@ export const canActivate: CanActivateFn = (next: ActivatedRouteSnapshot, state: 
 export const canMatch: CanMatchFn = (route: Route, segments: UrlSegment[]) => {
   console.log(route, 'ROUTE')
   console.log(segments, 'SEGMENT')
-  return false;
+  return true;
 }
