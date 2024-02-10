@@ -19,6 +19,7 @@ export class RouterTesterComponent {
     // console.log(window.location, 'LOCATION')
     // console.log(window.history)
     // window.history.pushState({}, '', 'gaga')
+    this.activatedRoute.data.subscribe(data => console.log(data, 'ROUTE_DATA'))
   }
 
   public toSelector(): void {
