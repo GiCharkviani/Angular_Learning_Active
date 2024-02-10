@@ -18,6 +18,7 @@ import {SignalsTesterComponent} from "./signals/signalsTester.component";
 import {SignalsObservablesTesterComponent} from "./signals/signalsObservablesTester.component";
 import {canActivate, resolveData} from "./routing/guards";
 import {FormsTesterComponent} from "./forms/formsTester.component";
+import {RouterTesterComponent} from "./routing/routerTester.component";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -37,15 +38,17 @@ export const routes: Route[] = [
   {path: 'di', component: DiTesterComponent},
   {path: 'signals', component: SignalsTesterComponent},
   {path: 'signalsObservables', component: SignalsObservablesTesterComponent},
-  {
-    resolve: {data: resolveData},
-    canActivate: [canActivate], loadComponent: () => import('./routing/routerTester.component')
-      .then(m => m.RouterTesterComponent),
-    matcher: (url) => {
-      // console.log(url, 'URL')
-      return {consumed: url, posParams: {userName: new UrlSegment(url[0].path, {})}};
-    }
-  },
+  {path: 'router', component: RouterTesterComponent},
+
+  // {
+  //   resolve: {data: resolveData},
+  //   canActivate: [canActivate], loadComponent: () => import('./routing/routerTester.component')
+  //     .then(m => m.RouterTesterComponent),
+  //   matcher: (url) => {
+  //     // console.log(url, 'URL')
+  //     return {consumed: url, posParams: {userName: new UrlSegment(url[0].path, {})}};
+  //   }
+  // },
   {path: 'forms', component: FormsTesterComponent},
 ];
 
