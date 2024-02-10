@@ -8,14 +8,14 @@ import {
 import {delay, map, of, throwError} from "rxjs";
 
 export const canActivate: CanActivateFn = (next: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
-  console.log(next, 'NEXT')
-  console.log(state, 'STATE')
+  // console.log(next, 'NEXT')
+  // console.log(state, 'STATE')
   return true;
 }
 
 export const canMatch: CanMatchFn = (route: Route, segments: UrlSegment[]) => {
-  console.log(route, 'ROUTE')
-  console.log(segments, 'SEGMENT')
+  // console.log(route, 'ROUTE')
+  // console.log(segments, 'SEGMENT')
   return true;
 }
 
