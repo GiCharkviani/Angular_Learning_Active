@@ -1,4 +1,4 @@
-import {Route} from '@angular/router';
+import {Route, UrlSegment} from '@angular/router';
 import {SelectorsTesterComponent} from "./components/selectors/selectorsTester.component";
 import {StylesTesterComponent} from "./components/styles/stylesTester.component";
 import {InputPropertiesTesterComponent} from "./components/inputProperties/inputPropertiesTester.component";
@@ -36,9 +36,16 @@ export const routes: Route[] = [
   {path: 'di', component: DiTesterComponent},
   {path: 'signals', component: SignalsTesterComponent},
   {path: 'signalsObservables', component: SignalsObservablesTesterComponent},
-  {path: 'router',
+  {
     resolve: {data: resolveData},
     canActivate: [canActivate], loadComponent: () => import('./routing/routerTester.component')
-      .then(m => m.RouterTesterComponent)}
+      .then(m => m.RouterTesterComponent),
+    matcher: (url) => {
+      console.log(url, 'URL')
+      return {consumed: url, posParams: {userName: new UrlSegment(url[0].path, {})}};
+    }
+  }
 ];
+
+
 

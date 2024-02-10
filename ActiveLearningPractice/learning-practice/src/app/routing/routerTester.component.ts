@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 
@@ -11,7 +11,12 @@ import {ActivatedRoute, Router} from "@angular/router";
   `,
   styles: ``
 })
-export class RouterTesterComponent {
+export class RouterTesterComponent implements OnChanges {
+  @Input() userName!: any;
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes, 'CHANGES')
+  }
 
   constructor(private readonly router: Router, private readonly activatedRoute: ActivatedRoute) {
     console.log('ROUTER_TESTER_CREATED')

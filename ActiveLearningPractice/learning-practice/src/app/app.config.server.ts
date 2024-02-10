@@ -1,7 +1,13 @@
 import {mergeApplicationConfig, ApplicationConfig, importProvidersFrom} from '@angular/core';
 import {provideServerRendering} from '@angular/platform-server';
 import {HttpClientModule, withFetch} from "@angular/common/http";
-import {PreloadAllModules, provideRouter, withComponentInputBinding, withPreloading} from "@angular/router";
+import {
+  PreloadAllModules,
+  provideRouter,
+  withComponentInputBinding,
+  withHashLocation,
+  withPreloading
+} from "@angular/router";
 import {routes} from "./app-router.module";
 import {provideClientHydration} from "@angular/platform-browser";
 
@@ -15,7 +21,7 @@ export const config = mergeApplicationConfig(
   {
     providers: [
       importProvidersFrom(HttpClientModule),
-      provideRouter(routes, withComponentInputBinding()),
+      provideRouter(routes, withComponentInputBinding(), withHashLocation()),
       withPreloading(PreloadAllModules),
       provideClientHydration(),
       withFetch(),

@@ -20,5 +20,5 @@ export const canMatch: CanMatchFn = (route: Route, segments: UrlSegment[]) => {
 }
 
 export const resolveData: ResolveFn<any> = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
-  return of({name: 'avto'}).pipe(delay(2000));
+  return of({name: 'avto'}).pipe(delay(200));
 }
