@@ -17,6 +17,7 @@ import {DiTesterComponent} from "./DI/diTester.component";
 import {SignalsTesterComponent} from "./signals/signalsTester.component";
 import {SignalsObservablesTesterComponent} from "./signals/signalsObservablesTester.component";
 import {RouterTesterComponent} from "./routing/routerTester.component";
+import {canActivate, canMatch} from "./routing/guards";
 
 export const routes: Route[] = [
   {path: 'selector', component: SelectorsTesterComponent},
@@ -36,6 +37,6 @@ export const routes: Route[] = [
   {path: 'di', component: DiTesterComponent},
   {path: 'signals', component: SignalsTesterComponent},
   {path: 'signalsObservables', component: SignalsObservablesTesterComponent},
-  {path: 'router', component: RouterTesterComponent}
+  {path: 'router', canMatch: [canMatch], component: RouterTesterComponent}
 ];
 

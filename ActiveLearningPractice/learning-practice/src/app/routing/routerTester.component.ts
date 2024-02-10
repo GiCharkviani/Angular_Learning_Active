@@ -14,6 +14,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class RouterTesterComponent {
 
   constructor(private readonly router: Router, private readonly activatedRoute: ActivatedRoute) {
+    console.log('ROUTER_TESTER_CREATED')
     /* Router Native */
     // console.log(window.location, 'LOCATION')
     // console.log(window.history)
