@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -13,7 +13,7 @@ import {Router} from "@angular/router";
 })
 export class RouterTesterComponent {
 
-  constructor(private readonly router: Router) {
+  constructor(private readonly router: Router, private readonly activatedRoute: ActivatedRoute) {
     /* Router Native */
     // console.log(window.location, 'LOCATION')
     // console.log(window.history)
@@ -21,7 +21,8 @@ export class RouterTesterComponent {
   }
 
   public toSelector(): void {
-    this.router.navigate(['selector'])
+    // /router/selector
+    this.router.navigate(['selector'], {relativeTo: this.activatedRoute})
   }
 
 
